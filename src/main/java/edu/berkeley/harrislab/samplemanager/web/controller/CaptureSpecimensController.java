@@ -1,28 +1,16 @@
 package edu.berkeley.harrislab.samplemanager.web.controller;
 
-import edu.berkeley.harrislab.samplemanager.domain.Box;
-import edu.berkeley.harrislab.samplemanager.domain.Equip;
-import edu.berkeley.harrislab.samplemanager.domain.Specimen;
-import edu.berkeley.harrislab.samplemanager.domain.SpecimenStorage;
-import edu.berkeley.harrislab.samplemanager.domain.Subject;
+import com.google.gson.JsonObject;
+import edu.berkeley.harrislab.samplemanager.domain.*;
 import edu.berkeley.harrislab.samplemanager.domain.audit.AuditTrail;
 import edu.berkeley.harrislab.samplemanager.language.MessageResource;
-import edu.berkeley.harrislab.samplemanager.service.AuditTrailService;
-import edu.berkeley.harrislab.samplemanager.service.BoxService;
-import edu.berkeley.harrislab.samplemanager.service.EquipService;
-import edu.berkeley.harrislab.samplemanager.service.MessageResourceService;
-import edu.berkeley.harrislab.samplemanager.service.RackService;
-import edu.berkeley.harrislab.samplemanager.service.StudyService;
-import edu.berkeley.harrislab.samplemanager.service.SubjectService;
-import edu.berkeley.harrislab.samplemanager.service.UsuarioService;
-import edu.berkeley.harrislab.samplemanager.service.SpecimenService;
-import edu.berkeley.harrislab.samplemanager.service.SpecimenStorageService;
-import edu.berkeley.harrislab.samplemanager.service.VisitsService;
+import edu.berkeley.harrislab.samplemanager.service.*;
 import edu.berkeley.harrislab.samplemanager.users.model.UserSistema;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
+import org.apache.commons.lang3.text.translate.UnicodeEscaper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.i18n.LocaleContextHolder;
@@ -35,10 +23,7 @@ import org.springframework.security.web.authentication.WebAuthenticationDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -50,11 +35,10 @@ import javax.annotation.Resource;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * 
@@ -88,13 +72,17 @@ public class CaptureSpecimensController {
 	
 	@Resource(name="visitsService")
 	private VisitsService visitsService;
+
+	@Resource(name="specimenFilterService")
+	private SpecimenFilterService specimenFilterService;
     
     
 	@RequestMapping(value = "/", method = RequestMethod.GET)
     public String obtenerEntidades(Model model) throws ParseException { 	
     	logger.debug("Mostrando registros en JSP");
-    	List<Specimen> entidades = specimenService.getSpecimens();
-    	for(Specimen specimen:entidades) {
+
+    //	List<SpecimensResults> entidades = specimenFilterService.getSpecimensByFilter();
+    /*	for(SpecimensResults specimen:entidades) {
     		MessageResource mr = null;
     		String descCatalogo = null;
     		mr = this.messageResourceService.getMensaje(specimen.getSpecimenType(),"CAT_SP_TYPE");
@@ -117,8 +105,10 @@ public class CaptureSpecimensController {
     			descCatalogo = (LocaleContextHolder.getLocale().getLanguage().equals("en")) ? mr.getEnglish(): mr.getSpanish();
     			specimen.setSpecimenCondition(descCatalogo);
     		}
-    	}
-    	model.addAttribute("entidades", entidades);
+    	}*/
+		List<Subject> subjects = this.subjectService.getActiveSubjects();
+		model.addAttribute("subjects",subjects);
+    //	model.addAttribute("entidades", entidades);
     	this.visitsService.saveUserPages(this.usuarioService.getUser(SecurityContextHolder.getContext().getAuthentication().getName()),new Date(),"capturespecimenspage");
     	return "capture/specimens/list";
 	}
@@ -142,6 +132,8 @@ public class CaptureSpecimensController {
 	    model.addAttribute("subjects",subjects);
 	    List<Equip> equips = this.equipService.getActiveEquips();
 	    model.addAttribute("equips",equips);
+		List<MessageResource> substudies = this.messageResourceService.getCatalogo("CAT_SUBSTUDIES");
+		model.addAttribute("substudies",substudies);
 	    this.visitsService.saveUserPages(this.usuarioService.getUser(SecurityContextHolder.getContext().getAuthentication().getName()),new Date(),"capturenewspecimenpage");
 		return "capture/specimens/enterNewForm";
 	}
@@ -226,6 +218,8 @@ public class CaptureSpecimensController {
 		    List<Box> boxes = this.boxService.getActiveBoxes();
 		    model.addAttribute("boxes",boxes);
 			model.addAttribute("entidad",entidadEditar);
+			List<MessageResource> substudies = this.messageResourceService.getCatalogo("CAT_SUBSTUDIES");
+			model.addAttribute("substudies",substudies);
 		    this.visitsService.saveUserPages(this.usuarioService.getUser(SecurityContextHolder.getContext().getAuthentication().getName()),new Date(),"captureeditspecimenpage");
 			return "capture/specimens/editForm";
 		}
@@ -306,6 +300,7 @@ public class CaptureSpecimensController {
 	        , @RequestParam( value="orthocode", required=false, defaultValue="") String orthocode
 	        , @RequestParam( value="boxSpecId", required=false, defaultValue="") String boxSpecId
 	        , @RequestParam( value="position", required=false, defaultValue="") String position
+			, @RequestParam( value="substudy", required=false) String substudy
 	        )
 	{
     	try{
@@ -323,6 +318,7 @@ public class CaptureSpecimensController {
 				fechaIngreso=formatter.parse(labReceiptDate);
 				entidad.setLabReceiptDate(fechaIngreso);
 			}
+			if (!substudy.equals("")) entidad.setSubstudy(substudy);
 			if (!inStorage.equals("")) entidad.setInStorage(inStorage);
 			if (!volume.equals("")) entidad.setVolume(Float.valueOf(volume));
 			if (!varA.equals("")) entidad.setVarA(Integer.valueOf(varA));
@@ -331,6 +327,7 @@ public class CaptureSpecimensController {
 			if (!obs.equals("")) entidad.setObs(obs);
 			if (!orthocode.equals("")) entidad.setOrthocode(orthocode);
 			if (!subjectSpecId.equals("")) entidad.setSubjectId(this.subjectService.getSubjectBySystemId(subjectSpecId));
+
 			if (entidad.getInStorage().equals("1")) {
 				entidad2 = new SpecimenStorage(new Date(), usuarioActual.getUsername(), wad.getRemoteAddress(), '0');
 				entidad2.setSpecimen(entidad);
@@ -379,6 +376,7 @@ public class CaptureSpecimensController {
 	        , @RequestParam( value="obs", required=false, defaultValue="") String obs
 	        , @RequestParam( value="orthocode", required=false, defaultValue="") String orthocode
 	        , @RequestParam( value="subjectSpecId", required=false, defaultValue="") String subjectSpecId
+			, @RequestParam( value="substudy", required=false) String substudy
 	        )
 	{
     	try{
@@ -393,6 +391,7 @@ public class CaptureSpecimensController {
 				fechaIngreso=formatter.parse(labReceiptDate);
 				entidad.setLabReceiptDate(fechaIngreso);
 			}
+			if (!substudy.equals("")) entidad.setSubstudy(substudy);
 			if (!volume.equals("")) {
 				entidad.setVolume(Float.valueOf(volume));
 			}else {
@@ -645,6 +644,120 @@ public class CaptureSpecimensController {
     		}
     	}
 	    return "capture/specimens/uploadResult";
-	}    
-	
+	}
+
+
+	/**
+	 * Custom handler for searching.
+	 *
+	 * @return a ModelMap with the model attributes for the view
+	 */
+	@RequestMapping( value="/search/", method=RequestMethod.GET)
+	public @ResponseBody List<SpecimensResults> searchProcess(@RequestParam( value = "strFilter", required = true) String filtro) throws Exception {
+		SpecimensFilters specFilters = jsonToFilter(filtro);
+		List<SpecimensResults> specimensList;
+		List<MessageResource>  mr_sp_type = this.messageResourceService.getCatalogoTodos("CAT_SP_TYPE");
+		List<MessageResource>  mr_sino = this.messageResourceService.getCatalogoTodos("CAT_SINO");
+		List<MessageResource>  mr_vol_units = this.messageResourceService.getCatalogoTodos("CAT_VOL_UNITS");
+		List<MessageResource>  mr_sp_cond = this.messageResourceService.getCatalogoTodos("CAT_SP_COND");
+
+		if (specFilters.getActiveSearch() == 0){
+				specimensList = new ArrayList<>();
+		}else{
+			specimensList = specimenFilterService.getSpecimensByFilter(specFilters);
+		}
+
+
+		String lang = LocaleContextHolder.getLocale().getLanguage();
+		for(SpecimensResults specimen:specimensList) {
+			String descCatalogo = null;
+
+			if(mr_sp_type!=null) {
+				descCatalogo = getMessage(mr_sp_type, specimen.getSpecimenType(), lang);
+				specimen.setSpecimenType(descCatalogo);
+			}
+
+			if(mr_sino!=null) {
+				descCatalogo = getMessage(mr_sino, specimen.getInStorage(), lang);
+				specimen.setInStorage(descCatalogo);
+			}
+
+			if(mr_vol_units!=null) {
+				descCatalogo = getMessage(mr_vol_units, specimen.getVolUnits(), lang);
+				specimen.setVolUnits(descCatalogo);
+			}
+
+			if(mr_sp_cond!=null) {
+				descCatalogo = getMessage(mr_sp_cond, specimen.getSpecimenCondition(), lang);
+				specimen.setSpecimenCondition(descCatalogo);
+			}
+
+			if(mr_sino!=null) {
+				descCatalogo = getMessage(mr_sino, specimen.getDesPasive(), lang);
+				specimen.setDesPasive("<span class='badge badge-"+(specimen.getDesPasive().equals("1")? "success":"danger")+"'>"+descCatalogo + "</span>");
+			}
+		}
+
+		return specimensList ;
+	}
+
+        /**
+	 * M�todo para convertir estructura Json que se recibe desde el cliente a FiltroMx para realizar b�squeda de Mx(Vigilancia) y Recepci�n Mx(Laboratorio)
+	 *
+	 * @param strJson String con la informaci�n de los filtros
+	 * @return FiltroMx
+	 * @throws Exception
+	 */
+	private SpecimensFilters jsonToFilter(String strJson) throws Exception {
+		JsonObject jObjectFiltro = new Gson().fromJson(strJson, JsonObject.class);
+		SpecimensFilters specFilters = new SpecimensFilters();
+		String specimenId = null;
+		String labReceiptDate = null;
+		String orthocode = null;
+		String studyId = null;
+		String box = null;
+		Integer activeSearch = null;
+
+
+		if (jObjectFiltro.get("specimenId") != null && !jObjectFiltro.get("specimenId").getAsString().isEmpty())
+			specimenId = jObjectFiltro.get("specimenId").getAsString();
+		if (jObjectFiltro.get("labReceiptDate") != null && !jObjectFiltro.get("labReceiptDate").getAsString().isEmpty())
+			labReceiptDate = jObjectFiltro.get("labReceiptDate").getAsString();
+		if (jObjectFiltro.get("orthocode") != null && !jObjectFiltro.get("orthocode").getAsString().isEmpty())
+			orthocode = jObjectFiltro.get("orthocode").getAsString();
+		if (jObjectFiltro.get("studyId") != null && !jObjectFiltro.get("studyId").getAsString().isEmpty())
+			studyId = jObjectFiltro.get("studyId").getAsString();
+		if (jObjectFiltro.get("box") != null && !jObjectFiltro.get("box").getAsString().isEmpty())
+			box = jObjectFiltro.get("box").getAsString();
+
+		if (jObjectFiltro.get("activeSearch") != null && !jObjectFiltro.get("activeSearch").getAsString().isEmpty())
+			activeSearch = jObjectFiltro.get("activeSearch").getAsInt();
+
+
+		specFilters.setSpecimenId(specimenId);
+		specFilters.setOrthocode(orthocode);
+		specFilters.setLabReceiptDate(labReceiptDate);
+		specFilters.setStudyId(studyId);
+		specFilters.setBox(box);
+		specFilters.setActiveSearch(activeSearch);
+
+		return specFilters;
+	}
+
+	public static String getMessage(List<MessageResource> cat, String codigo, String idioma) {
+		String etiqueta = "";
+		try {
+			for (MessageResource message : cat) {
+				if (message.getCatKey().equalsIgnoreCase(codigo)) {
+					etiqueta = idioma.equals("en") ? message.getEnglish(): message.getSpanish();
+					break;
+				}
+			}
+		}catch (Exception ex){
+			ex.printStackTrace();
+		}
+		return etiqueta;
+	}
+
 }
+

@@ -76,7 +76,11 @@ return {
       },
       'position': {
           required: true
-      }
+      },
+
+      'substudy': {
+          required: false
+        }
     },
     // Errors
     //
@@ -198,13 +202,12 @@ return {
 				                		$('#specimenCondition').val('').trigger('change');
 				                		$('#varA').val("");
 				                		$('#varB').val("");
-				                		$('#volume').val("");
 				                		$('#volUnits').val('').trigger('change');
-				                		$('#subjectSpecId').val('').trigger('change');
 				                		$('#orthocode').val("");
 				                		$('#obs').val("");
 				                		$('#boxSpecId').trigger('change');
 				                		$('#specimenId').focus();
+
 				                	}
 				                } 
 				            }); 

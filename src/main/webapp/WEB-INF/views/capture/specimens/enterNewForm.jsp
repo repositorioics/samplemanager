@@ -141,7 +141,7 @@
 					                    </div>
 					                    
 					                    <div class="form-group">
-					                    	<label class="form-label"><spring:message code="subjectId" /></label>
+					                    	<label class="form-label"><spring:message code="studyId" /></label>
 						                	<select class="select2-control form-control" id="subjectSpecId" name="subjectSpecId" style="width: 100%" data-allow-clear="true">
 						                		<option value=""></option>
 					                        	<c:forEach items="${subjects}" var="subject">
@@ -149,6 +149,16 @@
 												</c:forEach>
 						                	</select>
 					                    </div>
+
+										  <div class="form-group">
+											  <label class="form-label"><spring:message code="substudy" /></label>
+											  <select class="select2-control form-control" id="substudy" name="substudy" style="width: 100%" data-allow-clear="true">
+												  <option value=""></option>
+												  <c:forEach items="${substudies}" var="substudy">
+													  <option value="${substudy.catKey}"><spring:message code="${substudy.messageKey}" /></option>
+												  </c:forEach>
+											  </select>
+										  </div>
 					                    
 					                    <div class="form-group">
 					                      <div class="input-group">
@@ -289,7 +299,7 @@
 	
   <!-- Custom scripts required by this view -->
   <spring:url value="/resources/js/views/EntitySpecimen.js" var="processEntity" />
-  <script src="${processEntity}"></script>
+	<script src="${processEntity}"></script>
   
   <spring:url value="/resources/vendor/libs/validate/messages_{language}.js" var="validateLang">
 	<spring:param name="language" value="${lenguaje}" />

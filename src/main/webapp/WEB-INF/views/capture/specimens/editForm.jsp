@@ -188,6 +188,23 @@
 												</c:forEach>
 						                	</select>
 					                    </div>
+
+										  <div class="form-group">
+											  <label class="form-label"><spring:message code="substudy" /></label> <span class="badge badge-dot badge-danger"></span>
+											  <select class="select2-control form-control" id="substudy" name="substudy" style="width: 100%" data-allow-clear="false">
+												  <option value=""></option>
+												  <c:forEach items="${substudies}" var="substudy">
+													  <c:choose>
+														  <c:when test="${substudy.catKey eq entidad.substudy}">
+															  <option selected value="${substudy.catKey}"><spring:message code="${substudy.messageKey}" /></option>
+														  </c:when>
+														  <c:otherwise>
+															  <option value="${substudy.catKey}"><spring:message code="${substudy.messageKey}" /></option>
+														  </c:otherwise>
+													  </c:choose>
+												  </c:forEach>
+											  </select>
+										  </div>
 					                    
 					                    <div class="form-group">
 					                      <div class="input-group">

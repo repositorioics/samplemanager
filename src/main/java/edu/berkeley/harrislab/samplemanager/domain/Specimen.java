@@ -39,6 +39,7 @@ public class Specimen extends BaseMetaData implements Auditable{
 	private String parentSpecimenId;
 	
 	private Subject subjectId;
+	private String substudy;
 	
 	private String inStorage;
 	private String orthocode;
@@ -128,7 +129,6 @@ public class Specimen extends BaseMetaData implements Auditable{
 		this.parentSpecimenId = parentSpecimenId;
 	}
 	
-	
 	@Column(name = "inStorage", nullable = false, length = 5)
 	public String getInStorage() {
 		return inStorage;
@@ -170,6 +170,15 @@ public class Specimen extends BaseMetaData implements Auditable{
 	public void setVarB(Integer varB) {
 		this.varB = varB;
 	}
+
+	@Column(name = "substudy", length = 50)
+	public String getSubstudy() {
+		return substudy;
+	}
+	public void setSubstudy(String substudy) {
+		this.substudy = substudy;
+	}
+
 	@Override
 	public String toString(){
 		return specimenId;
