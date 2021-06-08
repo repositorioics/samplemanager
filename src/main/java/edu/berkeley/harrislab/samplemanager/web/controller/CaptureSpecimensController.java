@@ -759,5 +759,13 @@ public class CaptureSpecimensController {
 		return etiqueta;
 	}
 
+
+	@RequestMapping(value = "getBoxes", method = RequestMethod.GET, produces = "application/json")
+	public
+	@ResponseBody
+	List<Box> getBoxes(@RequestParam(value = "box", required = true) String box) throws Exception {
+		return boxService.getActiveBoxesbyName(box);
+	}
+
 }
 

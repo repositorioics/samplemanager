@@ -6,6 +6,8 @@
 <html class="default-style">
 <head>
     <jsp:include page="../../fragments/headTag.jsp"/>
+    <spring:url value="/resources/vendor/libs/jquery-ui/jquery-ui.css" var="jqui" />
+    <link href="${jqui}" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div class="page-loader">
@@ -99,6 +101,7 @@
 
                                         <div class="row">
                                             <div class="col-md-8">
+
                                                 <div class="form-group">
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
@@ -109,7 +112,7 @@
                                                                data-toggle="tooltip" data-state="danger"
                                                                data-placement="right"
                                                                title="<spring:message code="box" />"
-                                                               class="form-control"
+                                                               class="form-control ui-autocomplete-input"
                                                                placeholder="<spring:message code="box" />">
                                                     </div>
                                                 </div>
@@ -267,6 +270,10 @@
     </c:otherwise>
 </c:choose>
 
+<!-- IMPORTANT! Load jquery-ui-1.10.3.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+<!-- jQuery UI-->
+<spring:url value="/resources/vendor/libs/jquery-ui/jquery-ui.js" var="jQueryUI" />
+<script src="${jQueryUI}" type="text/javascript"></script>
 <spring:url value="/resources/vendor/libs/datatables/label_{language}.json" var="dataTablesLang">
     <spring:param name="language" value="${lenguaje}"/>
 </spring:url>
@@ -282,6 +289,9 @@
 
 <spring:url value="/capture/subjects/"
             var="viewSubjectUrl"/>
+
+<spring:url value="/capture/specimens/getBoxes"
+            var="boxNameUrl"/>
 
 <!-- Custom scripts required by this view -->
 <spring:url value="/resources/js/views/SpecimenFilter.js" var="searchProcess"/>
@@ -320,6 +330,7 @@
             viewMessage: "${viewMessage}",
             lenguaje: "${lenguaje}",
             notfound: "${notfound}",
+            boxNameUrl: "${boxNameUrl}",
             viewSubjectUrl: "${viewSubjectUrl}",
             dataTablesLang: "${dataTablesLang}"
         };

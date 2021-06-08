@@ -199,60 +199,26 @@ return {
 
     });
 
-
-
-      function search() {
-
-
-
-          $.blockUI({message: parametros.waitmessage});
-          $.getJSON(parametros.searchUrl, {
-              strFilter: JSON.stringify(filtros),
-              ajax: 'true'
-          }, function (dataToLoad) {
-              table1.clear();
-              var len = Object.keys(dataToLoad).length;
-              var viewMess = parametros.viewMessage;
-              var editMess = parametros.editMessage;
-                console.log(len);
-
-              if (len > 0) {
-                  for (var i = 0; i < len; i++) {
-                      var editUrl = parametros.editUrl + dataToLoad[i].systemId + '/' ;
-                      var viewUrl = parametros.viewUrl + dataToLoad[i].systemId + '/';
-                      var span = null;
-                      if (dataToLoad[i].enabled == 'Yes' ){
-                           span = '<span class="badge badge-success">' + dataToLoad[i].enabled +'</span>';
-                      }else{
-                          span = '<span class="badge badge-danger">' + dataToLoad[i].enabled +' </span>';
-                      }
-
-                      table1.row.add([
-                          dataToLoad[i].specimenId, dataToLoad[i].labReceiptDate, dataToLoad[i].specimenType, dataToLoad[i].specimenCondition, dataToLoad[i].varA, dataToLoad[i].varB, dataToLoad[i].volume, dataToLoad[i].volUnits, dataToLoad[i].studyId, dataToLoad[i].inStorage,
-                          dataToLoad[i].orthocode, dataToLoad[i].obs, dataToLoad[i].recordDate, dataToLoad[i].recordUser, dataToLoad[i].recordIp, span,
-                          '<a data-toggle="tooltip" data-placement="bottom" title= ' + viewMess + ' href=' + viewUrl + ' class="btn btn-outline-primary btn-sm"><i class="fa fa-search"></i></a> <a data-toggle="tooltip" data-placement="bottom" title= ' + editMess + ' href=' + editUrl + ' class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></a> '
-                      ]).draw();
-
-                 /*     table1.fnAddData(
-                          [dataToLoad[i].specimenId, dataToLoad[i].labReceiptDate, dataToLoad[i].specimenType, dataToLoad[i].specimenCondition, dataToLoad[i].varA, dataToLoad[i].varB, dataToLoad[i].volume, dataToLoad[i].volUnits, dataToLoad[i].studyId, dataToLoad[i].inStorage,
-                              dataToLoad[i].orthocode, dataToLoad[i].obs, dataToLoad[i].recordDate, dataToLoad[i].recordUser, dataToLoad[i].recordIp, span,
-                              '<a data-toggle="tooltip" data-placement="bottom" title= ' + viewMess + ' href=' + viewUrl + ' class="btn btn-outline-primary btn-sm"><i class="fa fa-search"></i></a> <a data-toggle="tooltip" data-placement="bottom" title= ' + editMess + ' href=' + editUrl + ' class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></a> ']);
-                 */
+      $('#box').on("input",
+          function () {
+          if ($(this).val().length > 0) {
+              $.getJSON(parametros.boxNameUrl, {
+                      ajax: 'true',
+                      box : $(this).val()
+                  }, function (dataToLoad) {
+                  console.log(dataToLoad);
+                      $( "#box" ).autocomplete({
+                          source: dataToLoad,
+                          minLength: 3
+                      });
+                  $.unblockUI();
                   }
-                  console.log("Salida");
+              ).fail(function(jqXHR) {
+                  $.unblockUI();
+              });
 
-                  $.blockUI({message: parametros.successmessage});
-              } else {
-                  $.blockUI({message: parametros.notfound});
-              }
-
-          })
-
-      .fail(function(XMLHttpRequest, textStatus, errorThrown) {
-              alert( "error:" + errorThrown);
-              $.unblockUI();
-          });
-      }
+          }
+      });
 
 
 

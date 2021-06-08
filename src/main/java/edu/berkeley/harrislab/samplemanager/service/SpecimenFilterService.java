@@ -44,7 +44,7 @@ public class SpecimenFilterService {
         Query querySpecimenFilter = null;
 
         if (filter.getSpecimenId() != null) {
-            sQuery += "and specimen.specimenId =:specimenId ";
+            sQuery += "and specimen.specimenId like :specimenId";
         }
         if (filter.getOrthocode() != null) {
             sQuery += "and specimen.orthocode =:orthocode ";
@@ -59,13 +59,13 @@ public class SpecimenFilterService {
         }
 
         if (filter.getBox() != null) {
-            sQuery += "and specimen.systemId in (select storage.specimen.systemId FROM SpecimenStorage storage where storage.box.systemId =:box) ";
+            sQuery += "and specimen.systemId in (select storage.specimen.systemId FROM SpecimenStorage storage where storage.box.name =:box) ";
         }
 
         querySpecimenFilter =  session.createQuery(sQuery);
 
         if (filter.getSpecimenId() != null) {
-            querySpecimenFilter.setParameter("specimenId", filter.getSpecimenId());
+            querySpecimenFilter.setParameter("specimenId", '%' + filter.getSpecimenId() + '%');
         }
 
         if (filter.getOrthocode()!= null) {

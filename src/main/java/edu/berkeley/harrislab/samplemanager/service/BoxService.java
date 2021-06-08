@@ -120,4 +120,21 @@ public class BoxService {
 		session.saveOrUpdate(box);
 	}
 
+	/**
+	 * Regresa todos los registros
+	 *
+	 * @return una lista de <code>Box</code>(s)
+	 */
+
+	@SuppressWarnings("unchecked")
+	public List<Box> getActiveBoxesbyName(String boxName) {
+		// Retrieve session from Hibernate
+		Session session = sessionFactory.getCurrentSession();
+		// Create a Hibernate query (HQL)
+		Query query = session.createQuery(" select box.name FROM Box box where box.pasive = '0' and box.name like :boxName order by box.name");
+		query.setParameter("boxName",'%'+boxName+'%');
+		// Retrieve all
+		return  query.list();
+	}
+
 }
