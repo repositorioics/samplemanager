@@ -15,6 +15,7 @@
 </div>
 
 <!-- Layout wrapper -->
+<div id="wrap">
 <div class="layout-wrapper layout-2">
     <div class="layout-inner">
         <jsp:include page="../../fragments/sideNav.jsp"/>
@@ -38,25 +39,17 @@
                             <small class="font-weight-normal"><fmt:formatDate value="${now}" dateStyle="long"/></small>
                         </div>
                     </h4>
-                    <spring:url value="/capture/specimens/newEntity/" var="newEntity"/>
-                    <spring:url value="/capture/specimens/uploadEntity/" var="uploadEntity"/>
+                    <spring:url value="/capture/antibodies/newEntity/" var="newEntity"/>
+                    <spring:url value="/capture/antibodies/uploadEntity/" var="uploadEntity"/>
                     <button id="lista_entidades_new" data-toggle="tooltip" data-placement="bottom"
                             title="<spring:message code="addEntityToolTip" />"
                             onclick="location.href='${fn:escapeXml(newEntity)}'" type="button"
                             class="btn rounded-pill btn-outline-primary"><i class="fa fa-plus"></i>&nbsp;
                         <spring:message code="add"/></button>
-                    <button id="lista_entidades_import" data-toggle="tooltip" data-placement="bottom"
-                            title="<spring:message code="importEntityToolTip" />"
-                            onclick="location.href='${fn:escapeXml(uploadEntity)}'" type="button"
-                            class="btn rounded-pill btn-outline-primary"><i class="fa fa-file-upload"></i>&nbsp;
-                        <spring:message code="import"/></button>
 
-                    <spring:url value="/capture/specimens/ClassExcForm1/" var="ClassExcForm1"/>
-                    <button id="lista_entidades_sql" data-toggle="tooltip" data-placement="bottom"
-                            title="<spring:message code="downSQLQUpdatequery" />"
-                            onclick="location.href='${fn:escapeXml(ClassExcForm1)}'" type="button"
-                            class="btn rounded-pill btn-outline-primary">&nbsp;
-                        <spring:message code="downSQLQUpdatequery"/></button>
+
+
+
 
 
                     <br><br>
@@ -65,7 +58,7 @@
                         <h6 class="card-header with-elements">
                             <div class="card-title-elements">
                             </div>
-                            <div class="card-header-title"><spring:message code="findspecimens"/></div>
+                            <div class="card-header-title"><spring:message code="findantibodies"/></div>
                         </h6>
                         <div class="col-md-12 col-lg-12 col-xl-12">
                             <div class="card-body">
@@ -84,9 +77,9 @@
                                                         <input type="text" id="specimenId" name="specimenId"
                                                                data-toggle="tooltip" data-state="danger"
                                                                data-placement="right"
-                                                               title="<spring:message code="specimenId" />"
+                                                               title="<spring:message code="antibody_id" />"
                                                                class="form-control"
-                                                               placeholder="<spring:message code="specimenId" />">
+                                                               placeholder="<spring:message code="antibody_id" />">
                                                     </div>
                                                 </div>
                                             </div>
@@ -95,84 +88,27 @@
                                                 <div class="form-group">
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
-                                                                    <span class="input-group-text"><i
-                                                                            class="fa fa-calendar-alt"></i></span>
+                                                                    <span class="input-group-text"></span>
                                                         </div>
-                                                        <input type="text" id="labReceiptDate"
-                                                               name="labReceiptDate" data-toggle="tooltip"
-                                                               data-state="danger" data-placement="right"
-                                                               title="<spring:message code="labReceiptDate" />"
-                                                               class="form-control" data-date-end-date="0d"
-                                                               placeholder="<spring:message code="labReceiptDate" />">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-md-8">
-
-                                                <div class="form-group">
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text"><i
-                                                                    class="fa fa-key"></i></span>
-                                                        </div>
-                                                        <input type="text" id="box" name="box"
-                                                               data-toggle="tooltip" data-state="danger"
-                                                               data-placement="right"
-                                                               title="<spring:message code="box" />"
-                                                               class="form-control ui-autocomplete-input"
-                                                               placeholder="<spring:message code="box" />">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text"><i
-                                                                    class="fa fa-sort-alpha-up"></i></span>
-                                                        </div>
-                                                        <input type="text" id="orthocode" name="orthocode"
-                                                               data-toggle="tooltip" data-state="primary"
-                                                               data-placement="right"
-                                                               title="<spring:message code="orthocode" />"
+                                                        <input type="text" id="antibody_name"
+                                                               name="antibody_name" data-toggle="tooltip"
+                                                               data-state="primary" data-placement="right"
+                                                               title="<spring:message code="antibody_name_tool_tip" />"
                                                                class="form-control"
-                                                               placeholder="<spring:message code="orthocode" />">
+                                                               placeholder="<spring:message code="antibody_name" />">
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
 
 
-                                        <div class="row">
-                                            <div class="col-md-8">
-                                                <div class="form-group">
-                                                    <label class="form-label"><spring:message code="studyId"/></label>
-                                                    <select class="select2-control form-control" id="studyId"
-                                                            name="studyId" style="width: 100%"
-                                                            data-allow-clear="true">
-                                                        <option value=""></option>
-                                                        <c:forEach items="${subjects}" var="subject">
-                                                            <option value="${subject.systemId}"><spring:message
-                                                                    code="studyId"/>: ${subject.subjectId}
-                                                                <spring:message
-                                                                        code="study"/>: ${subject.studyId.name}</option>
-                                                        </c:forEach>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                        </div>
 
                                         <div class="form-group" align="right">
                                             <button type="submit" class="btn rounded-pill btn-outline-primary"
                                                     data-toggle="tooltip" data-placement="bottom"
-                                                    title="<spring:message code="findspecimens" />"
+                                                    title="<spring:message code="findantibodies" />"
                                                     id="search"><i class="ion ion-md-search"></i> <spring:message
-                                                    code="findspecimens"/></button>
+                                                    code="findantibodies"/></button>
                                         </div>
                                         <div>
 
@@ -189,26 +125,38 @@
                         <div class="row no-gutters row-bordered">
                             <div class="col-md-12 col-lg-12 col-xl-12">
                                 <div class="card-body">
-                                    <table id="lista_entidades" class="table table-striped table-bordered datatable"
-                                           width="100%">
+                                    <table id="lista_antibodies" class="table table-striped table-bordered datatable"
+                                           width="100%" >
                                         <thead>
                                         <tr>
-                                            <th><spring:message code="specimenId"/></th>
-                                            <th><spring:message code="labReceiptDate"/></th>
-                                            <th><spring:message code="specimenType"/></th>
-                                            <th><spring:message code="specimenCondition"/></th>
-                                            <th><spring:message code="varA"/></th>
-                                            <th><spring:message code="varB"/></th>
-                                            <th><spring:message code="volume"/></th>
-                                            <th><spring:message code="volUnits"/></th>
-                                            <th><spring:message code="subject"/></th>
-                                            <th><spring:message code="inStorage"/></th>
-                                            <th class="none"><spring:message code="orthocode"/></th>
-                                            <th class="none"><spring:message code="obs"/></th>
-                                            <th class="none"><spring:message code="recordDate"/></th>
-                                            <th class="none"><spring:message code="recordUser"/></th>
-                                            <th class="none"><spring:message code="recordIp"/></th>
-                                            <th class="none"><spring:message code="enabled"/></th>
+                                            <th><spring:message code="antibody_id"/></th>
+                                            <th><spring:message code="antibody_name"/></th>
+                                            <th><spring:message code="target_protein"/></th>
+                                            <th><spring:message code="target_domain"/></th>
+                                            <th><spring:message code="target_epitope"/></th>
+                                            <th><spring:message code="antibody_isotype"/></th>
+                                            <th><spring:message code="virus_serotype"/></th>
+                                            <th><spring:message code="batch_number"/></th>
+                                            <th><spring:message code="date_produced"/></th>
+                                            <th><spring:message code="person_name"/></th>
+                                            <th><spring:message code="source_name"/></th>
+                                            <th><spring:message code="aliquot_volume"/></th>
+                                            <th><spring:message code="medium_buffer"/></th>
+                                            <th><spring:message code="concentration"/></th>
+                                            <th><spring:message code="technique1"/></th>
+                                            <th><spring:message code="technique1_concentration1"/></th>
+                                            <th><spring:message code="technique2"/></th>
+                                            <th><spring:message code="technique2_concentration2"/></th>
+                                            <th><spring:message code="technique3"/></th>
+                                            <th><spring:message code="technique3_concentration3"/></th>
+                                            <th><spring:message code="storage_temperature"/></th>
+                                            <th><spring:message code="freezer_name"/></th>
+                                            <th><spring:message code="shelf_name"/></th>
+                                            <th><spring:message code="rack_name"/></th>
+                                            <th><spring:message code="box_name"/></th>
+                                            <th><spring:message code="position_in_the_box"/></th>
+                                            <th><spring:message code="additional_comments"/></th>
+
                                             <th><spring:message code="actions"/></th>
                                         </tr>
                                         </thead>
@@ -269,6 +217,7 @@
         </div>
         <!-- / Layout container -->
     </div>
+</div>
 </div>
 <!-- / Layout wrapper -->
 
@@ -333,46 +282,41 @@
 <c:set var="editMessage"><spring:message code="editEntidadToolTip"/></c:set>
 
 <script>
-    function ClassExcForm1(){
-        var codigo= $('#codigo').val();
-        $.ajax({
-            type : "GET",
-            //url : "/capture/specimens/ClassExcForm1",
-            data: {
-                "codigo" : codigo
-            },
-            success: function(result) {
-                alert("success");
-            },
-            error : function(e) {
-                alert("error");
-            }
-        });
-    }
+
 
     jQuery(document).ready(function () {
         $("li.capture").addClass("open");
         $("li.capture").addClass("active");
-        $("li.specimens").addClass("active");
+        $("li.antibodies").addClass("active");
 
-        var parametros = {
-            searchUrl: "${searchUrl}",
-            editUrl: "${editUrl}",
-            viewUrl: "${viewUrl}",
-            successmessage: "${successmessage}",
-            errormessage: "${errormessage}",
-            waitmessage: "${waitmessage}",
-            seleccionar: "${seleccionar}",
-            editMessage: "${editMessage}",
-            viewMessage: "${viewMessage}",
-            lenguaje: "${lenguaje}",
-            notfound: "${notfound}",
-            boxNameUrl: "${boxNameUrl}",
-            viewSubjectUrl: "${viewSubjectUrl}",
-            dataTablesLang: "${dataTablesLang}"
-        };
-
-        SearchProcess.init(parametros);
+        $('#lista_antibodies').DataTable({
+            dom: 'lBfrtip',
+            "oLanguage": {
+                "sUrl": "${dataTablesLang}"
+            },
+            "bFilter": true,
+            "bInfo": true,
+            "bPaginate": true,
+            "bDestroy": true,
+            "responsive": false,
+            "pageLength": 5,
+            "lengthMenu": [5, 10, 20, 50, 100],
+            "bLengthChange": true,
+            "responsive": false,
+            "scrollX": true,
+            "buttons": [
+                {
+                    extend: 'excel',
+                    text: "Results to Excel ",
+                    className: "btn rounded-pill btn-outline-primary"
+                },
+                {
+                    extend: 'pdfHtml5',
+                    text: "Results to Pdf   ",
+                    className: "btn rounded-pill btn-outline-primary"
+                }
+            ]
+        }) ;
 
 
     });
@@ -382,6 +326,11 @@
         $('.tooltip-demo [data-placement=left]:not(.rtled)').attr('data-placement', 'right').addClass('rtled');
     }
     $('[data-toggle="tooltip"]').tooltip();
+
+
+
+
+
 </script>
 </body>
 </html>

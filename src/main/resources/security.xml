@@ -12,7 +12,8 @@
 		<intercept-url pattern="/loginfailed" access="IS_AUTHENTICATED_ANONYMOUSLY" />
 		<intercept-url pattern="/logout" access="IS_AUTHENTICATED_ANONYMOUSLY" />
 		<intercept-url pattern="/resources/.*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
-		<intercept-url pattern="/admin/.*" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/admin/fileuploadexcell/" access="ROLE_ADMIN_UPDATE"/>
+		<intercept-url pattern="/admin/.*"   access="ROLE_ADMIN"/>
 		
 		
         <intercept-url pattern="/users/chgpass" access="ROLE_PASSWORD"/>
@@ -49,7 +50,7 @@
 		<beans:property name="userDetailsDao" ref="userDetailsDao" />
 		<beans:property name="passwordEncoder" ref="encoder" />
 	</beans:bean>
-	
+
 	<authentication-manager>
 		<authentication-provider ref="authenticationProvider" />
 	</authentication-manager>

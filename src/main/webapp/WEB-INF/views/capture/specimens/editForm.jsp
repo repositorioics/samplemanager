@@ -236,7 +236,23 @@
 										  			data-toggle="tooltip" data-placement="bottom" title="<spring:message code="cancelRecord" />">
 										  				<i class="ion ion-md-close-circle"></i>     <spring:message code="end" /></a>
 				                        </div>
+
+                                          <table id="table_inventory_Extract"  class="table-centered mb-0 table-hover table-sm" data-show-toggle="false"  hidden="yes"   >
+                                              <thead>
+                                              <tr>
+                                                  <th><spring:message code="Specimens" /></th>
+                                                  <th><spring:message code="SpecimenId" /></th>
+                                                  <th><spring:message code="SpecimenType" /></th>
+                                                  <th><spring:message code="Volume" /></th>
+                                                  <th><spring:message code="VolUnits" /></th>
+                                                  <th><spring:message code="InStorage" /></th>
+
+                                              </tr>
+                                              </thead>
+
+                                          </table>
 				                      </form>
+
 				                    </div>
 				                  </div>
 			                  
@@ -247,6 +263,7 @@
 			            </div>
          			</div>
          			<!-- / Content -->
+
          			<jsp:include page="../../fragments/navFooter.jsp" />
         		</div>
         		<!-- Layout content -->
@@ -303,6 +320,29 @@
 				listUrl: "${listUrl}" ,seleccionar: "${seleccionar}" ,lenguaje: "${lenguaje}" 
 		};
 		ProcessEntity.init(parametros);
+
+        $('#table_inventory_Extract').DataTable({
+            dom: 'lBfrtip',
+            "oLanguage": {
+                "sUrl": "${dataTablesLang}"
+            },
+            "bFilter": false,
+            "bInfo": false,
+            "bPaginate": false,
+            "bDestroy": false,
+            "responsive": false,
+            "pageLength": 5,
+            "lengthMenu": [5, 10, 20, 50, 100],
+            "bLengthChange": false,
+            "responsive": false,
+            "buttons": [
+                {
+                    extend: 'excel',
+                    text: "Download Data to Update Inventory",
+                    className: "btn rounded-pill btn-outline-primary"
+                }
+            ]
+        });
 	});
 	if ($('html').attr('dir') === 'rtl') {
 	    $('.tooltip-demo [data-placement=right]').attr('data-placement', 'left').addClass('rtled');

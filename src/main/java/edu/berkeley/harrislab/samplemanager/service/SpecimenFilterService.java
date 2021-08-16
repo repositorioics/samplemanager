@@ -59,7 +59,7 @@ public class SpecimenFilterService {
         }
 
         if (filter.getBox() != null) {
-            sQuery += "and specimen.systemId in (select storage.specimen.systemId FROM SpecimenStorage storage where storage.box.name =:box) ";
+            sQuery += "and specimen.systemId in (select storage.specimen.systemId FROM SpecimenStorage storage where storage.box.name =:box ) ";
         }
 
         querySpecimenFilter =  session.createQuery(sQuery);

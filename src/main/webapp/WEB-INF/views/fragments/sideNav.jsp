@@ -45,6 +45,13 @@
                 </a>
               </li>
             </ul>
+            <ul class="sidenav-menu">
+                <li class="sidenav-item antibodies">
+                    <a href="<spring:url value="/capture/antibodies/" htmlEscape="true "/>" class="sidenav-link">
+                        <div><spring:message code="antibodies" /></div>
+                    </a>
+                </li>
+            </ul>
         </li>
         <li class="sidenav-item storage">
             <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><i class="sidenav-icon ion ion-md-archive"></i>
@@ -56,6 +63,13 @@
                   <div><spring:message code="storespecimens" /></div>
                 </a>
               </li>
+            </ul>
+            <ul class="sidenav-menu">
+                <li class="sidenav-item fileuploadexcel" >
+                    <a href="<spring:url value="/admin/fileuploadexcell/" htmlEscape="true "/>" class="sidenav-link">
+                        <div><spring:message code="FileUploadExcel" /></div>
+                    </a>
+                </li>
             </ul>
         </li>
         <sec:authorize url="/admin/">

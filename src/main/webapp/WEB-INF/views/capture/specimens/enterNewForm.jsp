@@ -132,21 +132,22 @@
 					                    
 					                    <div class="form-group">
 					                    	<label class="form-label"><spring:message code="volUnits" /></label>
-						                	<select class="select2-control form-control" id="volUnits" name="volUnits" style="width: 100%" data-allow-clear="true">
-						                		<option value=""></option>
+						                	<select class="select2-control form-control" id="volUnits" name="volUnits" style="width: 100%" data-allow-clear="true"  >
+						                		<option selected= "selected"  value="" ></option>
 					                        	<c:forEach items="${volUnits}" var="volUnit">
-													<option value="${volUnit.catKey}"><spring:message code="${volUnit.messageKey}" /></option>
+													<option   value="${volUnit.catKey}"> <spring:message code="${volUnit.messageKey}"  />  </option>
 												</c:forEach>
 						                	</select>
 					                    </div>
 					                    
 					                    <div class="form-group">
 					                    	<label class="form-label"><spring:message code="studyId" /></label>
-						                	<select class="select2-control form-control" id="subjectSpecId" name="subjectSpecId" style="width: 100%" data-allow-clear="true">
+						                	<select  class="select2-control form-control" id="subjectSpecId" name="subjectSpecId" style="width: 100%" data-allow-clear="true">
 						                		<option value=""></option>
 					                        	<c:forEach items="${subjects}" var="subject">
 													<option value="${subject.systemId}"><spring:message code="subjectId" />: ${subject.subjectId} <spring:message code="study" />: ${subject.studyId.name}</option>
 												</c:forEach>
+
 						                	</select>
 					                    </div>
 
@@ -253,6 +254,7 @@
 										  			data-toggle="tooltip" data-placement="bottom" title="<spring:message code="cancelRecord" />">
 										  				<i class="ion ion-md-close-circle"></i>     <spring:message code="end" /></a>
 				                        </div>
+
 				                      </form>
 				                    </div>
 				                  </div>
@@ -264,6 +266,7 @@
 			            </div>
          			</div>
          			<!-- / Content -->
+
          			<jsp:include page="../../fragments/navFooter.jsp" />
         		</div>
         		<!-- Layout content -->
@@ -331,6 +334,8 @@
 				racksUrl: "${racksUrl}" ,boxesUrl: "${boxesUrl}" ,agregando: "${agregando}" ,positionsUrl: "${positionsUrl}"
 		};
 		ProcessEntity.init(parametros);
+
+
 	});
 	if ($('html').attr('dir') === 'rtl') {
 	    $('.tooltip-demo [data-placement=right]').attr('data-placement', 'left').addClass('rtled');
@@ -346,6 +351,9 @@
         	$( "#storageDateDiv" ).hide();
         }
               
+    });
+    $(document).ready(function(){
+        $("#volUnits").val("ul");
     });
   	$('#specimenId').focus();
 	</script>

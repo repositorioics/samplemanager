@@ -10,7 +10,7 @@ import edu.berkeley.harrislab.samplemanager.users.model.UserSistema;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
-import org.apache.commons.lang3.text.translate.UnicodeEscaper;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.i18n.LocaleContextHolder;
@@ -75,6 +75,9 @@ public class CaptureSpecimensController {
 
 	@Resource(name="specimenFilterService")
 	private SpecimenFilterService specimenFilterService;
+
+    @Resource(name="DownSQLUpdateService")
+    private DownSQLUpdateService DownSQLUpdateService;
     
     
 	@RequestMapping(value = "/", method = RequestMethod.GET)
@@ -106,6 +109,8 @@ public class CaptureSpecimensController {
     			specimen.setSpecimenCondition(descCatalogo);
     		}
     	}*/
+
+
 		List<Subject> subjects = this.subjectService.getActiveSubjects();
 		model.addAttribute("subjects",subjects);
     //	model.addAttribute("entidades", entidades);
@@ -591,7 +596,7 @@ public class CaptureSpecimensController {
 			
 			//Create the records
 			Iterable<CSVRecord> records = parsed.getRecords();
-			
+
 			//Iterate over the records
 		    for (CSVRecord record : records) {
 		    	specimenId = record.get("specimenId");
@@ -656,6 +661,10 @@ public class CaptureSpecimensController {
 	public @ResponseBody List<SpecimensResults> searchProcess(@RequestParam( value = "strFilter", required = true) String filtro) throws Exception {
 		SpecimensFilters specFilters = jsonToFilter(filtro);
 		List<SpecimensResults> specimensList;
+
+
+
+
 		List<MessageResource>  mr_sp_type = this.messageResourceService.getCatalogoTodos("CAT_SP_TYPE");
 		List<MessageResource>  mr_sino = this.messageResourceService.getCatalogoTodos("CAT_SINO");
 		List<MessageResource>  mr_vol_units = this.messageResourceService.getCatalogoTodos("CAT_VOL_UNITS");
@@ -663,8 +672,11 @@ public class CaptureSpecimensController {
 
 		if (specFilters.getActiveSearch() == 0){
 				specimensList = new ArrayList<>();
-		}else{
+
+        }else{
+         //   entidadesSQL = DownSQLUpdateService.getSpecimensByFilter1();
 			specimensList = specimenFilterService.getSpecimensByFilter(specFilters);
+
 		}
 
 
@@ -700,6 +712,42 @@ public class CaptureSpecimensController {
 
 		return specimensList ;
 	}
+
+
+    @RequestMapping( value="/ClassExcForm1/", method = RequestMethod.GET)
+    public String submitUploadForm( ModelMap modelmap) throws IOException {
+    {
+        List<SqlQueryToInventory> lista_entidades1;
+        List<SqlQueryToInventory> specimensList1;
+
+        SqlQueryToInventory entidad = new SqlQueryToInventory();
+        List<SqlQueryToInventory> entidadesSQL = new ArrayList<SqlQueryToInventory>();
+
+        List<MessageResource>  mr_sp_type = this.messageResourceService.getCatalogoTodos("CAT_SP_TYPE");
+        List<MessageResource>  mr_sino = this.messageResourceService.getCatalogoTodos("CAT_SINO");
+        List<MessageResource>  mr_vol_units = this.messageResourceService.getCatalogoTodos("CAT_VOL_UNITS");
+        List<MessageResource>  mr_sp_cond = this.messageResourceService.getCatalogoTodos("CAT_SP_COND");
+
+        lista_entidades1 = new ArrayList<SqlQueryToInventory>();
+       // entidad  = DownSQLUpdateService.getSpecimensByFilter1().get(1);
+        lista_entidades1 = (DownSQLUpdateService.getSpecimensByFilter1());
+
+        //for(ClassExcForm ClassExcForm1:lista_entidades1) {
+        //    System.out.println("lista_entidades1::" + ClassExcForm1.getOrthocode() );
+        //}
+        modelmap.addAttribute("lista_entidades1", lista_entidades1);
+
+        List<Subject> subjects = this.subjectService.getActiveSubjects();
+
+        //	model.addAttribute("entidades", entidades);
+        this.visitsService.saveUserPages(this.usuarioService.getUser(SecurityContextHolder.getContext().getAuthentication().getName()),new Date(),"capturespecimenspage");
+
+        //  return "capture/specimens/uploadResultExcel";
+        return "capture/specimens/list_Dquery";
+
+
+    }
+    }
 
         /**
 	 * M�todo para convertir estructura Json que se recibe desde el cliente a FiltroMx para realizar b�squeda de Mx(Vigilancia) y Recepci�n Mx(Laboratorio)
