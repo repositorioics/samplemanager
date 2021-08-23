@@ -3,11 +3,22 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<html class="default-style">
+<html >
 <head>
+
     <jsp:include page="../../fragments/headTag.jsp"/>
     <spring:url value="/resources/vendor/libs/jquery-ui/jquery-ui.css" var="jqui" />
     <link href="${jqui}" rel="stylesheet" type="text/css"/>
+
+    <style>
+       #div2{
+           /* border: 1px solid black;*/
+            width: 400;
+           display:inline-block;
+            margin-bottom: 12px;
+        }
+        #div2 { overflow-x: scroll;}
+    </style>
 </head>
 <body>
 <div class="page-loader">
@@ -16,10 +27,12 @@
 
 <!-- Layout wrapper -->
 <div class="layout-wrapper layout-2">
+
     <div class="layout-inner">
         <jsp:include page="../../fragments/sideNav.jsp"/>
         <!-- Layout container -->
         <div class="layout-container">
+
             <!-- Layout navbar -->
             <nav class="layout-navbar navbar navbar-expand-lg align-items-lg-center bg-white container-p-x"
                  id="layout-navbar">
@@ -57,16 +70,14 @@
                             onclick="location.href='${fn:escapeXml(ClassExcForm1)}'" type="button"
                             class="btn rounded-pill btn-outline-primary">&nbsp;
                         <spring:message code="downSQLQUpdatequery"/></button>
-
-
                     <br><br>
-
                     <div class="card mb-4" id="entity-element">
                         <h6 class="card-header with-elements">
                             <div class="card-title-elements">
                             </div>
                             <div class="card-header-title"><spring:message code="findspecimens"/></div>
                         </h6>
+
                         <div class="col-md-12 col-lg-12 col-xl-12">
                             <div class="card-body">
                                 <%--<div class="row">--%>
@@ -186,90 +197,102 @@
                             </div>
                         </div>
 
-                        <div class="row no-gutters row-bordered">
-                            <div class="col-md-12 col-lg-12 col-xl-12">
-                                <div class="card-body">
-                                    <table id="lista_entidades" class="table table-striped table-bordered datatable"
-                                           width="100%">
-                                        <thead>
-                                        <tr>
-                                            <th><spring:message code="specimenId"/></th>
-                                            <th><spring:message code="labReceiptDate"/></th>
-                                            <th><spring:message code="specimenType"/></th>
-                                            <th><spring:message code="specimenCondition"/></th>
-                                            <th><spring:message code="varA"/></th>
-                                            <th><spring:message code="varB"/></th>
-                                            <th><spring:message code="volume"/></th>
-                                            <th><spring:message code="volUnits"/></th>
-                                            <th><spring:message code="subject"/></th>
-                                            <th><spring:message code="inStorage"/></th>
-                                            <th class="none"><spring:message code="orthocode"/></th>
-                                            <th class="none"><spring:message code="obs"/></th>
-                                            <th class="none"><spring:message code="recordDate"/></th>
-                                            <th class="none"><spring:message code="recordUser"/></th>
-                                            <th class="none"><spring:message code="recordIp"/></th>
-                                            <th class="none"><spring:message code="enabled"/></th>
-                                            <th><spring:message code="actions"/></th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <%--<c:forEach items="${entidades}" var="entidad">
-                                            <tr>
-                                                <spring:url value="/capture/specimens/{systemId}/"
-                                                            var="viewUrl">
-                                                    <spring:param name="systemId" value="${entidad.systemId}" />
-                                                </spring:url>
-                                                <spring:url value="/capture/specimens/editEntity/{systemId}/"
-                                                            var="editUrl">
-                                                    <spring:param name="systemId" value="${entidad.systemId}" />
-                                                </spring:url>
-                                                <spring:url value="/capture/subjects/{systemId}/"
-                                                            var="viewSubjectUrl">
-                                                    <spring:param name="systemId" value="${entidad.subjectId.systemId}" />
-                                                </spring:url>
-                                                <td><c:out value="${entidad.specimenId}" /></td>
-                                                <td><c:out value="${entidad.orthocode}" /></td>
-                                                <td><fmt:formatDate value="${entidad.labReceiptDate}" var="fecRec" pattern="yyyy-MM-dd" /><c:out value="${fecRec}" /></td>
-                                                <td><a href="${fn:escapeXml(viewSubjectUrl)}"><c:out value="${entidad.subjectId.subjectId}" /></a></td>
-                                                <td><c:out value="${entidad.inStorage}" /></td>
-                                                <td><c:out value="${entidad.orthocode}" /></td>
-                                                <td><c:out value="${entidad.obs}" /></td>
-                                                <td><c:out value="${entidad.recordDate}" /></td>
-                                                <td><c:out value="${entidad.recordUser}" /></td>
-                                                <td><c:out value="${entidad.recordIp}" /></td>
 
-                                               &lt;%&ndash; <c:choose>
-                                                    <c:when test="${entidad.pasive eq '0'.charAt(0)}">
-                                                        <td><span class="badge badge-success"><spring:message code="CAT_SINO_SI" /></span></td>
-                                                    </c:when>
-                                                    <c:otherwise>
-                                                        <td><span class="badge badge-danger"><spring:message code="CAT_SINO_NO" /></span></td>
-                                                    </c:otherwise>
-                                                </c:choose>&ndash;%&gt;
-                                                <td>
-                                                    <a href="${fn:escapeXml(viewUrl)}" data-toggle="tooltip" data-placement="bottom" title="<spring:message code="viewEntidadToolTip" />" class="btn btn-outline-primary btn-sm"><i class="fa fa-search"></i></a>
-                                                    <a href="${fn:escapeXml(editUrl)}" data-toggle="tooltip" data-placement="bottom" title="<spring:message code="editEntidadToolTip" />" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></a>
-                                                </td>
-                                            </tr>
-                                        </c:forEach>--%>
-                                        </tbody>
-                                    </table>
 
-                                </div>
-                            </div>
 
-                        </div>
-                    </div>
                 </div>
+                    <li><code></code>
+                        <div id="div2" >
+                            <table id="lista_entidades"  class="table table-striped table-bordered datatable"   >
+                                <thead>
+                                <tr>
+                                    <th><spring:message code="specimenId"/></th>
+                                    <th><spring:message code="labReceiptDate"/></th>
+                                    <th><spring:message code="specimenType"/></th>
+                                    <th><spring:message code="specimenCondition"/></th>
+                                    <th><spring:message code="varA"/></th>
+                                    <th><spring:message code="varB"/></th>
+                                    <th><spring:message code="volume"/></th>
+                                    <th><spring:message code="volUnits"/></th>
+                                    <th><spring:message code="subject"/></th>
+                                    <th><spring:message code="inStorage"/></th>
+
+
+
+                                    <th class="none"><spring:message code="orthocode"/></th>
+                                    <th class="none"><spring:message code="obs"/></th>
+                                    <th class="none"><spring:message code="recordDate"/></th>
+                                    <th class="none"><spring:message code="recordUser"/></th>
+                                    <th class="none"><spring:message code="recordIp"/></th>
+
+                                    <th class="none"><spring:message code="enabled"/></th>
+                                    <th class="none"><spring:message code="equip"/></th>
+                                    <th class="none"><spring:message code="rack"/></th>
+                                    <th class="none"><spring:message code="box"/></th>
+                                    <th class="none"><spring:message code="pos"/></th>
+
+                                    <th><spring:message code="actions"/></th>
+
+
+                                </tr>
+                                </thead>
+                                <tbody >
+                                <%--<c:forEach items="${entidades}" var="entidad">
+                                    <tr>
+                                        <spring:url value="/capture/specimens/{systemId}/"
+                                                    var="viewUrl">
+                                            <spring:param name="systemId" value="${entidad.systemId}" />
+                                        </spring:url>
+                                        <spring:url value="/capture/specimens/editEntity/{systemId}/"
+                                                    var="editUrl">
+                                            <spring:param name="systemId" value="${entidad.systemId}" />
+                                        </spring:url>
+                                        <spring:url value="/capture/subjects/{systemId}/"
+                                                    var="viewSubjectUrl">
+                                            <spring:param name="systemId" value="${entidad.subjectId.systemId}" />
+                                        </spring:url>
+                                        <td><c:out value="${entidad.specimenId}" /></td>
+                                        <td><c:out value="${entidad.orthocode}" /></td>
+                                        <td><fmt:formatDate value="${entidad.labReceiptDate}" var="fecRec" pattern="yyyy-MM-dd" /><c:out value="${fecRec}" /></td>
+                                        <td><a href="${fn:escapeXml(viewSubjectUrl)}"><c:out value="${entidad.subjectId.subjectId}" /></a></td>
+                                        <td><c:out value="${entidad.inStorage}" /></td>
+                                        <td><c:out value="${entidad.orthocode}" /></td>
+                                        <td><c:out value="${entidad.obs}" /></td>
+                                        <td><c:out value="${entidad.recordDate}" /></td>
+                                        <td><c:out value="${entidad.recordUser}" /></td>
+                                        <td><c:out value="${entidad.recordIp}" /></td>
+
+                                       &lt;%&ndash; <c:choose>
+                                            <c:when test="${entidad.pasive eq '0'.charAt(0)}">
+                                                <td><span class="badge badge-success"><spring:message code="CAT_SINO_SI" /></span></td>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <td><span class="badge badge-danger"><spring:message code="CAT_SINO_NO" /></span></td>
+                                            </c:otherwise>
+                                        </c:choose>&ndash;%&gt;
+                                        <td>
+                                            <a href="${fn:escapeXml(viewUrl)}" data-toggle="tooltip" data-placement="bottom" title="<spring:message code="viewEntidadToolTip" />" class="btn btn-outline-primary btn-sm"><i class="fa fa-search"></i></a>
+                                            <a href="${fn:escapeXml(editUrl)}" data-toggle="tooltip" data-placement="bottom" title="<spring:message code="editEntidadToolTip" />" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></a>
+                                        </td>
+                                    </tr>
+                                </c:forEach>--%>
+                                </tbody>
+                            </table>
+                        </div>
+                    </li>
                 <!-- / Content -->
 
                 <jsp:include page="../../fragments/navFooter.jsp"/>
             </div>
+
             <!-- Layout content -->
         </div>
+
         <!-- / Layout container -->
     </div>
+
 </div>
+
 <!-- / Layout wrapper -->
 
 <!-- Bootstrap and necessary plugins -->
@@ -333,6 +356,9 @@
 <c:set var="editMessage"><spring:message code="editEntidadToolTip"/></c:set>
 
 <script>
+
+
+
     function ClassExcForm1(){
         var codigo= $('#codigo').val();
         $.ajax({
@@ -370,10 +396,11 @@
             boxNameUrl: "${boxNameUrl}",
             viewSubjectUrl: "${viewSubjectUrl}",
             dataTablesLang: "${dataTablesLang}"
+
+
         };
 
         SearchProcess.init(parametros);
-
 
     });
 
@@ -382,6 +409,9 @@
         $('.tooltip-demo [data-placement=left]:not(.rtled)').attr('data-placement', 'right').addClass('rtled');
     }
     $('[data-toggle="tooltip"]').tooltip();
+
+
+
 </script>
 </body>
 </html>

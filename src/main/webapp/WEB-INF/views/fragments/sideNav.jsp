@@ -51,7 +51,7 @@
                         <div><spring:message code="antibodies" /></div>
                     </a>
                 </li>
-            </ul>-->    
+            </ul>-->
         </li>
         <li class="sidenav-item storage">
             <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><i class="sidenav-icon ion ion-md-archive"></i>

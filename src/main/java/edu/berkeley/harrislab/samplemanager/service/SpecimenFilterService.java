@@ -38,7 +38,11 @@ public class SpecimenFilterService {
 
         String sQuery = "SELECT specimen.systemId as systemId, specimen.specimenId as specimenId,  DATE_FORMAT(specimen.labReceiptDate, '%Y-%m-%d')  as labReceiptDate, specimen.specimenType as specimenType, specimen.specimenCondition as specimenCondition, " +
                 "specimen.varA as varA, specimen.varB as varB, specimen.volume as volume, specimen.volUnits as volUnits, (select subj.systemId from Subject as subj where subj.systemId = specimen.subjectId.systemId) as subjectId , (select subj.subjectId from Subject as subj where subj.systemId = specimen.subjectId.systemId ) as subjectName, specimen.inStorage as inStorage,  " +
-                "specimen.orthocode as orthocode, specimen.obs as obs, DATE_FORMAT(specimen.recordDate, '%Y-%m-%d') as recordDate, specimen.recordUser as recordUser, specimen.recordIp as recordIp, (CASE WHEN specimen.pasive = '1' then '0' else '1' END) as desPasive  " +
+                "specimen.orthocode as orthocode, specimen.obs as obs, DATE_FORMAT(specimen.recordDate, '%Y-%m-%d') as recordDate, specimen.recordUser as recordUser, specimen.recordIp as recordIp, (CASE WHEN specimen.pasive = '1' then '0' else '1' END) as desPasive,  " +
+                "(select st.box.rack.equip.name as Equip_name from SpecimenStorage st where specimen.systemId = st.specimen ) as equip, " +
+                " (select st.box.rack.name as Rack_name from SpecimenStorage st where specimen.systemId = st.specimen ) as rack, " +
+                "(select st.box.id as box_id from SpecimenStorage st where specimen.systemId = st.specimen ) as box, " +
+                " (select st.pos from SpecimenStorage st where specimen.systemId = st.specimen) as Pos " +
                 "FROM Specimen specimen where 1=1 ";
 
         Query querySpecimenFilter = null;

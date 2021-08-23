@@ -24,6 +24,11 @@ public class SpecimensResults {
     private String subjectName;
     private String desPasive;
 
+    private String Equip;
+    private String Rack;
+    private String Box;
+    private Integer pos;
+
 
     public String getSpecimenId() {
         return specimenId;
@@ -175,5 +180,37 @@ public class SpecimensResults {
 
     public void setDesPasive(String desPasive) {
         this.desPasive = desPasive;
+    }
+
+    public String getEquip() {
+        return Equip;
+    }
+
+    public void setEquip(String Equip) {
+        this.Equip = Equip;
+    }
+
+    public String getRack() {
+        return Rack;
+    }
+
+    public void setRack(String Rack) {
+        this.Rack = Rack;
+    }
+
+    public String getBox() {
+        return Box;
+    }
+
+    public void setBox(String Box) {
+        this.Box = Box;
+    }
+
+    public Integer getPos() {
+        return pos;
+    }
+
+    public void setPos(Integer  pos) {
+        this.pos = pos;
     }
 }

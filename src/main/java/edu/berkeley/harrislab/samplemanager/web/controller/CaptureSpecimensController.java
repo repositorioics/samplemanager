@@ -664,7 +664,6 @@ public class CaptureSpecimensController {
 
 
 
-
 		List<MessageResource>  mr_sp_type = this.messageResourceService.getCatalogoTodos("CAT_SP_TYPE");
 		List<MessageResource>  mr_sino = this.messageResourceService.getCatalogoTodos("CAT_SINO");
 		List<MessageResource>  mr_vol_units = this.messageResourceService.getCatalogoTodos("CAT_VOL_UNITS");
@@ -708,7 +707,12 @@ public class CaptureSpecimensController {
 				descCatalogo = getMessage(mr_sino, specimen.getDesPasive(), lang);
 				specimen.setDesPasive("<span class='badge badge-"+(specimen.getDesPasive().equals("1")? "success":"danger")+"'>"+descCatalogo + "</span>");
 			}
+
+
+
 		}
+
+
 
 		return specimensList ;
 	}
