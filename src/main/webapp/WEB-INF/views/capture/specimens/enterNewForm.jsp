@@ -132,14 +132,16 @@
 					                    
 					                    <div class="form-group">
 					                    	<label class="form-label"><spring:message code="volUnits" /></label>
-						                	<select class="select2-control form-control" id="volUnits" name="volUnits" style="width: 100%" data-allow-clear="true"  >
-						                		<option selected= "selected"  value="" ></option>
+						                	<select class="select2-control form-control" id="volUnits1" name="volUnits1" style="width: 100%" data-allow-clear="false">
+						                		<option  value="" ></option>
 					                        	<c:forEach items="${volUnits}" var="volUnit">
 													<option   value="${volUnit.catKey}"> <spring:message code="${volUnit.messageKey}"  />  </option>
 												</c:forEach>
 						                	</select>
 					                    </div>
-					                    
+
+
+
 					                    <div class="form-group">
 					                    	<label class="form-label"><spring:message code="studyId" /></label>
 						                	<select  class="select2-control form-control" id="subjectSpecId" name="subjectSpecId" style="width: 100%" data-allow-clear="true">
@@ -324,6 +326,8 @@
   	<spring:url value="/api/positions" var="positionsUrl"/>
 
 	<script>
+
+
 	jQuery(document).ready(function() {
 		$("li.capture").addClass("open");
     	$("li.capture").addClass("active");

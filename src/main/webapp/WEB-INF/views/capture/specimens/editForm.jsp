@@ -157,7 +157,7 @@
 					                    
 					                    <div class="form-group">
 					                    	<label class="form-label"><spring:message code="volUnits" /></label>
-						                	<select class="select2-control form-control" id="volUnits" name="volUnits" style="width: 100%" data-allow-clear="true">
+						                	<select class="select2-control form-control" id="volUnits" name="volUnits" style="width: 100%" data-allow-clear="false">
 						                		<option value=""></option>
 					                        	<c:forEach items="${volUnits}" var="volUnit">
 													<c:choose> 
@@ -321,35 +321,16 @@
 		};
 		ProcessEntity.init(parametros);
 
-        $('#table_inventory_Extract').DataTable({
-            dom: 'lBfrtip',
-            "oLanguage": {
-                "sUrl": "${dataTablesLang}"
-            },
-            "bFilter": false,
-            "bInfo": false,
-            "bPaginate": false,
-            "bDestroy": false,
-            "responsive": false,
-            "pageLength": 5,
-            "lengthMenu": [5, 10, 20, 50, 100],
-            "bLengthChange": false,
-            "responsive": false,
-            "buttons": [
-                {
-                    extend: 'excel',
-                    text: "Download Data to Update Inventory",
-                    className: "btn rounded-pill btn-outline-primary"
-                }
-            ]
-        });
+
 	});
 	if ($('html').attr('dir') === 'rtl') {
 	    $('.tooltip-demo [data-placement=right]').attr('data-placement', 'left').addClass('rtled');
 	    $('.tooltip-demo [data-placement=left]:not(.rtled)').attr('data-placement', 'right').addClass('rtled');
   	}
   	$('[data-toggle="tooltip"]').tooltip();
-  	
+    $(document).ready(function(){
+        $("#volUnits").val("ul");
+    });
 	</script>
 </body>
 </html>
