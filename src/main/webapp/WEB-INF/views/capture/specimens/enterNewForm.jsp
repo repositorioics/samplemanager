@@ -357,7 +357,7 @@
               
     });
     $(document).ready(function(){
-        $("#volUnits").val("ul");
+        $("#volUnits1").val("ul");
     });
   	$('#specimenId').focus();
 	</script>
