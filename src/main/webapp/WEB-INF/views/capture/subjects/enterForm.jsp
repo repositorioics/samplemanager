@@ -86,7 +86,7 @@
 												</c:forEach>
 						                	</select>
 					                    </div>
-					                    
+
 					                    <div class="form-group">
 					                      <div class="input-group">
 					                      	<div class="input-group-prepend">
@@ -107,6 +107,11 @@
 										  			data-toggle="tooltip" data-placement="bottom" title="<spring:message code="cancelRecord" />">
 										  				<i class="ion ion-md-close-circle"></i>     <spring:message code="cancel" /></a>
 				                        </div>
+
+                                          <br><br><br><br>
+                                          <br><br><br><br>
+                                          <br><br><br><br>
+
 				                      </form>
 				                    </div>
 				                  </div>
