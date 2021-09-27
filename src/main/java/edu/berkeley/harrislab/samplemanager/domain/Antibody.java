@@ -1,6 +1,7 @@
 package edu.berkeley.harrislab.samplemanager.domain;
 
 import edu.berkeley.harrislab.samplemanager.domain.audit.Auditable;
+import org.hibernate.annotations.ForeignKey;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -39,7 +40,7 @@ public class Antibody extends BaseMetaData implements Auditable {
     private String technique3_concentration3;
     private String storage_temperature;
     private String freezer_name;
-    private String shelf_name;
+
     private String rack_name;
     private String box_name;
     private Integer position_in_the_box;
@@ -241,12 +242,12 @@ public class Antibody extends BaseMetaData implements Auditable {
         this.freezer_name = freezer_name;
     }
 
-    @Column(name = "shelf_name", nullable = true, length =40)
-    public String getShelf_name() {
-        return shelf_name;
+    @Column(name = "box_name", nullable = true, length =40)
+    public String getBox_name () {
+        return box_name;
     }
-    public void setShelf_name(String shelf_name) {
-        this.shelf_name = shelf_name;
+    public void setBox_name(String box_name) {
+        this.box_name = box_name;
     }
 
     @Column(name = "rack_name", nullable = true, length =40)
@@ -255,14 +256,6 @@ public class Antibody extends BaseMetaData implements Auditable {
     }
     public void setRack_name(String rack_name) {
         this.rack_name = rack_name;
-    }
-
-    @Column(name = "box_name", nullable = true, length =40)
-    public String getBox_name() {
-        return box_name;
-    }
-    public void setBox_name(String box_name) {
-        this.box_name = box_name;
     }
 
     @Column(name = "position_in_the_box", nullable = true)

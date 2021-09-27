@@ -16,9 +16,10 @@
     	<div class="bg-primary"></div>
   	</div>
   	<!-- urls -->
-    <spring:url value="/capture/antibodies/saveEntity/" var="saveUrl"></spring:url>
-    <spring:url value="/capture/antibodies/newEntity" var="newUrl"></spring:url>
+    <spring:url value="/capture/antibodies/saveEditEntity/" var="saveUrl"></spring:url>
+
     <spring:url value="/capture/antibodies/" var="listUrl"></spring:url>
+
 	<!-- Layout wrapper -->
 	<div class="layout-wrapper layout-2">
 		<div class="layout-inner">
@@ -44,7 +45,8 @@
 			              <h6 class="card-header with-elements">
 			              	<div class="card-title-elements">
 			              	</div>
-			                <div class="card-header-title"><spring:message code="antibodies" /></div>
+			                <div class="card-header-title"><spring:message code="antibodies"  />  | <spring:message code="Antibodies_edit"  /> ${entidad.antibody_id}  </div>
+
 			              </h6>
 			              <div>
 			                <div class="col-md-12 col-lg-12 col-xl-12">
@@ -53,18 +55,29 @@
 
 				                    <div class="col-md-8">
 				                      <form action="#" autocomplete="off" id="edit-form">
-				                      	<div class="form-group">
-					                    </div>
+
+                                      <div class="form-group">
+                                          <div class="input-group">
+                                              <div class="input-group-prepend">
+                                                  <span class="input-group-text"><i class="fa fa-key"></i></span>
+                                              </div>
+                                              <input type="text" id="systemId" name="systemId" readonly value="${entidad.systemId}"
+                                                     data-toggle="tooltip" data-state="primary" data-placement="right" title="<spring:message code="systemId" />"
+                                                     class="form-control" placeholder="<spring:message code="systemId" />">
+                                          </div>
+                                      </div>
+
+
                                         <div class="row">
+
                                             <div class="col-md-8">
                                                 <div class="form-group">
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
-                                                                    <span class="input-group-text"><i
-                                                                            class="fa fa-key"></i></span>
+                                                            <span class="input-group-text"><i class="fa fa-key"></i></span>
                                                         </div>
-                                                        <input type="text" id="antibody_id" name="antibody_id"
-                                                               data-toggle="tooltip" data-state="danger" style="width: 100%" data-allow-clear="true"
+                                                        <input type="text" id="antibody_id" name="antibody_id" readonly value="${entidad.antibody_id}"
+                                                               data-toggle="tooltip" data-state="danger"
                                                                data-placement="right"
                                                                title="<spring:message code="antibody_id" />"
                                                                class="form-control"
@@ -73,13 +86,14 @@
                                                 </div>
                                             </div>
 
+
                                             <div class="col-md-8">
                                                 <div class="form-group">
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text"></span>
                                                         </div>
-                                                        <input type="text" id="antibody_name"
+                                                        <input type="text" id="antibody_name" value="${entidad.antibody_name}"
                                                                name="antibody_name" data-toggle="tooltip"
                                                                data-state="primary" data-placement="right"
                                                                title="<spring:message code="antibody_name_tool_tip" />"
@@ -90,9 +104,6 @@
                                             </div>
                                         </div>
 
-
-
-
                                         <div class="row">
                                             <div class="col-md-8">
 
@@ -101,7 +112,7 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text"></span>
                                                         </div>
-                                                        <input type="text" id="target_protein" name="target_protein"
+                                                        <input type="text" id="target_protein" name="target_protein" value="${entidad.target_protein}"
                                                                data-toggle="tooltip" data-state="primary"
                                                                data-placement="right"
                                                                title="<spring:message code="target_protein_tool_tip" />"
@@ -117,7 +128,7 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text"></span>
                                                         </div>
-                                                        <input type="text" id="target_domain" name="target_domain"
+                                                        <input type="text" id="target_domain" name="target_domain" value="${entidad.target_domain}"
                                                                data-toggle="tooltip" data-state="primary"
                                                                data-placement="right"
                                                                title="<spring:message code="target_domain_tool_tip" />"
@@ -132,7 +143,7 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text"></span>
                                                         </div>
-                                                        <input type="text" id="target_epitope" name="target_epitope"
+                                                        <input type="text" id="target_epitope" name="target_epitope" value="${entidad.target_epitope}"
                                                                data-toggle="tooltip" data-state="primary"
                                                                data-placement="right"
                                                                title="<spring:message code="target_epitope_tool_tip" />"
@@ -148,7 +159,7 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text"></span>
                                                         </div>
-                                                        <input type="text" id="antibody_isotype" name="antibody_isotype"
+                                                        <input type="text" id="antibody_isotype" name="antibody_isotype" value="${entidad.antibody_isotype}"
                                                                data-toggle="tooltip" data-state="primary"
                                                                data-placement="right"
                                                                title="<spring:message code="antibody_isotype_tool_tip" />"
@@ -164,7 +175,7 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text"></span>
                                                         </div>
-                                                        <input type="text" id="virus_serotype" name="virus_serotype"
+                                                        <input type="text" id="virus_serotype" name="virus_serotype" value="${entidad.virus_serotype}"
                                                                data-toggle="tooltip" data-state="primary"
                                                                data-placement="right"
                                                                title="<spring:message code="virus_serotype_tool_tip" />"
@@ -180,7 +191,7 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text"></span>
                                                         </div>
-                                                        <input type="text" id="batch_number" name="batch_number"
+                                                        <input type="text" id="batch_number" name="batch_number" value="${entidad.batch_number}"
                                                                data-toggle="tooltip" data-state="primary"
                                                                data-placement="right"
                                                                title="<spring:message code="batch_number_tool_tip" />"
@@ -203,7 +214,7 @@
 							                  <span class="input-group-text"><i class="fa fa-calendar-alt"></i></span>
 							                </div>
 							                <fmt:formatDate value="${now}" var="fecEnr" pattern="yyyy-MM-dd" />
-					                        <input type="text" id="date_produced" name="date_produced" value="${fecEnr}"
+					                        <input type="text" id="date_produced" name="date_produced" value="${entidad.date_produced}"
 					                        	data-toggle="tooltip" data-state="primary" data-placement="right" title="<spring:message code="date" />"
 					                        		class="form-control"  data-date-end-date="0d" placeholder="<spring:message code="date" />">
 					                      </div>
@@ -217,7 +228,7 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text"></span>
                                                     </div>
-                                                    <input type="text" id="person_name" name="person_name"
+                                                    <input type="text" id="person_name" name="person_name" value="${entidad.person_name}"
                                                            data-toggle="tooltip" data-state="primary"
                                                            data-placement="right"
                                                            title="<spring:message code="person_name_tool_tip" />"
@@ -233,7 +244,7 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text"></span>
                                                     </div>
-                                                    <input type="text" id="source_name" name="source_name"
+                                                    <input type="text" id="source_name" name="source_name" value="${entidad.source_name}"
                                                            data-toggle="tooltip" data-state="primary"
                                                            data-placement="right"
                                                            title="<spring:message code="source_name_tool_tip" />"
@@ -249,7 +260,7 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text"></span>
                                                     </div>
-                                                    <input type="text" id="aliquot_volume" name="aliquot_volume"
+                                                    <input type="text" id="aliquot_volume" name="aliquot_volume" value="${entidad.aliquot_volume}"
                                                            data-toggle="tooltip" data-state="primary"
                                                            data-placement="right" onkeypress="return valideKey(event);"
                                                            title="<spring:message code="aliquot_volume_tool_tip" />"
@@ -265,7 +276,7 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text"></span>
                                                     </div>
-                                                    <input type="text" id="medium_buffer" name="medium_buffer"
+                                                    <input type="text" id="medium_buffer" name="medium_buffer" value="${entidad.medium_buffer}"
                                                            data-toggle="tooltip" data-state="primary"
                                                            data-placement="right"
                                                            title="<spring:message code="medium_buffer_tool_tip" />"
@@ -281,7 +292,7 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text"></span>
                                                     </div>
-                                                    <input type="text" id="concentration" name="concentration"
+                                                    <input type="text" id="concentration" name="concentration" value="${entidad.concentration}"
                                                            data-toggle="tooltip" data-state="primary"
                                                            data-placement="right"
                                                            title="<spring:message code="concentration_tool_tip" />"
@@ -298,7 +309,7 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text"></span>
                                                     </div>
-                                                    <input type="text" id="technique1" name="technique1"
+                                                    <input type="text" id="technique1" name="technique1" value="${entidad.technique1}"
                                                            data-toggle="tooltip" data-state="primary"
                                                            data-placement="right"
                                                            title="<spring:message code="technique1_tool_tip" />"
@@ -314,7 +325,7 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text"></span>
                                                     </div>
-                                                    <input type="text" id="technique1_concentration1" name="technique1_concentration1"
+                                                    <input type="text" id="technique1_concentration1" name="technique1_concentration1" value="${entidad.technique1_concentration1}"
                                                            data-toggle="tooltip" data-state="primary"
                                                            data-placement="right"
                                                            title="<spring:message code="technique1_concentration_tool_tip" />"
@@ -332,7 +343,7 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text"></span>
                                                         </div>
-                                                        <input type="text" id="technique2" name="technique2"
+                                                        <input type="text" id="technique2" name="technique2" value="${entidad.technique2}"
                                                                data-toggle="tooltip" data-state="primary"
                                                                data-placement="right"
                                                                title="<spring:message code="technique2_tool_tip" />"
@@ -348,7 +359,7 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text"></span>
                                                         </div>
-                                                        <input type="text" id="technique2_concentration2" name="technique2_concentration2"
+                                                        <input type="text" id="technique2_concentration2" name="technique2_concentration2" value="${entidad.technique2_concentration2}"
                                                                data-toggle="tooltip" data-state="primary"
                                                                data-placement="right"
                                                                title="<spring:message code="technique2_concentration_tool_tip" />"
@@ -366,7 +377,7 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text"></span>
                                                         </div>
-                                                        <input type="text" id="technique3" name="technique3"
+                                                        <input type="text" id="technique3" name="technique3" value="${entidad.technique3}"
                                                                data-toggle="tooltip" data-state="primary"
                                                                data-placement="right"
                                                                title="<spring:message code="technique3_tool_tip" />"
@@ -382,7 +393,7 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text"></span>
                                                         </div>
-                                                        <input type="text" id="technique3_concentration3" name="technique3_concentration3"
+                                                        <input type="text" id="technique3_concentration3" name="technique3_concentration3" value="${entidad.technique3_concentration3}"
                                                                data-toggle="tooltip" data-state="primary"
                                                                data-placement="right"
                                                                title="<spring:message code="technique3_concentration_tool_tip" />"
@@ -399,7 +410,7 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text"></span>
                                                     </div>
-                                                    <input type="text" id="storage_temperature" name="storage_temperature"
+                                                    <input type="text" id="storage_temperature" name="storage_temperature" value="${entidad.storage_temperature}"
                                                            data-toggle="tooltip" data-state="primary"
                                                            data-placement="right"
                                                            title="<spring:message code="storage_temperature_tool_tip" />"
@@ -420,7 +431,14 @@
                                                     <select class="select2-control form-control" id="equip" name="equip" style="width: 100%" data-allow-clear="false">
                                                         <option value=""></option>
                                                         <c:forEach items="${equips}" var="equip">
-                                                            <option value="${equip.systemId}"><spring:message code="equip" />: ${equip.id} - ${equip.name}</option>
+                                                            <c:choose>
+                                                                <c:when test="${equip.systemId eq entidad.freezer_name}">
+                                                                    <option selected value="${equip.systemId}"><spring:message code="${equip.name}" /></option>
+                                                                </c:when>
+                                                                <c:otherwise>
+                                                                    <option value="${equip.systemId}"><spring:message code="${equip.name}" /></option>
+                                                                </c:otherwise>
+                                                            </c:choose>
                                                         </c:forEach>
                                                     </select>
                                                 </div>
@@ -432,6 +450,16 @@
                                                         <label class="form-label"><spring:message code="rack" /></label> <span class="badge badge-dot badge-danger"></span>
                                                         <select class="select2-control form-control" id="rack" name="rack" style="width: 100%" data-allow-clear="false">
                                                             <option value=""></option>
+                                                            <c:forEach items="${racks}" var="rack">
+                                                                <c:choose>
+                                                                    <c:when test="${rack.systemId eq entidad.rack_name}">
+                                                                        <option selected value="${rack.systemId}"><spring:message code="${rack.name}" /></option>
+                                                                    </c:when>
+                                                                    <c:otherwise>
+                                                                        <option value="${rack.systemId}"><spring:message code="${rack.name}" /></option>
+                                                                    </c:otherwise>
+                                                                </c:choose>
+                                                            </c:forEach>
                                                         </select>
                                                     </div>
 
@@ -442,6 +470,16 @@
                                                         <label class="form-label"><spring:message code="box" /></label> <span class="badge badge-dot badge-danger"></span>
                                                         <select class="select2-control form-control" id="boxSpecId" name="boxSpecId" style="width: 100%" data-allow-clear="false">
                                                             <option value=""></option>
+                                                            <c:forEach items="${boxes}" var="box">
+                                                                <c:choose>
+                                                                    <c:when test="${box.systemId eq entidad.box_name}">
+                                                                        <option selected value="${box.systemId}"><spring:message code="${box.name}" /></option>
+                                                                    </c:when>
+                                                                    <c:otherwise>
+                                                                        <option value="${box.systemId}"><spring:message code="${box.name}" /></option>
+                                                                    </c:otherwise>
+                                                                </c:choose>
+                                                            </c:forEach>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -449,8 +487,18 @@
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label class="form-label"><spring:message code="pos" /></label> <span class="badge badge-dot badge-danger"></span>
-                                                    <select class="select2-control form-control" id="position" name="position" style="width: 100%" data-allow-clear="false">
+                                                    <select class="select2-control form-control" id="positions" name="positions" style="width: 100%" data-allow-clear="false">
                                                         <option value=""></option>
+                                                        <c:forEach items="${posiciones}" var="pos1">
+                                                            <c:choose>
+                                                                <c:when test="${pos1 eq entidad.position_in_the_box}">
+                                                                    <option selected value="${pos1}"><spring:message code="${pos1}" /></option>
+                                                                </c:when>
+                                                                <c:otherwise>
+                                                                    <option value="${pos1}"><spring:message code="${pos1}" /></option>
+                                                                </c:otherwise>
+                                                            </c:choose>
+                                                        </c:forEach>
                                                     </select>
                                                 </div>
                                             </div>
@@ -466,7 +514,7 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text"></span>
                                                         </div>
-                                                        <input type="text" id="additional_comments" name="additional_comments"
+                                                        <input type="text" id="additional_comments" name="additional_comments" value="${entidad.additional_comments}"
                                                                data-toggle="tooltip" data-state="primary"
                                                                data-placement="right"
                                                                title="<spring:message code="additional_comments_tool_tip" />"
@@ -551,15 +599,14 @@
   	<c:set var="errormessage"><spring:message code="process.errors" /></c:set>
   	<c:set var="waitmessage"><spring:message code="process.wait" /></c:set>
   	<c:set var="agregando">true</c:set>
-  	
-  	<spring:url value="/api/racks" var="racksUrl"/>
-  	<spring:url value="/api/boxes" var="boxesUrl"/>
 
-  	<spring:url value="/api/positions" var="positionsUrl"/>
+    <spring:url value="/api/racks" var="racksUrl"/>
+    <spring:url value="/api/boxes" var="boxesUrl"/>
+
+    <spring:url value="/api/positions_antibodies" var="positionsUrl"/>
+
 
 	<script>
-
-
 
 	jQuery(document).ready(function() {
 		$("li.capture").addClass("open");
@@ -576,16 +623,13 @@
 
             $.ajax({
 
-
-
                 success:function(r){
                     if(r==1){
 
-                        //¿Aquí iría el borrar contenido del formulario no?
-
+                        //¿Aquí iría el borrar contenido del formulario
 
                     }else{
-                        $('#antibody_id').val('');
+                    //   $('#antibody_id').val('');
                         $('#antibody_name').val('');
                         $('#target_protein').val('');
                         $('#target_domain').val('');
@@ -634,6 +678,8 @@
     });
   	$('#specimenId').focus();
 
+
+
     function valideKey(evt){
 
         // code is the decimal ASCII representation of the pressed key.
@@ -659,7 +705,11 @@
 
         }
     });
+    $(document).ready(function(){
+        $('#positions').prepend("<option value='1' selected = 'selected' > ${entidad.position_in_the_box} </option>");
+        $('#positions').val("1");
 
+    });
 	</script>
 </body>
 </html>

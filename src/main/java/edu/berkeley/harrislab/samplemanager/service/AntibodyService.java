@@ -66,6 +66,34 @@ public class AntibodyService {
     }
 
     /**
+     * Regresa un registro
+     * @param systemId
+     * @return un <code>Specimen</code>
+     */
+
+    public Antibody getAntibodyBySystemId(String systemId) {
+        // Retrieve session from Hibernate
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("FROM Antibody antibody where " +
+                "antibody.systemId =:systemId");
+        query.setParameter("systemId",systemId);
+        Antibody antibody = (Antibody) query.uniqueResult();
+        return antibody;
+    }
+
+
+    @SuppressWarnings("unchecked")
+    public List<Antibody> getAntibodyForBox(String boxId) {
+        // Retrieve session from Hibernate
+        Session session = sessionFactory.getCurrentSession();
+        // Create a Hibernate query (HQL)
+        Query query = session.createQuery("FROM Antibody antibody where antibody.box_name =:boxId");
+        query.setParameter("boxId",boxId);
+        // Retrieve all
+        return  query.list();
+    }
+
+    /**
      * Guarda un registro
      *
      */

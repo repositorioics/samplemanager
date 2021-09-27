@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import edu.berkeley.harrislab.samplemanager.domain.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.i18n.LocaleContextHolder;
@@ -15,17 +16,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import edu.berkeley.harrislab.samplemanager.domain.Box;
-import edu.berkeley.harrislab.samplemanager.domain.BoxAliquots;
-import edu.berkeley.harrislab.samplemanager.domain.Equip;
-import edu.berkeley.harrislab.samplemanager.domain.Rack;
-import edu.berkeley.harrislab.samplemanager.domain.SpecimenStorage;
 import edu.berkeley.harrislab.samplemanager.language.MessageResource;
 import edu.berkeley.harrislab.samplemanager.service.BoxService;
 import edu.berkeley.harrislab.samplemanager.service.EquipService;
 import edu.berkeley.harrislab.samplemanager.service.MessageResourceService;
 import edu.berkeley.harrislab.samplemanager.service.RackService;
 import edu.berkeley.harrislab.samplemanager.service.SpecimenStorageService;
+import edu.berkeley.harrislab.samplemanager.service.AntibodyService;
 
 
 
@@ -46,8 +43,11 @@ public class APIController {
 	private BoxService boxService;
 	@Resource(name="specimenStorageService")
 	private SpecimenStorageService specimenStorageService;
-	@Resource(name="messageResourceService")
+    @Resource(name="messageResourceService")
 	private MessageResourceService messageResourceService;
+
+    @Resource(name="AntibodyService")
+    private AntibodyService AntibodyService;
 	
     private static final Logger logger = LoggerFactory.getLogger(APIController.class);
 
@@ -72,32 +72,50 @@ public class APIController {
     @RequestMapping(value = "boxes", method = RequestMethod.GET, produces = "application/json")
     public @ResponseBody List<Box> fetchBoxesJson(@RequestParam(value = "rackId", required = true) String rackId) throws ParseException {
         logger.info("Obteniendo las cajas en JSON");
-        List<Box> boxes = null; 
+        List<Box> boxes = null;
         Rack rack = this.rackService.getRackBySystemId(rackId);
         if (rack!=null){
         	boxes = boxService.getActiveBoxes(rackId);
         }
-        return boxes;	
+        return boxes;
     }
     
     @RequestMapping(value = "positions", method = RequestMethod.GET, produces = "application/json")
-    public @ResponseBody List<String> fetchPositionsJson(@RequestParam(value = "boxId", required = true) String boxId) throws ParseException {
+     public @ResponseBody List<String> fetchPositionsJson(@RequestParam(value = "boxId", required = true) String boxId) throws ParseException {
         logger.info("Obteniendo las posiciones en JSON");
-        List<String> posiciones = new ArrayList<String>(); 
+        List<String> posiciones = new ArrayList<String>();
         Box box = this.boxService.getBoxBySystemId(boxId);
         if (box!=null){
-        	for(Integer i = 1; i<=box.getCapacity(); i++){
-    			posiciones.add(i.toString());
-    		}
+            for(Integer i = 1; i<=box.getCapacity(); i++){
+                posiciones.add(i.toString());
+            }
         }
         List <SpecimenStorage> specBox = this.specimenStorageService.getSpecimenForBox(boxId);
         for(SpecimenStorage spec:specBox) {
-        	String posicion = String.valueOf(spec.getPos());
-        	posiciones.remove(posicion);
+            String posicion = String.valueOf(spec.getPos());
+            posiciones.remove(posicion);
         }
-        return posiciones;	
+        return posiciones;
     }
-    
+
+    @RequestMapping(value = "positions_antibodies", method = RequestMethod.GET, produces = "application/json")
+    public @ResponseBody List<String> fetchPositionsAntibodiesJson(@RequestParam(value = "boxId", required = true) String boxId) throws ParseException {
+        logger.info("Obteniendo las posiciones en JSON");
+        List<String> posiciones = new ArrayList<String>();
+        Box box = this.boxService.getBoxBySystemId(boxId);
+        if (box!=null){
+            for(Integer i = 1; i<=box.getCapacity(); i++){
+                posiciones.add(i.toString());
+            }
+        }
+        List <Antibody> specBox = this.AntibodyService.getAntibodyForBox(boxId);
+        for(Antibody spec:specBox) {
+            String posicion = String.valueOf(spec.getPosition_in_the_box());
+            posiciones.remove(posicion);
+        }
+        return posiciones;
+    }
+
     @RequestMapping(value = "boxSelected", method = RequestMethod.GET, produces = "application/json")
     public @ResponseBody BoxAliquots fetchBoxJson(@RequestParam(value = "boxId", required = true) String boxId) throws ParseException {
         logger.info("Obteniendo las muestras en JSON");

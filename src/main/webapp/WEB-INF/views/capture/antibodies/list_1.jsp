@@ -3,11 +3,22 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<html class="default-style">
+<html >
 <head>
+
     <jsp:include page="../../fragments/headTag.jsp"/>
     <spring:url value="/resources/vendor/libs/jquery-ui/jquery-ui.css" var="jqui" />
     <link href="${jqui}" rel="stylesheet" type="text/css"/>
+
+    <style>
+       #div2{
+           /* border: 1px solid black;*/
+            width: 400;
+           display:inline-block;
+            margin-bottom: 12px;
+        }
+        #div2 { overflow-x: scroll;}
+    </style>
 </head>
 <body>
 <div class="page-loader">
@@ -15,12 +26,13 @@
 </div>
 
 <!-- Layout wrapper -->
-
 <div class="layout-wrapper layout-2">
+
     <div class="layout-inner">
         <jsp:include page="../../fragments/sideNav.jsp"/>
         <!-- Layout container -->
         <div class="layout-container">
+
             <!-- Layout navbar -->
             <nav class="layout-navbar navbar navbar-expand-lg align-items-lg-center bg-white container-p-x"
                  id="layout-navbar">
@@ -55,6 +67,7 @@
                             </div>
                             <div class="card-header-title"><spring:message code="findantibodies"/></div>
                         </h6>
+
                         <div class="col-md-12 col-lg-12 col-xl-12">
                             <div class="card-body">
                                 <%--<div class="row">--%>
@@ -77,13 +90,12 @@
                                                                placeholder="<spring:message code="antibody_id" />">
                                                     </div>
                                                 </div>
-                                            </div>
 
-                                            <div class="col-md-4">
                                                 <div class="form-group">
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
-                                                                    <span class="input-group-text"></span>
+                                                                    <span class="input-group-text"><i
+                                                                            class="fa fa-key"></i></span>
                                                         </div>
                                                         <input type="text" id="antibody_name"
                                                                name="antibody_name" data-toggle="tooltip"
@@ -93,126 +105,89 @@
                                                                placeholder="<spring:message code="antibody_name" />">
                                                     </div>
                                                 </div>
+
                                             </div>
+
+
+
                                         </div>
-
                                         <div class="form-group" align="right">
-
                                             <button type="submit" class="btn rounded-pill btn-outline-primary"
                                                     data-toggle="tooltip" data-placement="bottom"
                                                     title="<spring:message code="findantibodies" />"
                                                     id="search"><i class="ion ion-md-search"></i> <spring:message
                                                     code="findantibodies"/></button>
                                         </div>
+                                        <div>
+
+
+                                        </div>
 
                                     </form>
-
                                 </div>
                                 <%--</div>--%>
 
                             </div>
                         </div>
 
-                        <div class="row no-gutters row-bordered">
-                            <div class="col-md-12 col-lg-12 col-xl-12">
 
-                                    <table id="lista_antibodies" class="table table-striped table-bordered datatable"
-                                           width="100%" >
-                                        <thead>
-                                        <tr>
-                                            <th><spring:message code="antibody_id"/></th>
-                                            <th><spring:message code="antibody_name"/></th>
-                                            <th><spring:message code="target_protein"/></th>
-                                            <th><spring:message code="target_domain"/></th>
-                                            <th><spring:message code="target_epitope"/></th>
-                                            <th><spring:message code="antibody_isotype"/></th>
-                                            <th><spring:message code="virus_serotype"/></th>
-                                            <th><spring:message code="batch_number"/></th>
-                                            <th><spring:message code="date_produced"/></th>
-                                            <th><spring:message code="person_name"/></th>
-                                            <th><spring:message code="source_name"/></th>
-                                            <th><spring:message code="aliquot_volume"/></th>
-                                            <th><spring:message code="medium_buffer"/></th>
-                                            <th><spring:message code="concentration"/></th>
-                                            <th><spring:message code="technique1"/></th>
-                                            <th><spring:message code="technique1_concentration1"/></th>
-                                            <th><spring:message code="technique2"/></th>
-                                            <th><spring:message code="technique2_concentration2"/></th>
-                                            <th><spring:message code="technique3"/></th>
-                                            <th><spring:message code="technique3_concentration3"/></th>
-                                            <th><spring:message code="storage_temperature"/></th>
-                                            <th><spring:message code="freezer_name"/></th>
-
-                                            <th><spring:message code="rack_name"/></th>
-                                            <th><spring:message code="box_name"/></th>
-                                            <th><spring:message code="position_in_the_box"/></th>
-                                            <th><spring:message code="additional_comments"/></th>
-
-                                            <th><spring:message code="actions"/></th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <%--<c:forEach items="${entidades}" var="entidad">
-                                            <tr>
-                                                <spring:url value="/capture/specimens/{systemId}/"
-                                                            var="viewUrl">
-                                                    <spring:param name="systemId" value="${entidad.systemId}" />
-                                                </spring:url>
-                                                <spring:url value="/capture/specimens/editEntity/{systemId}/"
-                                                            var="editUrl">
-                                                    <spring:param name="systemId" value="${entidad.systemId}" />
-                                                </spring:url>
-                                                <spring:url value="/capture/subjects/{systemId}/"
-                                                            var="viewSubjectUrl">
-                                                    <spring:param name="systemId" value="${entidad.subjectId.systemId}" />
-                                                </spring:url>
-                                                <td><c:out value="${entidad.specimenId}" /></td>
-                                                <td><c:out value="${entidad.orthocode}" /></td>
-                                                <td><fmt:formatDate value="${entidad.labReceiptDate}" var="fecRec" pattern="yyyy-MM-dd" /><c:out value="${fecRec}" /></td>
-                                                <td><a href="${fn:escapeXml(viewSubjectUrl)}"><c:out value="${entidad.subjectId.subjectId}" /></a></td>
-                                                <td><c:out value="${entidad.inStorage}" /></td>
-                                                <td><c:out value="${entidad.orthocode}" /></td>
-                                                <td><c:out value="${entidad.obs}" /></td>
-                                                <td><c:out value="${entidad.recordDate}" /></td>
-                                                <td><c:out value="${entidad.recordUser}" /></td>
-                                                <td><c:out value="${entidad.recordIp}" /></td>
-
-                                               &lt;%&ndash; <c:choose>
-                                                    <c:when test="${entidad.pasive eq '0'.charAt(0)}">
-                                                        <td><span class="badge badge-success"><spring:message code="CAT_SINO_SI" /></span></td>
-                                                    </c:when>
-                                                    <c:otherwise>
-                                                        <td><span class="badge badge-danger"><spring:message code="CAT_SINO_NO" /></span></td>
-                                                    </c:otherwise>
-                                                </c:choose>&ndash;%&gt;
-                                                <td>
-                                                    <a href="${fn:escapeXml(viewUrl)}" data-toggle="tooltip" data-placement="bottom" title="<spring:message code="viewEntidadToolTip" />" class="btn btn-outline-primary btn-sm"><i class="fa fa-search"></i></a>
-                                                    <a href="${fn:escapeXml(editUrl)}" data-toggle="tooltip" data-placement="bottom" title="<spring:message code="editEntidadToolTip" />" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></a>
-                                                </td>
-                                            </tr>
-                                        </c:forEach>--%>
-                                        </tbody>
-                                    </table>
-
-
-                            </div>
-
-                        </div>
-
-
-
-                    </div>
                 </div>
+                    <li><code></code>
+                        <div id="wrap" >
+                        <div id="div2" >
+                            <table id="lista_entidades"  class="table table-striped table-bordered datatable"   >
+                                <thead>
+                                <tr>
+                                    <th><spring:message code="antibody_id"/></th>
+                                    <th><spring:message code="antibody_name"/></th>
+                                    <th><spring:message code="target_protein"/></th>
+                                    <th><spring:message code="target_domain"/></th>
+                                    <th><spring:message code="target_epitope"/></th>
+                                    <th><spring:message code="antibody_isotype"/></th>
+                                    <th><spring:message code="virus_serotype"/></th>
+                                    <th><spring:message code="batch_number"/></th>
+                                    <th><spring:message code="date"/></th>
+                                    <th><spring:message code="person_name"/></th>
+                                    <th><spring:message code="source_name"/></th>
+                                    <th><spring:message code="aliquot_volume"/></th>
+                                    <th class="none" ><spring:message code="medium_buffer"/></th>
+                                    <th class="none" ><spring:message code="concentration"/></th>
+                                    <th class="none" ><spring:message code="technique1"/></th>
+                                    <th class="none" ><spring:message code="technique1_concentration"/></th>
+                                    <th class="none" ><spring:message code="technique2"/></th>
+                                    <th class="none" ><spring:message code="technique2_concentration"/></th>
+                                    <th class="none" ><spring:message code="technique3"/></th>
+                                    <th class="none" ><spring:message code="technique3_concentration"/></th>
+                                    <th class="none" ><spring:message code="storage_temperature"/></th>
+                                    <th class="none" ><spring:message code="freezer_name"/></th>
+
+                                    <th class="none" ><spring:message code="rack_name"/></th>
+                                    <th class="none" ><spring:message code="box_name"/></th>
+                                    <th class="none" ><spring:message code="position_in_the_box"/></th>
+                                    <th class="none" ><spring:message code="additional_comments"/></th>
+
+                                    <th><spring:message code="actions"/></th>
+                                </tr>
+                                </thead>
+                                <tbody >
+
+                                </tbody>
+                            </table>
+                        </div>
+                        </div>
+                    </li>
                 <!-- / Content -->
 
                 <jsp:include page="../../fragments/navFooter.jsp"/>
             </div>
+
             <!-- Layout content -->
         </div>
+
         <!-- / Layout container -->
     </div>
-</div>
 
+</div>
 
 <!-- / Layout wrapper -->
 
@@ -240,8 +215,7 @@
 <script src="${bdLang}">
 </script>
 
-<spring:url value="/capture/antibodies/ClassExcForm1/"
-            var="ClassExcForm1"/>
+
 
 <spring:url value="/capture/antibodies/search/"
             var="searchUrl"/>
@@ -258,7 +232,7 @@
             var="boxNameUrl"/>
 
 <!-- Custom scripts required by this view -->
-<spring:url value="/resources/js/views/AntibodyFilter.js" var="searchProcess"/>
+    <spring:url value="/resources/js/views/AntibodyFilter.js" var="searchProcess"/>
 <script src="${searchProcess}"></script>
 
 <spring:url value="/resources/vendor/libs/validate/messages_{language}.js" var="validateLang">
@@ -276,13 +250,13 @@
 <c:set var="viewMessage"><spring:message code="viewEntidadToolTip"/></c:set>
 <c:set var="editMessage"><spring:message code="editEntidadToolTip"/></c:set>
 
-<script>
-
+<script defer>
 
     jQuery(document).ready(function () {
         $("li.capture").addClass("open");
         $("li.capture").addClass("active");
         $("li.antibodies").addClass("active");
+
         var parametros = {
             searchUrl: "${searchUrl}",
             editUrl: "${editUrl}",
@@ -299,39 +273,9 @@
             viewSubjectUrl: "${viewSubjectUrl}",
             dataTablesLang: "${dataTablesLang}"
 
-
         };
 
         SearchProcess.init(parametros);
-
-        $('#lista_antibodies').DataTable({
-            dom: 'lBfrtip',
-            "oLanguage": {
-                "sUrl": "${dataTablesLang}"
-            },
-            "bFilter": true,
-            "bInfo": true,
-            "bPaginate": true,
-            "bDestroy": true,
-            "responsive": false,
-            "pageLength": 5,
-            "lengthMenu": [5, 10, 20, 50, 100],
-            "bLengthChange": true,
-            "responsive": false,
-            "scrollX": true,
-            "buttons": [
-                {
-                    extend: 'excel',
-                    text: "Results to Excel ",
-                    className: "btn rounded-pill btn-outline-primary"
-                },
-                {
-                    extend: 'pdfHtml5',
-                    text: "Results to Pdf   ",
-                    className: "btn rounded-pill btn-outline-primary"
-                }
-            ]
-        }) ;
 
 
     });
@@ -341,8 +285,6 @@
         $('.tooltip-demo [data-placement=left]:not(.rtled)').attr('data-placement', 'right').addClass('rtled');
     }
     $('[data-toggle="tooltip"]').tooltip();
-
-
 
 
 
