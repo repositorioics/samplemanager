@@ -67,9 +67,6 @@
                                           </div>
                                       </div>
 
-
-                                        <div class="row">
-
                                             <div class="col-md-8">
                                                 <div class="form-group">
                                                     <div class="input-group">
@@ -91,7 +88,7 @@
                                                 <div class="form-group">
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
-                                                            <span class="input-group-text"></span>
+                                                            <span class="input-group-text"><i class="fa fa-sort-alpha-up"></i></span>
                                                         </div>
                                                         <input type="text" id="antibody_name" value="${entidad.antibody_name}"
                                                                name="antibody_name" data-toggle="tooltip"
@@ -102,15 +99,13 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
 
-                                        <div class="row">
                                             <div class="col-md-8">
 
                                                 <div class="form-group">
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
-                                                            <span class="input-group-text"></span>
+                                                            <span class="input-group-text"><i class="fa fa-sort-alpha-up"></i></span>
                                                         </div>
                                                         <input type="text" id="target_protein" name="target_protein" value="${entidad.target_protein}"
                                                                data-toggle="tooltip" data-state="primary"
@@ -126,7 +121,7 @@
                                                 <div class="form-group">
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
-                                                            <span class="input-group-text"></span>
+                                                            <span class="input-group-text"><i class="fa fa-sort-alpha-up"></i></span>
                                                         </div>
                                                         <input type="text" id="target_domain" name="target_domain" value="${entidad.target_domain}"
                                                                data-toggle="tooltip" data-state="primary"
@@ -141,7 +136,7 @@
                                                 <div class="form-group">
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
-                                                            <span class="input-group-text"></span>
+                                                            <span class="input-group-text"><i class="fa fa-sort-alpha-up"></i></span>
                                                         </div>
                                                         <input type="text" id="target_epitope" name="target_epitope" value="${entidad.target_epitope}"
                                                                data-toggle="tooltip" data-state="primary"
@@ -157,7 +152,7 @@
                                                 <div class="form-group">
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
-                                                            <span class="input-group-text"></span>
+                                                            <span class="input-group-text"><i class="fa fa-sort-alpha-up"></i></span>
                                                         </div>
                                                         <input type="text" id="antibody_isotype" name="antibody_isotype" value="${entidad.antibody_isotype}"
                                                                data-toggle="tooltip" data-state="primary"
@@ -173,7 +168,7 @@
                                                 <div class="form-group">
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
-                                                            <span class="input-group-text"></span>
+                                                            <span class="input-group-text"><i class="fa fa-sort-alpha-up"></i></span>
                                                         </div>
                                                         <input type="text" id="virus_serotype" name="virus_serotype" value="${entidad.virus_serotype}"
                                                                data-toggle="tooltip" data-state="primary"
@@ -189,7 +184,7 @@
                                                 <div class="form-group">
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
-                                                            <span class="input-group-text"></span>
+                                                            <span class="input-group-text"><i class="fa fa-sort-alpha-up"></i></span>
                                                         </div>
                                                         <input type="text" id="batch_number" name="batch_number" value="${entidad.batch_number}"
                                                                data-toggle="tooltip" data-state="primary"
@@ -200,12 +195,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-
-
-
-
-
-                                        </div>
 
                                         <div class="col-md-4">
 					                    <div class="form-group">
@@ -226,7 +215,7 @@
                                             <div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <span class="input-group-text"></span>
+                                                        <span class="input-group-text"><i class="fa fa-sort-alpha-up"></i></span>
                                                     </div>
                                                     <input type="text" id="person_name" name="person_name" value="${entidad.person_name}"
                                                            data-toggle="tooltip" data-state="primary"
@@ -242,7 +231,7 @@
                                             <div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <span class="input-group-text"></span>
+                                                        <span class="input-group-text"><i class="fa fa-sort-alpha-up"></i></span>
                                                     </div>
                                                     <input type="text" id="source_name" name="source_name" value="${entidad.source_name}"
                                                            data-toggle="tooltip" data-state="primary"
@@ -258,7 +247,7 @@
                                             <div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <span class="input-group-text"></span>
+                                                        <span class="input-group-text"><i class="fa fa-sort-numeric-up"></i></span>
                                                     </div>
                                                     <input type="text" id="aliquot_volume" name="aliquot_volume" value="${entidad.aliquot_volume}"
                                                            data-toggle="tooltip" data-state="primary"
@@ -274,7 +263,7 @@
                                             <div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <span class="input-group-text"></span>
+                                                        <span class="input-group-text"><i class="fa fa-sort-alpha-up"></i></span>
                                                     </div>
                                                     <input type="text" id="medium_buffer" name="medium_buffer" value="${entidad.medium_buffer}"
                                                            data-toggle="tooltip" data-state="primary"
@@ -290,7 +279,7 @@
                                             <div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <span class="input-group-text"></span>
+                                                        <span class="input-group-text"><i class="fa fa-sort-alpha-up"></i></span>
                                                     </div>
                                                     <input type="text" id="concentration" name="concentration" value="${entidad.concentration}"
                                                            data-toggle="tooltip" data-state="primary"
@@ -302,12 +291,11 @@
                                             </div>
                                         </div>
 
-                                        <div class="row">
                                         <div class="col-md-8">
                                             <div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <span class="input-group-text"></span>
+                                                        <span class="input-group-text"><i class="fa fa-sort-alpha-up"></i></span>
                                                     </div>
                                                     <input type="text" id="technique1" name="technique1" value="${entidad.technique1}"
                                                            data-toggle="tooltip" data-state="primary"
@@ -323,7 +311,7 @@
                                             <div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <span class="input-group-text"></span>
+                                                        <span class="input-group-text"><i class="fa fa-sort-alpha-up"></i></span>
                                                     </div>
                                                     <input type="text" id="technique1_concentration1" name="technique1_concentration1" value="${entidad.technique1_concentration1}"
                                                            data-toggle="tooltip" data-state="primary"
@@ -334,14 +322,12 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        </div>
 
-                                        <div class="row">
                                             <div class="col-md-8">
                                                 <div class="form-group">
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
-                                                            <span class="input-group-text"></span>
+                                                            <span class="input-group-text"><i class="fa fa-sort-alpha-up"></i></span>
                                                         </div>
                                                         <input type="text" id="technique2" name="technique2" value="${entidad.technique2}"
                                                                data-toggle="tooltip" data-state="primary"
@@ -357,7 +343,7 @@
                                                 <div class="form-group">
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
-                                                            <span class="input-group-text"></span>
+                                                            <span class="input-group-text"><i class="fa fa-sort-alpha-up"></i></span>
                                                         </div>
                                                         <input type="text" id="technique2_concentration2" name="technique2_concentration2" value="${entidad.technique2_concentration2}"
                                                                data-toggle="tooltip" data-state="primary"
@@ -368,14 +354,12 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
 
-                                        <div class="row">
                                             <div class="col-md-8">
                                                 <div class="form-group">
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
-                                                            <span class="input-group-text"></span>
+                                                            <span class="input-group-text"><i class="fa fa-sort-alpha-up"></i></span>
                                                         </div>
                                                         <input type="text" id="technique3" name="technique3" value="${entidad.technique3}"
                                                                data-toggle="tooltip" data-state="primary"
@@ -391,7 +375,7 @@
                                                 <div class="form-group">
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
-                                                            <span class="input-group-text"></span>
+                                                            <span class="input-group-text"><i class="fa fa-sort-alpha-up"></i></span>
                                                         </div>
                                                         <input type="text" id="technique3_concentration3" name="technique3_concentration3" value="${entidad.technique3_concentration3}"
                                                                data-toggle="tooltip" data-state="primary"
@@ -402,13 +386,12 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
 
                                         <div class="col-md-8">
                                             <div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <span class="input-group-text"></span>
+                                                        <span class="input-group-text"><i class="fa fa-sort-alpha-up"></i></span>
                                                     </div>
                                                     <input type="text" id="storage_temperature" name="storage_temperature" value="${entidad.storage_temperature}"
                                                            data-toggle="tooltip" data-state="primary"
@@ -420,10 +403,6 @@
                                             </div>
                                         </div>
 
-                                        <div class="row">
-                                        </div>
-
-                                        <div class="row">
                                             <div class="modal-body">
                                             <div class="col-md-4">
                                                 <div class="form-group">
@@ -504,15 +483,11 @@
                                             </div>
                                             </div>
 
-                                        </div>
-
-                                        <div class="row">
-
                                             <div class="col-md-8">
                                                 <div class="form-group">
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
-                                                            <span class="input-group-text"></span>
+                                                            <span class="input-group-text"><i class="fa fa-sort-alpha-up"></i></span>
                                                         </div>
                                                         <input type="text" id="additional_comments" name="additional_comments" value="${entidad.additional_comments}"
                                                                data-toggle="tooltip" data-state="primary"
@@ -523,9 +498,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-
-
-                                        </div>
 
 <br><br><br>
 
