@@ -45,7 +45,7 @@
                 </a>
               </li>
             </ul>
-            <!--
+
             <ul class="sidenav-menu">
                 <li class="sidenav-item antibodies">
                     <a href="<spring:url value="/capture/antibodies/" htmlEscape="true "/>" class="sidenav-link">
@@ -53,7 +53,7 @@
                     </a>
                 </li>
             </ul>
-            -->
+     
         </li>
         <li class="sidenav-item storage">
             <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><i class="sidenav-icon ion ion-md-archive"></i>
