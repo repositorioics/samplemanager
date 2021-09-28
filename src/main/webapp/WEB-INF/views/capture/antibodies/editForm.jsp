@@ -55,7 +55,7 @@
 
 				                    <div class="col-md-8">
 				                      <form action="#" autocomplete="off" id="edit-form">
-
+                                      <div class="col-md-8">
                                       <div class="form-group">
                                           <div class="input-group">
                                               <div class="input-group-prepend">
@@ -64,6 +64,7 @@
                                               <input type="text" id="systemId" name="systemId" readonly value="${entidad.systemId}"
                                                      data-toggle="tooltip" data-state="primary" data-placement="right" title="<spring:message code="systemId" />"
                                                      class="form-control" placeholder="<spring:message code="systemId" />">
+                                              </div>
                                           </div>
                                       </div>
 

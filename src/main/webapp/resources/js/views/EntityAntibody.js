@@ -6,7 +6,12 @@ var ProcessEntity = function () {
             language:parametros.lenguaje;
             var isRtl = $('html').attr('dir') === 'rtl';
 
-
+            $('#date_produced').datepicker({
+                orientation: isRtl ? 'auto right' : 'auto left',
+                format:'yyyy-mm-dd',
+                autoclose: true,
+                language:parametros.lenguaje
+            });
 
             // Select2
             $(function() {

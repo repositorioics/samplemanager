@@ -55,16 +55,15 @@
 				                      <form action="#" autocomplete="off" id="edit-form">
 				                      	<div class="form-group">
 					                    </div>
-                                        <div class="row">
+
                                             <div class="col-md-8">
                                                 <div class="form-group">
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
-                                                                    <span class="input-group-text"><i
-                                                                            class="fa fa-key"></i></span>
+                                                            <span class="input-group-text"><i class="fa fa-key"></i></span>
                                                         </div>
                                                         <input type="text" id="antibody_id" name="antibody_id"
-                                                               data-toggle="tooltip" data-state="danger" style="width: 100%" data-allow-clear="true"
+                                                               data-toggle="tooltip" data-state="danger"
                                                                data-placement="right"
                                                                title="<spring:message code="antibody_id" />"
                                                                class="form-control"
@@ -88,7 +87,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+
 
                                             <div class="col-md-8">
 

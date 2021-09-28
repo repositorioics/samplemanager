@@ -9,7 +9,12 @@ var SearchProcess = function () {
             var viewMess = parametros.viewMessage;
             var editMess = parametros.editMessage;
 
-
+            $('#date_produced').datepicker({
+                orientation: isRtl ? 'auto right' : 'auto left',
+                format: 'yyyy-mm-dd',
+                autoclose: true,
+                language: parametros.language
+            });
 
             // Select2
             $(function () {
