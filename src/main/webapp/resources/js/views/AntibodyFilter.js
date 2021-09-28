@@ -99,7 +99,7 @@ var SearchProcess = function () {
                         }
                     },
                     {
-                        extend: 'pdfHtml5',
+                        extend: 'pdf',    
                         orientation: 'landscape',
                         pageSize: 'LEGAL',
                         exportOptions: {
