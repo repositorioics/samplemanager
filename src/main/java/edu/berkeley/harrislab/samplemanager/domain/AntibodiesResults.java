@@ -11,11 +11,12 @@ public class AntibodiesResults {
     private String target_domain;
     private String target_epitope;
     private String antibody_isotype;
-    private String virus_serotype;
+    private String recognizes;
     private String batch_number;
     private String date_produced;
     private String person_name;
     private String source_name;
+    private String raised_in;
     private Float aliquot_volume;
     private String medium_buffer;
     private String concentration;
@@ -88,12 +89,12 @@ public class AntibodiesResults {
         this.antibody_isotype = antibody_isotype;
     }
 
-    public String getvirus_serotype() {
-        return virus_serotype;
+    public String getRecognizes() {
+        return recognizes;
     }
 
-    public void setvirus_serotype(String virus_serotype) {
-        this.virus_serotype = virus_serotype;
+    public void setRecognizes(String recognizes) {
+        this.recognizes = recognizes;
     }
 
     public String getbatch_number() {
@@ -126,6 +127,14 @@ public class AntibodiesResults {
 
     public void setsource_name(String source_name) {
         this.source_name = source_name;
+    }
+
+    public String getRaised_in() {
+        return raised_in;
+    }
+
+    public void setRaised_in(String raised_in) {
+        this.raised_in = raised_in;
     }
 
     public Float getaliquot_volume() {

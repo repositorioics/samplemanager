@@ -24,11 +24,12 @@ public class Antibody extends BaseMetaData implements Auditable {
     private String target_domain;
     private String target_epitope;
     private String antibody_isotype;
-    private String virus_serotype;
+    private String recognizes;
     private String batch_number;
     private Date date_produced;
     private String person_name;
     private String source_name;
+    private String raised_in;
     private Float aliquot_volume;
     private String medium_buffer;
     private String concentration;
@@ -114,12 +115,12 @@ public class Antibody extends BaseMetaData implements Auditable {
         this.antibody_isotype = antibody_isotype;
     }
 
-    @Column(name = "virus_serotype", nullable = true, length =30)
-    public String getVirus_serotype () {
-        return virus_serotype;
+    @Column(name = "recognizes", nullable = true, length =30)
+    public String getRecognizes () {
+        return recognizes;
     }
-    public void setVirus_serotype (String virus_serotype) {
-        this.virus_serotype = virus_serotype;
+    public void setRecognizes (String recognizes) {
+        this.recognizes = recognizes;
     }
 
     @Column(name = "batch_number", nullable = true, length =30)
@@ -152,6 +153,14 @@ public class Antibody extends BaseMetaData implements Auditable {
     }
     public void setSource_name(String source_name) {
         this.source_name = source_name;
+    }
+
+    @Column(name = "raised_in", nullable = true, length =40)
+    public String getRaised_in () {
+        return source_name;
+    }
+    public void setRaised_in(String raised_in) {
+        this.raised_in = raised_in;
     }
 
     @Column(name = "aliquot_volume", nullable = true)

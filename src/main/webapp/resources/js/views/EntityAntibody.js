@@ -63,7 +63,7 @@ var ProcessEntity = function () {
                         required: true,
                         maxlength:30
                     },
-                    'virus_serotype': {
+                    'recognizes': {
                         required: true,
                         maxlength:30
                     },
@@ -74,6 +74,11 @@ var ProcessEntity = function () {
                     'date_produced': {
                         required: true
                     },
+                    'raised_in': {
+                        required: true,
+                        maxlength:30
+                    },
+
                     'person_name': {
                         required: true,
                         maxlength:30

@@ -155,11 +155,12 @@ public class CaptureAntibodiesController {
             , @RequestParam( value="target_domain", required=true) String target_domain
             , @RequestParam( value="target_epitope", required=false, defaultValue="") String target_epitope
             , @RequestParam( value="antibody_isotype", required=false, defaultValue="") String antibody_isotype
-            , @RequestParam( value="virus_serotype", required=false, defaultValue="") String virus_serotype
+            , @RequestParam( value="recognizes", required=false, defaultValue="") String recognizes
             , @RequestParam( value="batch_number", required=false, defaultValue="") String batch_number
             , @RequestParam( value="date_produced", required=false, defaultValue="") String date_produced
             , @RequestParam( value="person_name", required=false, defaultValue="") String person_name
             , @RequestParam( value="source_name", required=true) String source_name
+            , @RequestParam( value="raised_in", required=true) String raised_in
             , @RequestParam( value="aliquot_volume", required=false, defaultValue="") Float aliquot_volume
             , @RequestParam( value="medium_buffer", required=false, defaultValue="") String medium_buffer
             , @RequestParam( value="concentration", required=false, defaultValue="") String concentration
@@ -202,10 +203,11 @@ public class CaptureAntibodiesController {
             if (!aliquot_volume.equals("")) entidad.setAliquot_volume(Float.valueOf(aliquot_volume)) ;
             if (!antibody_isotype.equals("")) entidad.setAntibody_isotype(antibody_isotype);
            // if (!position.equals("")) entidad.setPosition_in_the_box(Integer.valueOf(position));
-            if (!virus_serotype.equals("")) entidad.setVirus_serotype(virus_serotype);
+            if (!recognizes.equals("")) entidad.setRecognizes(recognizes);
             if (!batch_number.equals("")) entidad.setBatch_number(batch_number);
             if (!person_name.equals("")) entidad.setPerson_name(person_name);
             if (!source_name.equals("")) entidad.setSource_name(source_name);
+            if (!raised_in.equals("")) entidad.setRaised_in(raised_in);
 
             if (!concentration.equals("")) entidad.setConcentration(concentration);
             if (!technique1.equals("")) entidad.setTechnique1(technique1);
@@ -323,11 +325,12 @@ public class CaptureAntibodiesController {
             , @RequestParam( value="target_domain", required=true) String target_domain
             , @RequestParam( value="target_epitope", required=false, defaultValue="") String target_epitope
             , @RequestParam( value="antibody_isotype", required=false, defaultValue="") String antibody_isotype
-            , @RequestParam( value="virus_serotype", required=false, defaultValue="") String virus_serotype
+            , @RequestParam( value="recognizes", required=false, defaultValue="") String recognizes
             , @RequestParam( value="batch_number", required=false, defaultValue="") String batch_number
             , @RequestParam( value="date_produced", required=false, defaultValue="") String date_produced
             , @RequestParam( value="person_name", required=false, defaultValue="") String person_name
             , @RequestParam( value="source_name", required=true) String source_name
+            , @RequestParam( value="raised_in", required=true) String raised_in
             , @RequestParam( value="aliquot_volume", required=false, defaultValue="") Float aliquot_volume
             , @RequestParam( value="medium_buffer", required=false, defaultValue="") String medium_buffer
             , @RequestParam( value="concentration", required=false, defaultValue="") String concentration
@@ -367,10 +370,11 @@ public class CaptureAntibodiesController {
             if (!medium_buffer.equals("")) entidad.setMedium_buffer(medium_buffer);
             if (!antibody_isotype.equals("")) entidad.setAntibody_isotype(antibody_isotype);
             if (!position.equals("")) entidad.setPosition_in_the_box(Integer.valueOf(position));
-            if (!virus_serotype.equals("")) entidad.setVirus_serotype(virus_serotype);
+            if (!recognizes.equals("")) entidad.setRecognizes(recognizes);
             if (!batch_number.equals("")) entidad.setBatch_number(batch_number);
             if (!person_name.equals("")) entidad.setPerson_name(person_name);
             if (!source_name.equals("")) entidad.setSource_name(source_name);
+            if (!raised_in.equals("")) entidad.setRaised_in(raised_in);
 
             if (!concentration.equals("")) entidad.setConcentration(concentration);
             if (!technique1.equals("")) entidad.setTechnique1(technique1);

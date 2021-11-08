@@ -37,8 +37,8 @@ public class AntibodyFilterService {
         Session session = sessionFactory.getCurrentSession();
 
         String sQuery = "SELECT antibody.systemId as systemId, antibody.antibody_id as antibody_id,antibody.antibody_name as antibody_name , antibody.target_protein as target_protein, " +
-                " antibody.target_domain as target_domain, antibody.target_epitope as target_epitope, antibody.antibody_isotype as antibody_isotype, antibody.virus_serotype as virus_serotype, " +
-                " antibody.batch_number as batch_number, DATE_FORMAT(antibody.date_produced, '%Y-%m-%d') as date_produced, antibody.person_name as person_name, antibody.source_name as source_name, " +
+                " antibody.target_domain as target_domain, antibody.target_epitope as target_epitope, antibody.antibody_isotype as antibody_isotype, antibody.recognizes as recognizes, " +
+                " antibody.batch_number as batch_number, DATE_FORMAT(antibody.date_produced, '%Y-%m-%d') as date_produced, antibody.person_name as person_name, antibody.source_name as source_name, antibody.raised_in as raised_in, " +
                 " antibody.aliquot_volume as aliquot_volume, antibody.medium_buffer as medium_buffer, antibody.concentration as concentration, antibody.technique1 as technique1, antibody.technique1_concentration1 as technique1_concentration1, " +
                 " antibody.technique2 as technique2, antibody.technique2_concentration2 as technique2_concentration2, antibody.technique3 as technique3, antibody.technique3_concentration3 as technique3_concentration3, " +
                 " antibody.storage_temperature as storage_temperature, (select e.name from Equip e where e.systemId = antibody.freezer_name ) as freezer_name, (select rk.name from Rack rk where antibody.rack_name = rk.systemId ) as rack_name, " +

@@ -53,7 +53,17 @@
                     </a>
                 </li>
             </ul>
-     
+
+            <!--
+            <ul class="sidenav-menu">
+                <li class="sidenav-item recombinantproteins">
+                    <a href="<spring:url value="/capture/recombinantProtein/" htmlEscape="true "/>" class="sidenav-link">
+                        <div><spring:message code="recombinantProtein" /></div>
+                    </a>
+                </li>
+            </ul>
+             -->
+
         </li>
         <li class="sidenav-item storage">
             <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><i class="sidenav-icon ion ion-md-archive"></i>

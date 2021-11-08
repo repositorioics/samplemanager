@@ -50,12 +50,11 @@
 			                <div class="col-md-12 col-lg-12 col-xl-12">
 			                  <div class="card-body demo-vertical-spacing">
 			                  		<div class="row">
-
 				                    <div class="col-md-8">
 				                      <form action="#" autocomplete="off" id="edit-form">
 				                      	<div class="form-group">
 					                    </div>
-
+                                        <div class="modal-body">
                                             <div class="col-md-8">
                                                 <div class="form-group">
                                                     <div class="input-group">
@@ -71,7 +70,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-
                                             <div class="col-md-8">
                                                 <div class="form-group">
                                                     <div class="input-group">
@@ -87,10 +85,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-
-
                                             <div class="col-md-8">
-
                                                 <div class="form-group">
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
@@ -136,7 +131,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <div class="input-group">
@@ -152,23 +146,21 @@
                                                     </div>
                                                 </div>
                                             </div>
-
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text"><i class="fa fa-sort-alpha-up"></i></span>
                                                         </div>
-                                                        <input type="text" id="virus_serotype" name="virus_serotype"
+                                                        <input type="text" id="recognizes" name="recognizes"
                                                                data-toggle="tooltip" data-state="primary"
                                                                data-placement="right"
-                                                               title="<spring:message code="virus_serotype_tool_tip" />"
+                                                               title="<spring:message code="recognizes_tool_tip" />"
                                                                class="form-control"
-                                                               placeholder="<spring:message code="virus_serotype" />">
+                                                               placeholder="<spring:message code="recognizes" />">
                                                     </div>
                                                 </div>
                                             </div>
-
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <div class="input-group">
@@ -185,7 +177,6 @@
                                                 </div>
                                             </div>
 
-
                                         <div class="col-md-4">
 					                    <div class="form-group">
 					                      <div class="input-group">
@@ -196,10 +187,9 @@
 					                        <input type="text" id="date_produced" name="date_produced" value="${fecEnr}"
 					                        	data-toggle="tooltip" data-state="primary" data-placement="right" title="<spring:message code="date" />"
 					                        		class="form-control"  data-date-end-date="0d" placeholder="<spring:message code="date" />">
-					                      </div>
-					                    </div>
-                                        </div>
-
+					                           </div>
+					                     </div>
+                                    </div>
 
                                         <div class="col-md-8">
                                             <div class="form-group">
@@ -216,7 +206,6 @@
                                                 </div>
                                             </div>
                                         </div>
-
                                         <div class="col-md-8">
                                             <div class="form-group">
                                                 <div class="input-group">
@@ -233,6 +222,22 @@
                                             </div>
                                         </div>
 
+                                            <div class="col-md-8">
+                                                <div class="form-group">
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text"><i class="fa fa-sort-alpha-up"></i></span>
+                                                        </div>
+                                                        <input type="text" id="raised_in" name="raised_in"
+                                                               data-toggle="tooltip" data-state="primary"
+                                                               data-placement="right"
+                                                               title="<spring:message code="raised_in_tool_tip" />"
+                                                               class="form-control"
+                                                               placeholder="<spring:message code="raised_in" />">
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <div class="input-group">
@@ -248,7 +253,6 @@
                                                 </div>
                                             </div>
                                         </div>
-
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <div class="input-group">
@@ -264,7 +268,6 @@
                                                 </div>
                                             </div>
                                         </div>
-
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <div class="input-group">
@@ -280,8 +283,6 @@
                                                 </div>
                                             </div>
                                         </div>
-
-
                                         <div class="col-md-8">
                                             <div class="form-group">
                                                 <div class="input-group">
@@ -297,7 +298,6 @@
                                                 </div>
                                             </div>
                                         </div>
-
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <div class="input-group">
@@ -313,9 +313,6 @@
                                                 </div>
                                             </div>
                                         </div>
-
-
-
                                             <div class="col-md-8">
                                                 <div class="form-group">
                                                     <div class="input-group">
@@ -331,7 +328,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <div class="input-group">
@@ -347,9 +343,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-
-
-
                                             <div class="col-md-8">
                                                 <div class="form-group">
                                                     <div class="input-group">
@@ -365,7 +358,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <div class="input-group">
@@ -381,8 +373,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-
-
                                         <div class="col-md-8">
                                             <div class="form-group">
                                                 <div class="input-group">
@@ -399,7 +389,6 @@
                                             </div>
                                         </div>
 
-                                            <div class="modal-body">
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label class="form-label"><spring:message code="equip" /></label> <span class="badge badge-dot badge-danger"></span>
@@ -411,18 +400,14 @@
                                                     </select>
                                                 </div>
                                             </div>
-
                                             <div class="col-md-4">
-
                                                     <div class="form-group">
                                                         <label class="form-label"><spring:message code="rack" /></label> <span class="badge badge-dot badge-danger"></span>
                                                         <select class="select2-control form-control" id="rack" name="rack" style="width: 100%" data-allow-clear="false">
                                                             <option value=""></option>
                                                         </select>
                                                     </div>
-
                                             </div>
-
                                                 <div class="col-md-4">
                                                     <div class="form-group">
                                                         <label class="form-label"><spring:message code="box" /></label> <span class="badge badge-dot badge-danger"></span>
@@ -431,7 +416,6 @@
                                                         </select>
                                                     </div>
                                                 </div>
-
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label class="form-label"><spring:message code="pos" /></label> <span class="badge badge-dot badge-danger"></span>
@@ -440,7 +424,7 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            </div>
+
                                             <div class="col-md-8">
                                                 <div class="form-group">
                                                     <div class="input-group">
@@ -457,11 +441,8 @@
                                                 </div>
                                             </div>
 
-
-
-
+                                        </div>
 <br><br><br>
-
                                         <div class="form-group">
                                             <button type="submit" class="btn rounded-pill btn-outline-primary"
                                                     data-toggle="tooltip" data-placement="bottom" title="<spring:message code="saveRecord" />"
@@ -470,14 +451,11 @@
 										  			data-toggle="tooltip" data-placement="bottom" title="<spring:message code="cancelRecord" />">
 										  				<i class="ion ion-md-close-circle"></i>     <spring:message code="end" /></a>
 				                        </div>
-
 				                      </form>
 				                    </div>
 				                  </div>
-			                  
 			                  </div>
 			                </div>
-			
 			              </div>
 			            </div>
          			</div>

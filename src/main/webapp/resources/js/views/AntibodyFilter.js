@@ -99,7 +99,7 @@ var SearchProcess = function () {
                         }
                     },
                     {
-                        extend: 'pdf',    
+                        extend: 'pdf',
                         orientation: 'landscape',
                         pageSize: 'LEGAL',
                         exportOptions: {
@@ -143,11 +143,12 @@ var SearchProcess = function () {
                     { data: 'target_domain' },
                     { data: 'target_epitope' },
                     { data: 'antibody_isotype' },
-                    { data: 'virus_serotype' },
+                    { data: 'recognizes' },
                     { data: 'batch_number' },
                     { data: 'date_produced'},
                     { data: 'person_name'},
                     { data: 'source_name' },
+                    { data: 'raised_in' },
                     { data: 'aliquot_volume' },
                     { data: 'medium_buffer' },
                     { data: 'concentration' },

@@ -144,11 +144,12 @@
                                     <th><spring:message code="target_domain"/></th>
                                     <th><spring:message code="target_epitope"/></th>
                                     <th><spring:message code="antibody_isotype"/></th>
-                                    <th><spring:message code="virus_serotype"/></th>
+                                    <th><spring:message code="recognizes"/></th>
                                     <th><spring:message code="batch_number"/></th>
                                     <th><spring:message code="date"/></th>
                                     <th><spring:message code="person_name"/></th>
                                     <th><spring:message code="source_name"/></th>
+                                    <th><spring:message code="raised_in"/></th>
                                     <th><spring:message code="aliquot_volume"/></th>
                                     <th class="none" ><spring:message code="medium_buffer"/></th>
                                     <th class="none" ><spring:message code="concentration"/></th>
