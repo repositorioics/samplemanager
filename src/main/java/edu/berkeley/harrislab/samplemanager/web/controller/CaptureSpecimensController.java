@@ -653,7 +653,7 @@ public class CaptureSpecimensController {
 
 
 	/**
-	 * Custom handler for searching.
+	 * Custom handler for searhing.
 	 *
 	 * @return a ModelMap with the model attributes for the view
 	 */
@@ -673,7 +673,7 @@ public class CaptureSpecimensController {
 				specimensList = new ArrayList<>();
 
         }else{
-         //   entidadesSQL = DownSQLUpdateService.getSpecimensByFilter1();
+
 			specimensList = specimenFilterService.getSpecimensByFilter(specFilters);
 
 		}

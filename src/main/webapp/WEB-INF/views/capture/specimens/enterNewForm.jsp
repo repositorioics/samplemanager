@@ -132,7 +132,7 @@
 					                    
 					                    <div class="form-group">
 					                    	<label class="form-label"><spring:message code="volUnits" /></label>
-						                	<select class="select2-control form-control" id="volUnits1" name="volUnits1" style="width: 100%" data-allow-clear="false">
+						                	<select class="select2-control form-control" id="volUnits" name="volUnits" style="width: 100%" data-allow-clear="false">
 						                		<option  value="" ></option>
 					                        	<c:forEach items="${volUnits}" var="volUnit">
 													<option   value="${volUnit.catKey}"> <spring:message code="${volUnit.messageKey}"  />  </option>
@@ -356,10 +356,19 @@
         }
               
     });
-    $(document).ready(function(){
-        $("#volUnits1").val("ul");
+
+
+    $(function(){
+        $("#volUnits").val ('ul');
+        $('#volUnits').trigger('change');
+
+
     });
+
   	$('#specimenId').focus();
 	</script>
+    <script>
+        document.ready = document.getElementById("volUnits").value = 'ul';
+    </script>
 </body>
 </html>
