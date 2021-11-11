@@ -395,6 +395,7 @@ public class CaptureSpecimensController {
 			if (!labReceiptDate.equals("")) {
 				fechaIngreso=formatter.parse(labReceiptDate);
 				entidad.setLabReceiptDate(fechaIngreso);
+
 			}
 			if (!substudy.equals("")) entidad.setSubstudy(substudy);
 			if (!volume.equals("")) {
