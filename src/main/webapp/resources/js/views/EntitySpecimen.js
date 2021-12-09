@@ -80,6 +80,9 @@ return {
 
       'substudy': {
           required: false
+        },
+        'volUnits': {
+            required: true
         }
     },
     // Errors
@@ -185,11 +188,12 @@ return {
 	    				data = data.replace(/u0027/g,"");
 	    				toastr.error(data, parametros.errormessage, {
 	    					    closeButton: true,
-	    					    progressBar: true,
+	    					    progressBar: true
 	    					  });
 	    				$.unblockUI();
 					}
 					else{
+
 						$.blockUI({ message: parametros.successmessage });
 						setTimeout(function() { 
 				            $.unblockUI({ 
@@ -202,7 +206,7 @@ return {
 				                		$('#specimenCondition').val('').trigger('change');
 				                		$('#varA').val("");
 				                		$('#varB').val("");
-				                		$('#volUnits').val('').trigger('change');
+
 				                		$('#orthocode').val("");
 				                		$('#obs').val("");
 				                		$('#boxSpecId').trigger('change');
