@@ -59,6 +59,13 @@
                             class="btn rounded-pill btn-outline-primary"><i class="fa fa-plus"></i>&nbsp;
                         <spring:message code="add"/></button>
 
+                    <button id="lista_entidades_import" data-toggle="tooltip" data-placement="bottom"
+                            title="<spring:message code="importEntityToolTip" />"
+                            onclick="location.href='${fn:escapeXml(uploadEntity)}'" type="button"
+                            class="btn rounded-pill btn-outline-primary"><i class="fa fa-file-upload"></i>&nbsp;
+                        <spring:message code="import"/></button>
+
+
                     <br><br>
 
                     <div class="card mb-4" id="entity-element">
@@ -82,10 +89,10 @@
                                                                     <span class="input-group-text"><i
                                                                             class="fa fa-key"></i></span>
                                                         </div>
-                                                        <input type="text" id="antibody_id" name="antibody_id"
+                                                        <input type="text" id="protrecombinante_id" name="protrecombinante_id"
                                                                data-toggle="tooltip" data-state="primary"
                                                                data-placement="right"
-                                                               title="<spring:message code="protrecombinante_id" />"
+                                                               title="<spring:message code="protrecombinante_id_tool_tip" />"
                                                                class="form-control"
                                                                placeholder="<spring:message code="protrecombinante_id" />">
                                                     </div>
@@ -107,19 +114,18 @@
 
                                             </div>
 
-
                                                 <div class="col-md-4">
                                                     <div class="form-group">
                                                         <div class="input-group">
                                                             <div class="input-group-prepend">
                                                                 <span class="input-group-text"></span>
                                                             </div>
-                                                            <input type="text" id="Construct_name" name="Construct_name"
+                                                            <input type="text" id="construct_name" name="construct_name"
                                                                    data-toggle="tooltip" data-state="primary"
                                                                    data-placement="right"
-                                                                   title="<spring:message code="Construct_name_tool_tip" />"
+                                                                   title="<spring:message code="construct_name_tool_tip" />"
                                                                    class="form-control"
-                                                                   placeholder="<spring:message code="Construct_name" />">
+                                                                   placeholder="<spring:message code="construct_name" />">
                                                         </div>
                                                     </div>
 

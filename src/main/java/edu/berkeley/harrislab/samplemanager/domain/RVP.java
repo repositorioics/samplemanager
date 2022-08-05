@@ -30,24 +30,32 @@ public class RVP extends BaseMetaData implements Auditable{
 	private String rvpId;
 	private String batchName;
 	private String virusSerotype;
-	private String source;
-	private Date date;
-	private Float amount;
-	private String amountUnits;
-	private Integer noAliquots;
-	private String diltuionRvp;
-	private String rateInfection;
+	private String provider;
+	private Date date_exp;
+	private Float aliquot_volume;
+
+	private Integer num_aliq;
+	private String working_dilution;
+	private String infection_percentage;
 	private String cellType;
-	private String timePostInf;
-	private Float amountRetit;
-	private String amountRetitUnits;
-	private String obs;
+	private String Time_hpi;
+
+    private String comments;
+    private String loc_freezer;
+    private String loc_rack;
+    private String loc_box;
+    private Integer loc_pos;
 	
 	public RVP() {
 		super();
 	}
+    public RVP(Date recordDate, String recordUser, String recordIp, char pasive) {
+        super(recordDate, recordUser, recordIp, pasive);
+        // TODO Auto-generated constructor stub
+    }
 
-	@Id
+
+    @Id
     @Column(name = "systemId", nullable = false, length = 36)
     @GeneratedValue(generator = "system-uuid")
     @GenericGenerator(name = "system-uuid", strategy = "uuid2")
@@ -79,55 +87,52 @@ public class RVP extends BaseMetaData implements Auditable{
 	public void setVirusSerotype(String virusSerotype) {
 		this.virusSerotype = virusSerotype;
 	}
-	@Column(name = "source", nullable = false, length = 50)
-	public String getSource() {
-		return source;
+	@Column(name = "provider", nullable = false, length = 50)
+	public String getProvider() {
+		return provider;
 	}
-	public void setSource(String source) {
-		this.source = source;
+	public void setProvider(String provider) {
+		this.provider = provider;
 	}
-	@Column(name = "date", nullable = false)
-	public Date getDate() {
-		return date;
+	@Column(name = "date_exp", nullable = false)
+	public Date getDate_exp() {
+		return date_exp;
 	}
-	public void setDate(Date date) {
-		this.date = date;
+	public void setDate_exp(Date date_exp) {
+		this.date_exp = date_exp;
 	}
-	@Column(name = "amount", nullable = true)
-	public Float getAmount() {
-		return amount;
+	@Column(name = "aliquot_volume", nullable = true)
+	public Float getAliquot_volume() {
+		return aliquot_volume;
 	}
-	public void setAmount(Float amount) {
-		this.amount = amount;
+	public void setAliquot_volume(Float aliquot_volume) {
+		this.aliquot_volume = aliquot_volume;
 	}
-	@Column(name = "amountUnits", nullable = true, length = 50)
-	public String getAmountUnits() {
-		return amountUnits;
+
+	@Column(name = "num_aliq", nullable = true)
+	public Integer getNum_aliq() {
+		return num_aliq;
 	}
-	public void setAmountUnits(String amountUnits) {
-		this.amountUnits = amountUnits;
+	public void setNum_aliq(Integer num_aliq) {
+		this.num_aliq = num_aliq;
 	}
-	@Column(name = "noAliquots", nullable = true)
-	public Integer getNoAliquots() {
-		return noAliquots;
+
+	@Column(name = "working_dilution", nullable = true, length = 50)
+	public String getWorking_dilution() {
+		return working_dilution;
 	}
-	public void setNoAliquots(Integer noAliquots) {
-		this.noAliquots = noAliquots;
+	public void setWorking_dilution(String working_dilution) {
+		this.working_dilution = working_dilution;
 	}
-	@Column(name = "diltuionRvp", nullable = true, length = 50)
-	public String getDiltuionRvp() {
-		return diltuionRvp;
+
+	@Column(name = "infection_percentage", nullable = true, length = 50)
+	public String getInfection_percentage() {
+		return infection_percentage;
 	}
-	public void setDiltuionRvp(String diltuionRvp) {
-		this.diltuionRvp = diltuionRvp;
+	public void setInfection_percentage(String infection_percentage) {
+		this.infection_percentage = infection_percentage;
 	}
-	@Column(name = "rateInfection", nullable = true, length = 50)
-	public String getRateInfection() {
-		return rateInfection;
-	}
-	public void setRateInfection(String rateInfection) {
-		this.rateInfection = rateInfection;
-	}
+
 	@Column(name = "cellType", nullable = true, length = 50)
 	public String getCellType() {
 		return cellType;
@@ -135,34 +140,56 @@ public class RVP extends BaseMetaData implements Auditable{
 	public void setCellType(String cellType) {
 		this.cellType = cellType;
 	}
-	@Column(name = "timePostInf", nullable = true, length = 50)
-	public String getTimePostInf() {
-		return timePostInf;
+
+	@Column(name = "Time_hpi", nullable = true, length = 50)
+	public String getTime_hpi() {
+		return Time_hpi;
 	}
-	public void setTimePostInf(String timePostInf) {
-		this.timePostInf = timePostInf;
+	public void setTime_hpi(String Time_hpi) {
+		this.Time_hpi = Time_hpi;
 	}
-	@Column(name = "amountRetit", nullable = true)
-	public Float getAmountRetit() {
-		return amountRetit;
-	}
-	public void setAmountRetit(Float amountRetit) {
-		this.amountRetit = amountRetit;
-	}
-	@Column(name = "amountRetitUnits", nullable = true, length = 50)
-	public String getAmountRetitUnits() {
-		return amountRetitUnits;
-	}
-	public void setAmountRetitUnits(String amountRetitUnits) {
-		this.amountRetitUnits = amountRetitUnits;
-	}
-	@Column(name = "obs", nullable = true, length = 500)
-	public String getObs() {
-		return obs;
-	}
-	public void setObs(String obs) {
-		this.obs = obs;
-	}
+
+
+
+    @Column(name = "comments", nullable = true, length =40)
+    public String getComments () {
+        return comments;
+    }
+    public void setComments (String comments) {
+        this.comments = comments;
+    }
+
+    @Column(name = "loc_freezer", nullable = true, length =40)
+    public String getLoc_freezer() {
+        return loc_freezer;
+    }
+    public void setLoc_freezer (String loc_freezer) {
+        this.loc_freezer = loc_freezer;
+    }
+
+    @Column(name = "loc_rack", nullable = true, length =40)
+    public String getLoc_rack  () {
+        return loc_rack;
+    }
+    public void setLoc_rack (String loc_rack) {
+        this.loc_rack = loc_rack;
+    }
+
+    @Column(name = "loc_box", nullable = true, length =40)
+    public String getLoc_box () {
+        return loc_box;
+    }
+    public void setLoc_box (String loc_box) {
+        this.loc_box = loc_box;
+    }
+
+    @Column(name = "loc_pos", nullable = true)
+    public Integer getLoc_pos () {
+        return loc_pos;
+    }
+    public void setLoc_pos (Integer loc_pos) {
+        this.loc_pos = loc_pos;
+    }
 	
 
 	@Override

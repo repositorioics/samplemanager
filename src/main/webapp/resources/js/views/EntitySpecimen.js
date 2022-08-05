@@ -83,6 +83,9 @@ return {
         },
         'volUnits': {
             required: true
+        },
+        'estado': {
+            required: false
         }
     },
     // Errors
@@ -211,6 +214,7 @@ return {
 				                		$('#obs').val("");
 				                		$('#boxSpecId').trigger('change');
 				                		$('#specimenId').focus();
+                                        $('#estado').val("");
 
 				                	}
 				                } 

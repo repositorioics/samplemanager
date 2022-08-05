@@ -54,7 +54,6 @@
                 </li>
             </ul>
 
-            <!--
             <ul class="sidenav-menu">
                 <li class="sidenav-item recombinantproteins">
                     <a href="<spring:url value="/capture/recombinantProtein/" htmlEscape="true "/>" class="sidenav-link">
@@ -62,13 +61,63 @@
                     </a>
                 </li>
             </ul>
-             -->
+
+            <ul class="sidenav-menu">
+                <li class="sidenav-item plasmids">
+                    <a href="<spring:url value="/capture/plasmids/" htmlEscape="true "/>" class="sidenav-link">
+                        <div><spring:message code="plasmids" /></div>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="sidenav-menu">
+                <li class="sidenav-item primers">
+                    <a href="<spring:url value="/capture/primers/" htmlEscape="true "/>" class="sidenav-link">
+                        <div><spring:message code="primers" /></div>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="sidenav-menu">
+                <li class="sidenav-item cells">
+                    <a href="<spring:url value="/capture/cells/" htmlEscape="true "/>" class="sidenav-link">
+                        <div><spring:message code="Cells" /></div>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="sidenav-menu">
+                <li class="sidenav-item Rvps">
+                    <a href="<spring:url value="/capture/RVPs/" htmlEscape="true "/>" class="sidenav-link">
+                        <div><spring:message code="RVPs" /></div>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="sidenav-menu">
+                <li class="sidenav-item Viruses">
+                    <a href="<spring:url value="/capture/viruses/" htmlEscape="true "/>" class="sidenav-link">
+                        <div><spring:message code="viruses" /></div>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="sidenav-menu">
+                <li class="sidenav-item Molecular_Clone">
+                    <a href="<spring:url value="/capture/molecularClone/" htmlEscape="true "/>" class="sidenav-link">
+                        <div><spring:message code="Molecular_Clone" /></div>
+                    </a>
+                </li>
+            </ul>
 
         </li>
+
         <li class="sidenav-item storage">
+
             <a href="javascript:void(0)" class="sidenav-link sidenav-toggle"><i class="sidenav-icon ion ion-md-archive"></i>
               <div><spring:message code="storage" /></div>
             </a>
+
             <ul class="sidenav-menu">
               <li class="sidenav-item storespecimens">
                 <a href="<spring:url value="/capture/storespecimens/" htmlEscape="true "/>" class="sidenav-link">
@@ -76,6 +125,7 @@
                 </a>
               </li>
             </ul>
+
             <ul class="sidenav-menu">
                 <li class="sidenav-item fileuploadexcel" >
                     <a href="<spring:url value="/admin/fileuploadexcell/" htmlEscape="true "/>" class="sidenav-link">
@@ -83,6 +133,7 @@
                     </a>
                 </li>
             </ul>
+
         </li>
         <sec:authorize url="/admin/">
         <li class="sidenav-item admin">

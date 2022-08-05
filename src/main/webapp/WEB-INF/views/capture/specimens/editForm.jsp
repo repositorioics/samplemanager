@@ -62,7 +62,8 @@
 					                        		data-toggle="tooltip" data-state="primary" data-placement="right" title="<spring:message code="systemId" />" 
 					                        				class="form-control" placeholder="<spring:message code="systemId" />">
 					                      </div>
-					                    </div>                      
+					                    </div>
+
 										<div class="form-group">
 					                      <div class="input-group">
 					                      	<div class="input-group-prepend">
@@ -72,6 +73,16 @@
 					                        	data-toggle="tooltip" data-state="danger" data-placement="right" title="<spring:message code="specimenId" />" 
 					                        		class="form-control" placeholder="<spring:message code="specimenId" />">
 					                      </div>
+
+                                            <div class="form-group">
+                                                <label class="form-label"><spring:message code="estado" /></label> <span class="badge badge-dot badge-danger"></span>
+                                                <select class="select2-control form-control" id="estado" name="estado" style="width: 100%" data-allow-clear="false">
+                                                    <option value="">Seleccione</option>
+                                                    <option value="1">Activo</option>
+                                                    <option value="0">Inactivo</option>
+                                                </select>
+                                            </div>
+
 					                    </div>	
 					                    
 					                    <div class="form-group">
@@ -330,6 +341,8 @@
   	$('[data-toggle="tooltip"]').tooltip();
     $(document).ready(function(){
         $("#volUnits").val("ul");
+
+
     });
 	</script>
 </body>

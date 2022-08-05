@@ -58,6 +58,10 @@ var SearchProcess = function () {
 
                     'orthocode': {
                         required: false
+                    },
+
+                    'estado': {
+                        required: false
                     }
 
 
@@ -132,6 +136,7 @@ var SearchProcess = function () {
                         filtros['labReceiptDate'] = $('#labReceiptDate').val();
                         filtros['studyId'] = $('#studyId option:selected').val();
                         filtros['box'] = $('#box').val();
+                        filtros['estado'] = $('#estado option:selected').val();
                         filtros['activeSearch'] = activeSearch;
                         d.strFilter = JSON.stringify(filtros);
                         return d;

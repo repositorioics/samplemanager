@@ -8,6 +8,8 @@
   <jsp:include page="../../fragments/headTag.jsp" />
 </head>
 <body>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 	<div class="page-loader">
     	<div class="bg-primary"></div>
   	</div>
@@ -25,7 +27,7 @@
 				</nav>
 				<!-- / Layout navbar -->
 				<!-- Layout content -->
-        		<div class="layout-content">
+        		<div class="layout-content" >
         			<!-- Content -->
          			<div class="container-fluid flex-grow-1 container-p-y">
          				<jsp:useBean id="now" class="java.util.Date"/>    
@@ -53,9 +55,9 @@
 				                	</tr>
 				                </thead>
 				                <tbody>
-				                	<c:forEach items="${entidades_error}" var="entidad_error">
+				                	<c:forEach items="${entidadesErr}" var="entidad">
 				                		<tr>
-				                            <td><c:out value="${entidad_error.obs}" /></td>
+				                            <td><c:out value="${entidad.specimenId }" /></td>
 
 				                		</tr>
 				                	</c:forEach>
@@ -130,12 +132,17 @@
 	              }
 	          ]
 	      });
+
         });
 		$('.import-error').hide();
 	  
 	    if ("${importError}"){
 		  $('.import-error').show();
 	    }
+        else {
+
+            swal("${numFilas}" + " Records Processed Successfully");
+        }
 		
 	</script>
 	

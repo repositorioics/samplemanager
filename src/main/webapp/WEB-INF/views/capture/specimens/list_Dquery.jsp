@@ -42,6 +42,7 @@
                    <div id="wrap" >
                     <br><br>
                     <div class="import-results col-md-12 col-lg-12 col-xl-12">
+                        <div class="table-container">
                     <table id="lista_entidades11" class="table table-striped table-bordered datatable" data-show-toggle="true"   >
                         <thead>
                         <tr>
@@ -65,7 +66,7 @@
 
                         </tr>
                         </thead>
-                        <tbody>
+                        <tbody >
                         <c:forEach items="${lista_entidades1}" var="lista_entidades1">
                             <tr>
                                 <td><c:out value="${lista_entidades1.specimenId}" /></td>
@@ -90,6 +91,7 @@
                         </c:forEach>
                         </tbody>
                     </table>
+                        </div>
                       </div>
                    </div>
                 <!-- / Content -->

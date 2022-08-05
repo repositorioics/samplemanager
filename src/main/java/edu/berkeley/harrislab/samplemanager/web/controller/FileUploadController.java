@@ -138,7 +138,6 @@ public class FileUploadController {
         return redirecTo;
     }
 
-
     /**
      * Custom handler for enabling.
      *
@@ -267,14 +266,17 @@ public class FileUploadController {
     public String submitUploadForm(@RequestParam("file") MultipartFile file, ModelMap modelMap) throws IOException {
         boolean checkLabReceiptDate = false;
         String specimenId;
-        String orthocode;
+        String orthocode, Record_user;
         String specimenCondition;
         Float volume;
         Integer varA;
         Integer varB;
         String specimenType,specimenTypeCatKey,inStorage;
+        String Record_date;
         int nuevos =0, viejos=0;
 
+        Record_user = "";
+        Record_date = "";
         Specimen entidad = new Specimen();
         Specimen entidad_error = new Specimen();
         List<Specimen> entidades = new ArrayList<Specimen>();
@@ -308,12 +310,18 @@ public class FileUploadController {
             //Get first/desired sheet from the workbook
              XSSFSheet sheet = workbook.getSheetAt(0);
 
+
+            int numFilas = sheet.getLastRowNum();
+            modelMap.addAttribute("numFilas", numFilas-1);
+            int numcol = 0;
+
             //Iterate through each rows one by one
             Iterator<Row> rowIterator = sheet.iterator();
             int contc = 2;
             int contfinalrows = 1;
             int camponoexiste = 0;
-            while (rowIterator.hasNext()) {
+            int centinelafin = 0;
+            while (rowIterator.hasNext()  ) {
                 Row row = rowIterator.next();
                 //For each row, iterate through all the columns
                 Cell c1 = row.getCell(contc);
@@ -326,8 +334,8 @@ public class FileUploadController {
                 }
                 Iterator<Cell> cellIterator = row.cellIterator();
                  int contf = 1;
-
-                while (cellIterator.hasNext() ) {
+                  numcol = row.getLastCellNum();
+                while (cellIterator.hasNext() && numcol > centinelafin ) {
                     int campoexiste = 0;
                     Cell c = row.getCell(contf);
                     Cell cell = cellIterator.next();
@@ -339,7 +347,7 @@ public class FileUploadController {
                          contfinalrows = contfinalrows - 1;
                     }
 
-                    if  ((c != null) )  {
+                    if  ((c != null ) )  {
 
                         /**Identificamos la tabla y el id
                             cada columna es un campo mas a actualizar
@@ -377,7 +385,10 @@ public class FileUploadController {
                             campoexiste ++;
                         }
                         if (sheet.getRow(1).getCell(contf).toString().equalsIgnoreCase("inStorage")){
-                            inStorage = sheet.getRow(contc).getCell(contf).toString();
+                            if (!sheet.getRow(contc).getCell(contf).toString().equals(""));
+                            {
+                                inStorage = sheet.getRow(contc).getCell(contf).toString();
+                            }
                             if ((entidad != null) && !inStorage.toString().isEmpty()) {
                                 entidad.setInStorage(inStorage);
                                 contfinalrows = contfinalrows + 1;
@@ -388,6 +399,38 @@ public class FileUploadController {
 
                             campoexiste ++;
                         }
+
+                        if (sheet.getRow(1).getCell(contf).toString().equalsIgnoreCase("Record_user")){
+                            if (!sheet.getRow(contc).getCell(contf).toString().equals("")) {
+                                Record_user = sheet.getRow(contc).getCell(contf).toString();
+                            }
+                            if ((entidad != null) && !Record_user.toString().isEmpty()) {
+                                entidad.setRecordUser(Record_user);
+                                contfinalrows = contfinalrows + 1;
+                            }else
+                            {
+                                entidad_error.setObs(entidad_error.getSpecimenId() +"  "+entidad_error.getObs() +" Error: inStorage, ") ;
+                            }
+
+                            campoexiste ++;
+                        }
+
+                        if (sheet.getRow(1).getCell(contf).toString().equalsIgnoreCase("Record_date")){
+                            if (!sheet.getRow(contc).getCell(contf).toString().equals("")) {
+                                Record_user = sheet.getRow(contc).getCell(contf).toString();
+                            }
+                            if ((entidad != null) && !Record_date.toString().isEmpty()) {
+                                SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+                                entidad.setRecordDate(formatter.parse(Record_date));
+                                contfinalrows = contfinalrows + 1;
+                            }else
+                            {
+                                entidad_error.setObs(entidad_error.getSpecimenId() +"  "+entidad_error.getObs() +" Error: inStorage, ") ;
+                            }
+
+                            campoexiste ++;
+                        }
+
                         if (sheet.getRow(1).getCell(contf).toString().equalsIgnoreCase("specimenCondition")){
 
                             specimenCondition = sheet.getRow(contc).getCell(contf, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).toString();
@@ -486,7 +529,7 @@ public class FileUploadController {
                         }
 
                     }
-
+                    centinelafin = centinelafin + 1;
             }
 
                 //se actualizan los datos de cada registro del archivo de excel
@@ -498,10 +541,10 @@ public class FileUploadController {
 
                 entidad = null;
                 }
-                entidades_error.add(entidad_error);
+
                 //contc++;
                 contfinalrows = 1;
-
+              //  centinelafin = centinelafin + 1;
             }
             if (entidad_error.getObs().toString().equals("0") )
             {
@@ -510,17 +553,21 @@ public class FileUploadController {
 
             modelMap.addAttribute("entidades", entidades);
 
+            modelMap.addAttribute("entidadesErr", entidades);
+
         }
         catch(IllegalArgumentException ile) {
             logger.error(ile.getLocalizedMessage());
             modelMap.addAttribute("importError", true);
             modelMap.addAttribute("errorMessage", ile.getLocalizedMessage());
-            return "capture/specimens/uploadResultExcel";
+            modelMap.addAttribute("entidades", entidades);
+            return "capture/specimens/uploadResulExcelt";
         }
         catch(Exception e) {
             logger.error(e.getMessage());
             modelMap.addAttribute("importError", true);
             modelMap.addAttribute("errorMessage", e.getMessage());
+            modelMap.addAttribute("entidades", entidades);
             return "capture/specimens/uploadResultExcel";
         }
 
@@ -533,6 +580,9 @@ public class FileUploadController {
                 specimen.setSpecimenType(descCatalogo);
             }
         }
+
+        modelMap.addAttribute("entidadesErr", entidades);
+
         return "capture/specimens/uploadResultExcel";
     }
 

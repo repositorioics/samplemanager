@@ -19,7 +19,10 @@
     <spring:url value="/capture/antibodies/saveEditEntity/" var="saveUrl"></spring:url>
 
     <spring:url value="/capture/antibodies/" var="listUrl"></spring:url>
-
+    <spring:url value="/capture/specimens/{systemId}/"
+                var="viewUrl">
+        <spring:param name="systemId" value="${entidad.systemId}" />
+    </spring:url>
 	<!-- Layout wrapper -->
 	<div class="layout-wrapper layout-2">
 		<div class="layout-inner">
@@ -171,12 +174,12 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text"><i class="fa fa-sort-alpha-up"></i></span>
                                                         </div>
-                                                        <input type="text" id="virus_serotype" name="virus_serotype" value="${entidad.virus_serotype}"
+                                                        <input type="text" id="recognizes" name="recognizes" value="${entidad.recognizes}"
                                                                data-toggle="tooltip" data-state="primary"
                                                                data-placement="right"
-                                                               title="<spring:message code="virus_serotype_tool_tip" />"
+                                                               title="<spring:message code="recognizes_tool_tip" />"
                                                                class="form-control"
-                                                               placeholder="<spring:message code="virus_serotype" />">
+                                                               placeholder="<spring:message code="recognizes" />">
                                                     </div>
                                                 </div>
                                             </div>
@@ -253,9 +256,9 @@
                                                     <input type="text" id="aliquot_volume" name="aliquot_volume" value="${entidad.aliquot_volume}"
                                                            data-toggle="tooltip" data-state="primary"
                                                            data-placement="right" onkeypress="return valideKey(event);"
-                                                           title="<spring:message code="aliquot_volume_tool_tip" />"
+                                                           title="<spring:message code="raised_in_tool_tip" />"
                                                            class="form-control"
-                                                           placeholder="<spring:message code="aliquot_volume" />">
+                                                           placeholder="<spring:message code="raised_in" />">
                                                 </div>
                                             </div>
                                         </div>

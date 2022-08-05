@@ -63,7 +63,11 @@ return {
       },
       'position': {
           required: true
-      }
+      },
+        'estado': {
+            required: true
+        }
+
     },
     // Errors
     //

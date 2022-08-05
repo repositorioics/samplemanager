@@ -6,6 +6,10 @@ import edu.berkeley.harrislab.samplemanager.domain.*;
 import edu.berkeley.harrislab.samplemanager.language.MessageResource;
 import edu.berkeley.harrislab.samplemanager.service.*;
 import edu.berkeley.harrislab.samplemanager.users.model.UserSistema;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.i18n.LocaleContextHolder;
@@ -17,13 +21,17 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.WebAuthenticationDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import java.io.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -421,5 +429,592 @@ public class CaptureAntibodiesController {
         Gson gson = new Gson();
         String json = gson.toJson(o);
         return new ResponseEntity<String>( json, headers, HttpStatus.CREATED );
+    }
+    @RequestMapping(value = "/uploadEntity/", method = RequestMethod.GET )
+    public String initUploadForm(Model model) {
+        this.visitsService.saveUserPages(this.usuarioService.getUser(SecurityContextHolder.getContext().getAuthentication().getName()),new Date(),"captureuploadantibodiepage");
+        return "capture/antibodies/uploadExcel";
+    }
+    /**carga el archivo excel**/
+
+    @RequestMapping(value = "/uploadEntityFile/", method = RequestMethod.POST)
+    public String submitUploadForm(@RequestParam("file") MultipartFile file, ModelMap modelMap) throws IOException {
+        boolean checkLabReceiptDate = false;
+
+         String antibody_id;   //requerido
+         String antibody_name; //requerido
+         String target_protein=""; //requerido
+         String target_domain;
+         String target_epitope="";
+         String antibody_isotype;
+         String recognizes;
+         String batch_number;
+         String date_produced;
+         String person_name;
+         String source_name;     //requerido
+         String raised_in="";      //requerido
+         Float aliquot_volume;   //requerido
+         String medium_buffer;
+         String concentration;
+         String technique1;                 //requerido
+         String technique1_concentration1;   //requerido
+         String technique2;
+         String technique2_concentration2;
+         String technique3;
+         String technique3_concentration3;
+         String storage_temperature;          //requerido
+         String freezer_name;                 //requerido
+
+         String rack_name;                    //requerido
+         String box_name;                     //requerido
+         Integer position;                    //requerido
+         String additional_comments;
+
+         String recordUser;
+         String recordDate;
+        int nuevos =0, viejos=0, id_no_validos=0;
+
+
+        Antibody entidad = new Antibody();
+        Antibody entidad_nuevos = new Antibody();
+        List<Antibody> entidades = new ArrayList<Antibody>();
+        List<Antibody> entidades_nuevos = new ArrayList<Antibody>();
+        WebAuthenticationDetails wad  = (WebAuthenticationDetails) SecurityContextHolder.getContext().getAuthentication().getDetails();
+        UserSistema usuarioActual = this.usuarioService.getUser(SecurityContextHolder.getContext().getAuthentication().getName());
+
+        try {
+            //Read the file
+            Reader in = new InputStreamReader(file.getInputStream());
+            InputStream in1 = file.getInputStream();
+            //Define the format
+            String fileLocation;
+            File currDir = new File(".");
+            String path = currDir.getAbsolutePath();
+            fileLocation = path.substring(0, path.length() - 1) + file.getOriginalFilename();
+            FileOutputStream f = new FileOutputStream(fileLocation);
+            int ch = 0;
+            while ((ch = in1.read()) != -1) {
+                f.write(ch);
+            }
+            f.flush();
+            f.close();
+
+
+            FileInputStream file2 = new FileInputStream(new File(fileLocation));
+
+            //Crear Workbook para instanciar referencia a .xlsx file
+            XSSFWorkbook workbook = new XSSFWorkbook(file2);
+
+            //Get first/desired sheet from the workbook
+            XSSFSheet sheet = workbook.getSheetAt(0);
+
+
+            int numFilas = sheet.getLastRowNum();
+            modelMap.addAttribute("numFilas", numFilas-1);
+            int numcol = 0;
+
+            //Iterate through each rows one by one
+            Iterator<Row> rowIterator = sheet.iterator();
+            int contc = 2;
+            int contfinalrows = 1;
+            int camponoexiste = 0;
+            int centinelafin = 0;
+            while (rowIterator.hasNext()  ) {
+                Row row = rowIterator.next();
+                //For each row, iterate through all the columns
+                Cell c1 = row.getCell(contc);
+                if(c1 != null && entidad == null)
+                {
+                    contc = contc + 1 ;
+                }
+                else {
+                    contc = 2;
+                }
+                Iterator<Cell> cellIterator = row.cellIterator();
+                int contf = 1;
+                numcol = row.getLastCellNum();
+                while (cellIterator.hasNext() && numcol > centinelafin ) {
+                    int campoexiste = 0;
+                    Cell c = row.getCell(contf);
+                    Cell cell = cellIterator.next();
+
+                    if ((contf != contfinalrows) && (c != null )){
+                        /**  if (contc > 3)  {
+                         contc = 2;
+                         }**/
+                        contfinalrows = contfinalrows - 1;
+                    }
+
+                    if  ((c != null ) )  {
+
+                        /**Identificamos la tabla y el id
+                         cada columna es un campo mas a actualizar
+                         en sheet el getrow 0 son los encabezados
+                         el encabezado de cada columna es el nombre de cada campo a partir de la columna 1**/
+
+
+                        if (sheet.getRow(1).getCell(contf).toString().equalsIgnoreCase("antibody_id")){
+                            antibody_id = sheet.getRow(contc).getCell(contf,  Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).toString();
+                            entidad = this.antibodyservice.getAntibodyByantibody_id(antibody_id);
+                         //   entidad_error = this.antibodyservice.getAntibodyByantibody_id(antibody_id);
+                            if (entidad != null  ) {
+                                entidad.setAntibody_id(antibody_id);
+                                contfinalrows = contfinalrows + 1;
+                                viejos = viejos + 1;
+                            }else
+                            {
+                               if(!antibody_id.toString().isEmpty()) {
+                                   entidad.setAntibody_id(antibody_id);
+                                  // entidades_nuevos.setAntibody_id(antibody_id);
+                                   nuevos = nuevos + 1;
+                               }
+                                else {
+                                   id_no_validos =  id_no_validos + 1 ;
+                               }
+
+                            }
+
+                        }
+
+                        if (sheet.getRow(1).getCell(contf).toString().equalsIgnoreCase("antibody_name")){
+                            antibody_name = sheet.getRow(contc).getCell(contf,  Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).toString();
+                            if (entidad != null  ) {
+                                entidad.setAntibody_name(antibody_name) ;
+                                contfinalrows = contfinalrows + 1;
+                            }else
+                            {
+                                if(!antibody_name.toString().isEmpty()) {
+                                    entidad.setAntibody_name(antibody_name) ;
+                                }
+                            }
+                        }
+
+                        if (sheet.getRow(1).getCell(contf).toString().equalsIgnoreCase("target_protein")){
+                            target_protein = sheet.getRow(contc).getCell(contf,  Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).toString();
+                            if (entidad != null  ) {
+                                entidad.setTarget_protein(target_protein);
+                                contfinalrows = contfinalrows + 1;
+                            }else
+                            {
+                                if(!target_protein.toString().isEmpty()) {
+                                    entidad.setTarget_protein(target_protein);
+                                }
+                            }
+                        }
+
+                        if (sheet.getRow(1).getCell(contf).toString().equalsIgnoreCase("target_domain")){
+                            target_domain = sheet.getRow(contc).getCell(contf,  Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).toString();
+                            if (entidad != null  ) {
+                                entidad.setTarget_domain(target_domain);
+                                contfinalrows = contfinalrows + 1;
+                            }else
+                            {
+                                if(!target_protein.toString().isEmpty()) {
+                                    entidad.setTarget_domain(target_domain);
+                                }
+                            }
+                        }
+
+                        if (sheet.getRow(1).getCell(contf).toString().equalsIgnoreCase("target_epitope")){
+                            target_epitope = sheet.getRow(contc).getCell(contf,  Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).toString();
+                            if (entidad != null  ) {
+                                entidad.setTarget_epitope(target_epitope);
+                                contfinalrows = contfinalrows + 1;
+                            }else
+                            {
+                                if(!target_epitope.toString().isEmpty()) {
+                                    entidad.setTarget_epitope(target_epitope);
+                                }
+                            }
+                        }
+
+                        if (sheet.getRow(1).getCell(contf).toString().equalsIgnoreCase("antibody_isotype")){
+                            antibody_isotype = sheet.getRow(contc).getCell(contf,  Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).toString();
+                            if (entidad != null  ) {
+                                entidad.setAntibody_isotype(antibody_isotype);
+                                contfinalrows = contfinalrows + 1;
+                            }else
+                            {
+                                if(!target_epitope.toString().isEmpty()) {
+                                    entidad.setAntibody_isotype(antibody_isotype);
+                                }
+                            }
+                        }
+
+                        if (sheet.getRow(1).getCell(contf).toString().equalsIgnoreCase("recognizes")){
+                            recognizes = sheet.getRow(contc).getCell(contf,  Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).toString();
+                            if (entidad != null  ) {
+                                entidad.setRecognizes(recognizes);
+                                contfinalrows = contfinalrows + 1;
+                            }else
+                            {
+                                if(!recognizes.toString().isEmpty()) {
+                                    entidad.setRecognizes(recognizes);
+                                }
+                            }
+                        }
+
+                        if (sheet.getRow(1).getCell(contf).toString().equalsIgnoreCase("batch_number")){
+                            batch_number = sheet.getRow(contc).getCell(contf,  Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).toString();
+                            if (entidad != null  ) {
+                                entidad.setBatch_number(batch_number);
+                                contfinalrows = contfinalrows + 1;
+                            }else
+                            {
+                                if(!batch_number.toString().isEmpty()) {
+                                    entidad.setBatch_number(batch_number);
+                                }
+                            }
+                        }
+
+
+                        if (sheet.getRow(1).getCell(contf).toString().equalsIgnoreCase("date_produced")){
+                            date_produced = sheet.getRow(contc).getCell(contf,  Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).toString();
+                            SimpleDateFormat formato = new SimpleDateFormat("yyyy/MM/dd");
+                            Date fecha1 = formato.parse(date_produced);
+                            if (entidad != null  ) {
+                                entidad.setDate_produced(fecha1);
+                                contfinalrows = contfinalrows + 1;
+                            }else
+                            {
+                                if(!date_produced.toString().isEmpty()) {
+                                    entidad.setDate_produced(fecha1);
+                                }
+                            }
+                        }
+
+                        if (sheet.getRow(1).getCell(contf).toString().equalsIgnoreCase("person_name")){
+                            person_name = sheet.getRow(contc).getCell(contf,  Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).toString();
+                            if (entidad != null  ) {
+                                entidad.setPerson_name(person_name);
+                                contfinalrows = contfinalrows + 1;
+                            }else
+                            {
+                                if(!person_name.toString().isEmpty()) {
+                                    entidad.setPerson_name(person_name);
+                                }
+                            }
+                        }
+
+
+                        if (sheet.getRow(1).getCell(contf).toString().equalsIgnoreCase("source_name")){
+                            source_name = sheet.getRow(contc).getCell(contf,  Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).toString();
+                            if (entidad != null  ) {
+                                entidad.setSource_name(source_name);
+                                contfinalrows = contfinalrows + 1;
+                            }else
+                            {
+                                if(!source_name.toString().isEmpty()) {
+                                    entidad.setSource_name(source_name);
+                                }
+                            }
+                        }
+
+                        if (sheet.getRow(1).getCell(contf).toString().equalsIgnoreCase("raised_in")){
+                            raised_in = sheet.getRow(contc).getCell(contf,  Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).toString();
+                            if (entidad != null  ) {
+                                entidad.setRaised_in(raised_in);
+                                contfinalrows = contfinalrows + 1;
+                            }else
+                            {
+                                if(!raised_in.toString().isEmpty()) {
+                                    entidad.setRaised_in(raised_in);
+                                }
+                            }
+                        }
+
+                        if (sheet.getRow(1).getCell(contf).toString().equalsIgnoreCase("aliquot_volume")){
+                            aliquot_volume = Float.parseFloat(sheet.getRow(contc).getCell(contf,  Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).toString());
+                            if (entidad != null  ) {
+                                entidad.setAliquot_volume((aliquot_volume));
+                                contfinalrows = contfinalrows + 1;
+                            }else
+                            {
+                                if(!aliquot_volume.toString().isEmpty()) {
+                                    entidad.setAliquot_volume((aliquot_volume));
+                                }
+                            }
+                        }
+
+                        if (sheet.getRow(1).getCell(contf).toString().equalsIgnoreCase("medium_buffer")){
+                            medium_buffer = sheet.getRow(contc).getCell(contf,  Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).toString();
+                            if (entidad != null  ) {
+                                entidad.setMedium_buffer(medium_buffer);
+                                contfinalrows = contfinalrows + 1;
+                            }else
+                            {
+                                if(!raised_in.toString().isEmpty()) {
+                                    entidad.setMedium_buffer(medium_buffer);
+                                }
+                            }
+                        }
+
+                        if (sheet.getRow(1).getCell(contf).toString().equalsIgnoreCase("concentration")){
+                            concentration = sheet.getRow(contc).getCell(contf,  Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).toString();
+                            if (entidad != null  ) {
+                                entidad.setConcentration(concentration);
+                                contfinalrows = contfinalrows + 1;
+                            }else
+                            {
+                                if(!concentration.toString().isEmpty()) {
+                                    entidad.setConcentration(concentration);
+                                }
+                            }
+                        }
+
+                        if (sheet.getRow(1).getCell(contf).toString().equalsIgnoreCase("technique1_concentration1")){
+                            technique1_concentration1 = sheet.getRow(contc).getCell(contf,  Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).toString();
+                            if (entidad != null  ) {
+                                entidad.setTechnique1_concentration1(technique1_concentration1);
+                                contfinalrows = contfinalrows + 1;
+                            }else
+                            {
+                                if(!technique1_concentration1.toString().isEmpty()) {
+                                    entidad.setTechnique1_concentration1(technique1_concentration1);
+                                }
+                            }
+                        }
+
+
+                        if (sheet.getRow(1).getCell(contf).toString().equalsIgnoreCase("technique2")){
+                            technique2 = sheet.getRow(contc).getCell(contf,  Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).toString();
+                            if (entidad != null  ) {
+                                entidad.setTechnique2(technique2);
+                                contfinalrows = contfinalrows + 1;
+                            }else
+                            {
+                                if(!technique2.toString().isEmpty()) {
+                                    entidad.setTechnique2(technique2);
+                                }
+                            }
+                        }
+
+
+                        if (sheet.getRow(1).getCell(contf).toString().equalsIgnoreCase("technique2_concentration2")){
+                            technique2_concentration2 = sheet.getRow(contc).getCell(contf,  Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).toString();
+                            if (entidad != null  ) {
+                                entidad.setTechnique2_concentration2(technique2_concentration2);
+                                contfinalrows = contfinalrows + 1;
+                            }else
+                            {
+                                if(!technique2_concentration2.toString().isEmpty()) {
+                                    entidad.setTechnique2_concentration2(technique2_concentration2);
+                                }
+                            }
+                        }
+
+                        if (sheet.getRow(1).getCell(contf).toString().equalsIgnoreCase("technique3")){
+                            technique3 = sheet.getRow(contc).getCell(contf,  Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).toString();
+                            if (entidad != null  ) {
+                                entidad.setTechnique3(technique3);
+                                contfinalrows = contfinalrows + 1;
+                            }else
+                            {
+                                if(!technique3.toString().isEmpty()) {
+                                    entidad.setTechnique3(technique3);
+                                }
+                            }
+                        }
+
+
+                        if (sheet.getRow(1).getCell(contf).toString().equalsIgnoreCase("technique3_concentration3")){
+                            technique3_concentration3 = sheet.getRow(contc).getCell(contf,  Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).toString();
+                            if (entidad != null  ) {
+                                entidad.setTechnique3_concentration3(technique3_concentration3);
+                                contfinalrows = contfinalrows + 1;
+                            }else
+                            {
+                                if(!technique3_concentration3.toString().isEmpty()) {
+                                    entidad.setTechnique3_concentration3(technique3_concentration3);
+                                }
+                            }
+                        }
+
+                        if (sheet.getRow(1).getCell(contf).toString().equalsIgnoreCase("storage_temperature")){
+                            storage_temperature = sheet.getRow(contc).getCell(contf,  Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).toString();
+                            if (entidad != null  ) {
+                                entidad.setStorage_temperature(storage_temperature);
+                                contfinalrows = contfinalrows + 1;
+                            }else
+                            {
+                                if(!storage_temperature.toString().isEmpty()) {
+                                    entidad.setStorage_temperature(storage_temperature);
+                                }
+                            }
+                        }
+
+
+                        if (sheet.getRow(1).getCell(contf).toString().equalsIgnoreCase("freezer_name")){
+                            freezer_name = sheet.getRow(contc).getCell(contf,  Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).toString();
+                            freezer_name = equipService.getEquipByUserId(freezer_name).getSystemId();
+                            if (entidad != null  ) {
+                                entidad.setFreezer_name(freezer_name);
+                                contfinalrows = contfinalrows + 1;
+                            }else
+                            {
+                                if(!freezer_name.toString().isEmpty()) {
+                                    entidad.setFreezer_name(freezer_name);
+                                }
+                            }
+                        }
+
+                        if (sheet.getRow(1).getCell(contf).toString().equalsIgnoreCase("rack_name")){
+                            rack_name = sheet.getRow(contc).getCell(contf,  Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).toString();
+                            rack_name = rackService.getRackByUserId(rack_name).getSystemId();
+                            if (entidad != null  ) {
+                                entidad.setRack_name(rack_name);
+                                contfinalrows = contfinalrows + 1;
+                            }else
+                            {
+                                if(!rack_name.toString().isEmpty()) {
+                                    entidad.setRack_name(rack_name);
+                                }
+                            }
+                        }
+
+                        if (sheet.getRow(1).getCell(contf).toString().equalsIgnoreCase("box_name")){
+                            box_name = sheet.getRow(contc).getCell(contf,  Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).toString();
+                            box_name = boxService.getBoxByUserId(box_name).getSystemId();
+                            if (entidad != null  ) {
+                                entidad.setBox_name(box_name) ;
+                                contfinalrows = contfinalrows + 1;
+                            }else
+                            {
+                                if(!box_name.toString().isEmpty()) {
+                                    entidad.setBox_name(box_name) ;
+                                }
+                            }
+                        }
+
+                        if (sheet.getRow(1).getCell(contf).toString().equalsIgnoreCase("position")){
+                            position = Integer.parseInt(sheet.getRow(contc).getCell(contf,  Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).toString());
+
+                            if (entidad != null  ) {
+                                entidad.setPosition_in_the_box((position));
+                                contfinalrows = contfinalrows + 1;
+                            }else
+                            {
+                                if(!position.toString().isEmpty()) {
+                                    entidad.setPosition_in_the_box((position));
+                                }
+                            }
+                        }
+
+                        if (sheet.getRow(1).getCell(contf).toString().equalsIgnoreCase("additional_comments")){
+                            additional_comments = sheet.getRow(contc).getCell(contf,  Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).toString();
+
+                            if (entidad != null  ) {
+                                entidad.setAdditional_comments(additional_comments);
+                                contfinalrows = contfinalrows + 1;
+                            }else
+                            {
+                                if(!additional_comments.toString().isEmpty()) {
+                                    entidad.setAdditional_comments(additional_comments);
+                                }
+                            }
+                        }
+
+
+                        if (sheet.getRow(1).getCell(contf).toString().equalsIgnoreCase("recordUser")){
+                            recordUser = sheet.getRow(contc).getCell(contf,  Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).toString();
+
+                            if (entidad != null  ) {
+                                entidad.setRecordUser(recordUser);
+                                contfinalrows = contfinalrows + 1;
+                            }else
+                            {
+                                if(!recordUser.toString().isEmpty()) {
+                                    entidad.setRecordUser(recordUser);
+                                }
+                            }
+                        }
+
+
+                        if (sheet.getRow(1).getCell(contf).toString().equalsIgnoreCase("recordDate")){
+                            recordDate = sheet.getRow(contc).getCell(contf,  Row.MissingCellPolicy.CREATE_NULL_AS_BLANK).toString();
+                            SimpleDateFormat formato = new SimpleDateFormat("yyyy/MM/dd");
+                            Date fecha2 = formato.parse(recordDate);
+                            if (entidad != null  ) {
+                                entidad.setRecordDate(fecha2);
+                                contfinalrows = contfinalrows + 1;
+                            }else
+                            {
+                                if(!recordDate.toString().isEmpty()) {
+                                    entidad.setRecordDate(fecha2);
+                                }
+                            }
+                        }
+
+
+                    } // fin C
+
+                    if (c == null ) {
+                        cell.setBlank();
+                        contfinalrows = contf + contfinalrows;
+                    }
+                    //Se valida que el campo que se esta leyendo en el archivo de excel existe en la entidad
+                    if (campoexiste == 0 && (c != null )) {
+                        contf ++;
+                        camponoexiste ++;
+                        contfinalrows = contfinalrows + 1;
+                    }else {
+                        if (c != null ) {
+                            contf ++;
+                            contfinalrows = contfinalrows + 1;
+                        }
+
+                    }
+                    centinelafin = centinelafin + 1;
+                }
+
+                //se actualizan los datos de cada registro del archivo de excel
+                if ( entidad != null) {
+                    this.antibodyservice.saveAntibody(entidad);
+                    //entidad_error.setObs("     Successfully updated records      ") ;
+                  //  entidades_error.add(entidad_error);
+                    entidades.add(entidad);
+
+                    entidad = null;
+                }
+
+                //contc++;
+                contfinalrows = 1;
+                //  centinelafin = centinelafin + 1;
+            }
+
+
+            modelMap.addAttribute("entidades", entidades);
+
+            modelMap.addAttribute("entidadesErr", entidades);
+
+        }
+        catch(IllegalArgumentException ile) {
+            logger.error(ile.getLocalizedMessage());
+            modelMap.addAttribute("importError", true);
+            modelMap.addAttribute("errorMessage", ile.getLocalizedMessage());
+            modelMap.addAttribute("entidades", entidades);
+            return "capture/antibodies/uploadResulExcelt";
+        }
+        catch(Exception e) {
+            logger.error(e.getMessage());
+            modelMap.addAttribute("importError", true);
+            modelMap.addAttribute("errorMessage", e.getMessage());
+            modelMap.addAttribute("entidades", entidades);
+            return "capture/antibodies/uploadResultExcel";
+        }
+
+      /*  for(Specimen specimen:entidades) {
+            MessageResource mr = null;
+            String descCatalogo = null;
+            mr = this.messageResourceService.getMensaje(specimen.getSpecimenType(),"CAT_SP_TYPE");
+            if(mr!=null) {
+                descCatalogo = (LocaleContextHolder.getLocale().getLanguage().equals("en")) ? mr.getEnglish(): mr.getSpanish();
+                specimen.setSpecimenType(descCatalogo);
+            }
+        }*/
+
+        modelMap.addAttribute("entidadesErr", entidades);
+
+        return "capture/antibodies/uploadResultExcel";
     }
 }

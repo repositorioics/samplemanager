@@ -176,6 +176,15 @@
                                                 </div>
                                             </div>
 
+                                            <div class="form-group">
+                                                <label class="form-label"><spring:message code="estado" /></label>
+                                                <select class="select2-control form-control" id="estado" name="estado" style="width: 100%" data-allow-clear="true">
+                                                    <option value="">Seleccione</option>
+                                                    <option value="1">Activo</option>
+                                                    <option value="0">Inactivo</option>
+                                                </select>
+                                            </div>
+
                                         </div>
 
                                         <div class="form-group" align="right">
@@ -185,7 +194,7 @@
                                                     id="search"><i class="ion ion-md-search"></i> <spring:message
                                                     code="findspecimens"/></button>
                                         </div>
-                                        <div>
+                                                                               <div>
 
 
                                         </div>

@@ -47,6 +47,12 @@
                             class="btn rounded-pill btn-outline-primary"><i class="fa fa-plus"></i>&nbsp;
                         <spring:message code="add"/></button>
 
+                    <button id="lista_entidades_import" data-toggle="tooltip" data-placement="bottom"
+                            title="<spring:message code="importEntityToolTip" />"
+                            onclick="location.href='${fn:escapeXml(uploadEntity)}'" type="button"
+                            class="btn rounded-pill btn-outline-primary"><i class="fa fa-file-upload"></i>&nbsp;
+                        <spring:message code="import"/></button>
+
                     <br><br>
 
                     <div class="card mb-4" id="entity-element">

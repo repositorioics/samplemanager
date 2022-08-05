@@ -43,7 +43,7 @@ public class SpecimenFilterService {
                 " (select st.box.rack.name as Rack_name from SpecimenStorage st where specimen.systemId = st.specimen ) as rack, " +
                 "(select st.box.id as box_id from SpecimenStorage st where specimen.systemId = st.specimen ) as box, " +
                 " (select st.pos from SpecimenStorage st where specimen.systemId = st.specimen) as Pos " +
-                "FROM Specimen specimen where 1=1 ";
+                "FROM Specimen specimen where 1=1";
 
         Query querySpecimenFilter = null;
 
@@ -66,6 +66,12 @@ public class SpecimenFilterService {
             sQuery += "and specimen.systemId in (select storage.specimen.systemId FROM SpecimenStorage storage where storage.box.name =:box ) ";
         }
 
+        if (filter.getEstado() != null) {
+            sQuery += " and specimen.estado =:estado ";
+        }
+
+
+
         querySpecimenFilter =  session.createQuery(sQuery);
 
         if (filter.getSpecimenId() != null) {
@@ -86,6 +92,10 @@ public class SpecimenFilterService {
 
         if (filter.getBox()!= null) {
             querySpecimenFilter.setParameter("box", filter.getBox());
+        }
+
+        if (filter.getEstado() != null) {
+            querySpecimenFilter.setParameter("estado", filter.getEstado());
         }
 
         querySpecimenFilter.setResultTransformer(Transformers.aliasToBean(SpecimensResults.class));

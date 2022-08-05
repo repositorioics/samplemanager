@@ -46,6 +46,7 @@ public class Specimen extends BaseMetaData implements Auditable{
 	private Integer varA;
 	private Integer varB;
 	private String obs;
+    private String estado;
 	
 	public Specimen() {
 		super();
@@ -178,6 +179,14 @@ public class Specimen extends BaseMetaData implements Auditable{
 	public void setSubstudy(String substudy) {
 		this.substudy = substudy;
 	}
+
+    @Column(name = "estado", length = 10)
+    public String getEstado() {
+        return estado;
+    }
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
 
 	@Override
 	public String toString(){

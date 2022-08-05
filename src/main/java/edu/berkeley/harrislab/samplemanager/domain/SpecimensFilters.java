@@ -9,6 +9,7 @@ public class SpecimensFilters {
     private String labReceiptDate;
     private String studyId;
     private String Box;
+    private String estado;
     private Integer activeSearch;
 
     public String getSpecimenId() {
@@ -49,6 +50,14 @@ public class SpecimensFilters {
 
     public void setLabReceiptDate(String labReceiptDate) {
         this.labReceiptDate = labReceiptDate;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     public Integer getActiveSearch() {

@@ -148,7 +148,7 @@ return {
 	    				data = data.replace(/u0027/g,"");
 	    				toastr.error(data, parametros.errormessage, {
 	    					    closeButton: true,
-	    					    progressBar: true,
+	    					    progressBar: true
 	    					  });
 	    				$.unblockUI();
 					}

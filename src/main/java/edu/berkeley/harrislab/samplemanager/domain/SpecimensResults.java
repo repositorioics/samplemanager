@@ -24,6 +24,8 @@ public class SpecimensResults {
     private String subjectName;
     private String desPasive;
 
+    private String estado;
+
     private String Equip;
     private String Rack;
     private String Box;
@@ -180,6 +182,14 @@ public class SpecimensResults {
 
     public void setDesPasive(String desPasive) {
         this.desPasive = desPasive;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     public String getEquip() {

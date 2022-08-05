@@ -382,6 +382,7 @@ public class CaptureSpecimensController {
 	        , @RequestParam( value="orthocode", required=false, defaultValue="") String orthocode
 	        , @RequestParam( value="subjectSpecId", required=false, defaultValue="") String subjectSpecId
 			, @RequestParam( value="substudy", required=false) String substudy
+            , @RequestParam( value="estado", required=false) String estado
 	        )
 	{
     	try{
@@ -392,6 +393,7 @@ public class CaptureSpecimensController {
 			if (!specimenId.equals("")) entidad.setSpecimenId(specimenId);
 			if (!specimenType.equals("")) entidad.setSpecimenType(specimenType);
 			if (!specimenCondition.equals("")) entidad.setSpecimenCondition(specimenCondition);
+            if (!estado.equals("")) entidad.setEstado(estado);
 			if (!labReceiptDate.equals("")) {
 				fechaIngreso=formatter.parse(labReceiptDate);
 				entidad.setLabReceiptDate(fechaIngreso);
@@ -558,7 +560,15 @@ public class CaptureSpecimensController {
 	public String submitUploadForm(@RequestParam("file") MultipartFile file, ModelMap modelMap) throws IOException {
     	boolean checkLabReceiptDate = false;
     	String specimenId;
-    	String specimenType,specimenTypeCatKey,inStorage;
+    	String specimenType,specimenTypeCatKey,inStorage, volUnits, record_user;
+
+        volUnits = "";
+        record_user = "";
+        specimenType = "";
+        inStorage = "";
+
+        Float volume;
+        Date record_date=null;
     	int nuevos =0, viejos=0;
     	Specimen entidad = new Specimen();
     	List<Specimen> entidades = new ArrayList<Specimen>();
@@ -590,6 +600,18 @@ public class CaptureSpecimensController {
 					logger.info(encabezado + " found....");
 					checkLabReceiptDate = true;
 				}
+                else if(encabezado.equalsIgnoreCase("Volume")) {
+                    logger.info(encabezado + " found....");
+                }
+                else if(encabezado.equalsIgnoreCase("Volume_Units")) {
+                    logger.info(encabezado + " found....");
+                }
+                else if(encabezado.equalsIgnoreCase("Record_date")) {
+                    logger.info(encabezado + " found....");
+                }
+                else if(encabezado.equalsIgnoreCase("Record_User")) {
+                    logger.info(encabezado + " found....");
+                }
 				else if(encabezado.equalsIgnoreCase("inStorage")) {
 					logger.info(encabezado + " found....");
 				}
@@ -598,29 +620,70 @@ public class CaptureSpecimensController {
 			//Create the records
 			Iterable<CSVRecord> records = parsed.getRecords();
 
-			//Iterate over the records
+			//Iterate over the records record.get("specimenId")
 		    for (CSVRecord record : records) {
-		    	specimenId = record.get("specimenId");
-		    	specimenType = record.get("specimenType");
-		    	inStorage = record.get("inStorage");
+                SimpleDateFormat formatter1 = new SimpleDateFormat("yyyy-MM-dd");
+		    	specimenId = record.get("specimenId").toString();
+
+                if (!record.get("inStorage").equals("")){
+                    inStorage = (record.get("inStorage"));
+                }
+                if (!record.get("specimenType").equals("")){
+                    specimenType = (record.get("specimenType"));
+                }
+                if (!record.get("Volume").equals("")){
+                    volume = Float.parseFloat(record.get("Volume"));
+                    entidad.setVolume(volume);
+                }
+                if (!record.get("Volume_Units").equals("")){
+                    volUnits = (record.get("Volume_Units"));
+                    entidad.setVolUnits(volUnits);
+                }
+                if (!record.get("Record_date").equals("")){
+                    record_date = formatter1.parse(record.get("Record_date"));
+                    entidad.setRecordDate(record_date);
+                }
+                if (!record.get("Record_User").equals("")){
+                    record_user = record.get("Record_User");
+                    entidad.setRecordUser(record_user);
+                }
+
+
 		        entidad = this.specimenService.getSpecimenByUserId(specimenId);
 		        if(entidad==null) {
 		        	entidad = new Specimen(new Date(), usuarioActual.getUsername(), wad.getRemoteAddress(), '0');
 		        	nuevos++;
+                    specimenType = record.get("specimenType");
+                    inStorage = record.get("inStorage");
+                    volume = Float.parseFloat(record.get("Volume"));
+                    volUnits = record.get("Volume_Units");
+                    if (!record.get("Record_date").equals("")){
+                        record_date = formatter1.parse(record.get("Record_date"));
+                    }
+                    if (!record.get("Record_User").equals("")){
+                        record_user = record.get("Record_User");
+                    }
+
 		        }
 		        else {
 		        	viejos++;
-		        }
+
+
+                }
 			    entidad.setSpecimenId(specimenId);
+
 			    specimenTypeCatKey = this.messageResourceService.getMensajeDesc(specimenType,"CAT_SP_TYPE").getCatKey();
 			    entidad.setSpecimenType(specimenTypeCatKey);
 			    if (checkLabReceiptDate) {
 			    	SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 			    	Date fechaIngreso=null;
 			    	if (!record.get("labReceiptDate").equals(""))  fechaIngreso=formatter.parse(record.get("labReceiptDate"));
+
+                    if (!record.get("labReceiptDate").equals(""))
 					entidad.setLabReceiptDate(fechaIngreso);
 				}
-			    entidad.setInStorage(inStorage);
+                if (!record.get("inStorage").equals(""))
+                    entidad.setInStorage(inStorage);
 			    this.specimenService.saveSpecimen(entidad);
 			    entidades.add(entidad);
 		    }
@@ -769,6 +832,7 @@ public class CaptureSpecimensController {
 		String orthocode = null;
 		String studyId = null;
 		String box = null;
+        String estado = null;
 		Integer activeSearch = null;
 
 
@@ -783,6 +847,9 @@ public class CaptureSpecimensController {
 		if (jObjectFiltro.get("box") != null && !jObjectFiltro.get("box").getAsString().isEmpty())
 			box = jObjectFiltro.get("box").getAsString();
 
+        if (jObjectFiltro.get("estado") != null && !jObjectFiltro.get("estado").getAsString().isEmpty())
+            estado = jObjectFiltro.get("estado").getAsString();
+
 		if (jObjectFiltro.get("activeSearch") != null && !jObjectFiltro.get("activeSearch").getAsString().isEmpty())
 			activeSearch = jObjectFiltro.get("activeSearch").getAsInt();
 
@@ -792,6 +859,7 @@ public class CaptureSpecimensController {
 		specFilters.setLabReceiptDate(labReceiptDate);
 		specFilters.setStudyId(studyId);
 		specFilters.setBox(box);
+        specFilters.setEstado(estado);
 		specFilters.setActiveSearch(activeSearch);
 
 		return specFilters;

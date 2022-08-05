@@ -13,9 +13,9 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * Servicio para el objeto Specimen Filter
+ * Servicio para el objeto Antibody Filter
  * 
- * @author William Aviles
+ * @author Everts Morales
  * 
  **/
 

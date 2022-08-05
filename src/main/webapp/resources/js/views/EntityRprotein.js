@@ -47,7 +47,7 @@ var ProcessEntity = function () {
                     },
                     'protrecombinante_id1' : {
                         required: true,
-                        maxlength:5
+                        maxlength:50
                     },
                     'protein_name2': {
                         required: true,
@@ -217,7 +217,7 @@ var ProcessEntity = function () {
 
             function processEntity(){
                 $.blockUI({ message: parametros.waitmessage });
-                alert("Entra JS");
+
                 $.post( parametros.saveUrl
                     , $( '#edit-form' ).serialize()
                     , function( data )

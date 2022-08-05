@@ -75,7 +75,7 @@ public class Antibody extends BaseMetaData implements Auditable {
         this.antibody_id = antibody_id;
     }
 
-    @Column(name = "antibody_name", nullable = true, length =30)
+    @Column(name = "antibody_name", nullable = false, length =30)
     public String getAntibody_name () {
         return antibody_name;
     }
@@ -83,7 +83,7 @@ public class Antibody extends BaseMetaData implements Auditable {
         this.antibody_name = antibody_name;
     }
 
-    @Column(name = "target_protein", nullable = true, length =30)
+    @Column(name = "target_protein", nullable = false, length =30)
     public String getTarget_protein  () {
         return target_protein;
     }
@@ -147,7 +147,7 @@ public class Antibody extends BaseMetaData implements Auditable {
         this.person_name = person_name;
     }
 
-    @Column(name = "source_name", nullable = true, length =40)
+    @Column(name = "source_name", nullable = false, length =40)
     public String getSource_name() {
         return source_name;
     }
@@ -155,7 +155,7 @@ public class Antibody extends BaseMetaData implements Auditable {
         this.source_name = source_name;
     }
 
-    @Column(name = "raised_in", nullable = true, length =40)
+    @Column(name = "raised_in", nullable = false, length =40)
     public String getRaised_in () {
         return source_name;
     }
@@ -163,7 +163,7 @@ public class Antibody extends BaseMetaData implements Auditable {
         this.raised_in = raised_in;
     }
 
-    @Column(name = "aliquot_volume", nullable = true)
+    @Column(name = "aliquot_volume", nullable = false)
     public Float getAliquot_volume() {
         return aliquot_volume;
     }
@@ -187,7 +187,7 @@ public class Antibody extends BaseMetaData implements Auditable {
         this.concentration = concentration;
     }
 
-    @Column(name = "technique1", nullable = true, length =40)
+    @Column(name = "technique1", nullable = false, length =40)
     public String getTechnique1() {
         return technique1;
     }
@@ -195,7 +195,7 @@ public class Antibody extends BaseMetaData implements Auditable {
         this.technique1 = technique1;
     }
 
-    @Column(name = "technique1_concentration1", nullable = true, length =10)
+    @Column(name = "technique1_concentration1", nullable = false, length =10)
     public String getTechnique1_concentration1() {
         return technique1_concentration1;
     }
@@ -235,7 +235,7 @@ public class Antibody extends BaseMetaData implements Auditable {
         this.technique3_concentration3 = technique3_concentration3;
     }
 
-    @Column(name = "storage_temperature", nullable = true, length =30)
+    @Column(name = "storage_temperature", nullable = false, length =30)
     public String getStorage_temperature () {
         return storage_temperature;
     }
@@ -243,7 +243,7 @@ public class Antibody extends BaseMetaData implements Auditable {
         this.storage_temperature = storage_temperature;
     }
 
-    @Column(name = "freezer_name", nullable = true, length =40)
+    @Column(name = "freezer_name", nullable = false, length =40)
     public String getFreezer_name() {
         return freezer_name;
     }
@@ -251,7 +251,7 @@ public class Antibody extends BaseMetaData implements Auditable {
         this.freezer_name = freezer_name;
     }
 
-    @Column(name = "box_name", nullable = true, length =40)
+    @Column(name = "box_name", nullable = false, length =40)
     public String getBox_name () {
         return box_name;
     }
@@ -259,7 +259,7 @@ public class Antibody extends BaseMetaData implements Auditable {
         this.box_name = box_name;
     }
 
-    @Column(name = "rack_name", nullable = true, length =40)
+    @Column(name = "rack_name", nullable = false, length =40)
     public String getRack_name() {
         return rack_name;
     }
@@ -267,7 +267,7 @@ public class Antibody extends BaseMetaData implements Auditable {
         this.rack_name = rack_name;
     }
 
-    @Column(name = "position_in_the_box", nullable = true)
+    @Column(name = "position_in_the_box", nullable = false)
     public Integer getPosition_in_the_box() {
         return position_in_the_box;
     }
