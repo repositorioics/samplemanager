@@ -1,0 +1,1801 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="samplemanager:war" />
+    </artifacts-to-build>
+  </component>
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/capture/specimens/editStorageForm.jsp" line="78" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4b3f16a4-2da5-4be3-b51e-7250e0d9ea45" name="Default" comment="Commit Traslado a produccion Specimens, valor UL">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_6_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_18.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+    </list>
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="Commander">
+    <leftPanel />
+    <rightPanel />
+    <splitter proportion="0.5" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/samplemanager$Tomcat8.coverage" NAME="Tomcat8 Coverage Results" MODIFIED="1659636905646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/samplemanager$fileUploadExcel_jsp.coverage" NAME="fileUploadExcel.jsp Coverage Results" MODIFIED="1623702800563" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="samplemanager" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="list.jsp" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/capture/specimens/list.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3332" max-vertical-offset="7344">
+              <caret line="196" column="68" selection-start-line="196" selection-start-column="68" selection-end-line="196" selection-end-column="68" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hibernate.cfg.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/appServlet/hibernate.cfg.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3302" max-vertical-offset="8347">
+              <caret line="197" column="47" selection-start-line="197" selection-start-column="47" selection-end-line="197" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpecimenFilter.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/views/SpecimenFilter.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2346" max-vertical-offset="4505">
+              <caret line="138" column="43" selection-start-line="138" selection-start-column="43" selection-end-line="138" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpecimenFilterService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/service/SpecimenFilterService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1498" max-vertical-offset="1921">
+              <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CaptureSpecimensController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/web/controller/CaptureSpecimensController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="7769" max-vertical-offset="15266">
+              <caret line="457" column="13" selection-start-line="432" selection-start-column="50" selection-end-line="457" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Specimen.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/domain/Specimen.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3196" max-vertical-offset="3876">
+              <caret line="188" column="0" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editForm.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/capture/specimens/editForm.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1017" max-vertical-offset="6035">
+              <caret line="77" column="102" selection-start-line="77" selection-start-column="102" selection-end-line="77" selection-end-column="102" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="true" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/views/EntityViruses.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/views/VirusesFilter.js" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/service/VirusesFilterService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/service/VirusesService.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/capture/viruses/list.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/web/controller/CaptureVirusesController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/capture/viruses/enterNewForm.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/domain/CellsFilters.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/domain/Cells.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/domain/CellsResults.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/domain/MolecularClone.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/capture/antibodies/list.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/capture/antibodies/list_1.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/capture/plasmids/list.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/capture/specimens/uploadResultExcel.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/fileuploadexcell/uploadExcel.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/web/controller/FileUploadController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/domain/Antibody.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/web/controller/CaptureAntibodiesController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/web/controller/CapturePlasmidsController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/web/controller/CaptureRecombinantProtController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/capture/plasmids/uploadResultExcel.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/capture/primers/uploadResultExcel.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/capture/plasmids/uploadExcel.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/capture/antibodies/uploadResultExcel.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/capture/antibodies/uploadExcel.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/capture/recombinantProtein/uploadExcel.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/capture/recombinantProtein/uploadResultExcel.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/capture/primers/uploadExcel.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/web/controller/CapturePrimersController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/capture/primers/list.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/capture/cells/list.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/web/controller/CaptureCellsController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/capture/cells/enterNewForm.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/web/controller/CaptureMolecularCloneController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/capture/molecularClone/list.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fragments/sideNav.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/service/MolecularClonService.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/capture/molecularClone/enterNewForm.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/capture/recombinantProtein/list.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/domain/Specimen.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/domain/SpecimensResults.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/views/EntitySpecimen.js" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/domain/SpecimensFilters.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/views/StoreSpecimen.js" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/service/SpecimenFilterService.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/views/SpecimenFilter.js" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/web/controller/CaptureSpecimensController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/capture/specimens/editForm.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/capture/specimens/list.jsp" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="alwaysUpdateSnapshots" value="true" />
+        <option name="mavenHome" value="C:\maven" />
+        <option name="usePluginRegistry" value="true" />
+        <option name="workOffline" value="true" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="downloadDocsAutomatically" value="true" />
+        <option name="downloadSourcesAutomatically" value="true" />
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState />
+  </component>
+  <component name="MavenRunner">
+    <option name="vmOptions" value="-Dmaven.multiModuleProjectDirectory=%M2_HOME" />
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/src/main/webapp/resources/vendor/libs/jquery-ui/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-7" />
+    <option name="width" value="1550" />
+    <option name="height" value="840" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>JPA issues</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>JpaQlInspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <OptionsSetting value="true" id="Undo Check Out" />
+    <OptionsSetting value="true" id="Get Latest Version" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="samplemanager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="AndroidView" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.5747393" />
+    <property name="options.lastSelected" value="vcs.Git" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="FullScreen" value="false" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="true" />
+    <property name="GenerateAntBuildDialog.generateSingleFile" value="false" />
+    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
+    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
+    <property name="GenerateAntBuildDialog.inclineRuntiemClasspath" value="false" />
+    <property name="GenerateAntBuildDialog.generateIdeaHomeProperty" value="false" />
+    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="samplemanager" />
+    <property name="SearchEverywhereHistoryKey" value="cfg&#9;FILE&#9;file://C:/Users/PC/Documents/GitHub/fuentes/samplemanager/src/main/webapp/WEB-INF/spring/appServlet/hibernate.cfg.xml&#10;SpecimenFilt&#9;PSI&#9;JAVA://edu.berkeley.harrislab.samplemanager.domain.SpecimensFilters&#10;side&#9;FILE&#9;file://C:/Users/PC/Documents/GitHub/fuentes/samplemanager/src/main/webapp/WEB-INF/views/fragments/sideNav.jsp&#10;siden&#9;FILE&#9;file://C:/Users/PC/Documents/GitHub/fuentes/samplemanager/src/main/webapp/WEB-INF/views/fragments/sideNav.jsp&#10;cf&#9;FILE&#9;file://C:/Users/PC/Documents/GitHub/fuentes/samplemanager/src/main/webapp/WEB-INF/spring/appServlet/hibernate.cfg.xml&#10;hi&#9;FILE&#9;file://C:/Users/PC/Documents/GitHub/fuentes/samplemanager/src/main/webapp/WEB-INF/spring/appServlet/hibernate-context.xml&#10;spring.pr&#9;FILE&#9;file://C:/Users/PC/Documents/GitHub/fuentes/samplemanager/src/main/webapp/WEB-INF/spring/spring.properties&#10;spec&#9;FILE&#9;file://C:/Users/PC/Documents/GitHub/fuentes/samplemanager/src/main/java/edu/berkeley/harrislab/samplemanager/service/SpecimenService.java&#10;specimen&#9;FILE&#9;file://C:/Users/PC/Documents/GitHub/fuentes/samplemanager/src/main/java/edu/berkeley/harrislab/samplemanager/domain/Specimen.java&#10;specimens&#9;PSI&#9;JAVA://edu.berkeley.harrislab.samplemanager.service.SpecimenService&#10;spring.p&#9;FILE&#9;file://C:/Users/PC/Documents/GitHub/fuentes/samplemanager/src/main/webapp/WEB-INF/spring/spring.properties&#10;.cfg&#9;FILE&#9;file://C:/Users/PC/Documents/GitHub/fuentes/samplemanager/src/main/webapp/WEB-INF/spring/appServlet/hibernate.cfg.xml&#10;sidenav&#9;FILE&#9;file://C:/Users/Dell/Documents/GitHub/fuentes/samplemanager/src/main/webapp/WEB-INF/views/fragments/sideNav.jsp&#10;sid&#9;FILE&#9;file://C:/Users/Dell/Documents/GitHub/fuentes/samplemanager/src/main/webapp/WEB-INF/views/fragments/sideNav.jsp&#10;sidena&#9;FILE&#9;file://C:/Users/Dell/Documents/GitHub/fuentes/samplemanager/src/main/webapp/WEB-INF/views/fragments/sideNav.jsp&#10;/api/positions&#9;null&#9;null&#10;resource&#9;null&#9;null&#10;pdfma&#9;FILE&#9;file://C:/Users/Dell/Documents/GitHub/fuentes/samplemanager/src/main/webapp/resources/vendor/libs/datatables/pdfmake.min.js&#10;processEnt&#9;PSI&#9;JAVA://edu.berkeley.harrislab.samplemanager.web.controller.AdminStudiesController#processEntity&#10;si&#9;FILE&#9;file://C:/Users/Dell/Documents/GitHub/fuentes/samplemanager/src/main/webapp/resources/vendor/js/sidenav.js&#10;box&#9;PSI&#9;JAVA://edu.berkeley.harrislab.samplemanager.domain.BoxAliquots&#10;api&#9;PSI&#9;JAVA://edu.berkeley.harrislab.samplemanager.APIController&#10;&#9;FILE&#9;file://C:/Users/Dell/Documents/GitHub/fuentes/samplemanager/src/main/webapp/resources/vendor/js/sidenav.js&#10;nav&#9;null&#9;null" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="edu.berkeley.harrislab.samplemanager.service" />
+      <recent name="edu.berkeley.harrislab.samplemanager.web.controller" />
+      <recent name="edu.berkeley.harrislab.samplemanager.domain" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\PC\Documents\GitHub\fuentes\samplemanager\src\main\webapp\WEB-INF\views\capture\viruses" />
+      <recent name="C:\Users\PC\Documents\GitHub\fuentes\samplemanager\src\main\webapp\WEB-INF\views\capture\RVPs" />
+      <recent name="C:\Users\PC\Documents\GitHub\fuentes\samplemanager\src\main\webapp\WEB-INF\views\capture" />
+      <recent name="C:\Users\PC\Documents\GitHub\fuentes\samplemanager\src\main\webapp\WEB-INF\views\capture\primers" />
+      <recent name="C:\Users\PC\Documents\GitHub\fuentes\samplemanager\src\main\webapp\WEB-INF\views\capture\recombinantProtein" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Dell\Documents\GitHub\fuentes\samplemanager\src\main\webapp\WEB-INF\views\capture\antibodies" />
+      <recent name="C:\Users\Dell\Documents\GitHub\fuentes\samplemanager\src\main\webapp\WEB-INF\views\capture\1a" />
+      <recent name="C:\Users\ICS_DESARROLLO1\Documents\GitHub\fuentes\samplemanager\src\main\webapp\WEB-INF\views\capture\specimens" />
+      <recent name="C:\Users\ICS_DESARROLLO1\Documents\GitHub\fuentes\samplemanager\src\main\webapp\WEB-INF\views\admin" />
+      <recent name="C:\Users\ICS_DESARROLLO1\Documents\GitHub\fuentes\samplemanager\src\main\webapp\WEB-INF\views\capture\fileuploadexcell" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat8">
+    <configuration name="All in samplemanager" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="samplemanager" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration default="false" name="All in samplemanager" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="samplemanager" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="fileUploadExcel.jsp" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" temporary="true" APPLICATION_SERVER_NAME="Tomcat 8.5.55" ALTERNATIVE_JRE_ENABLED="false" ALTERNATIVE_JRE_PATH="">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8081/WEB-INF/views/capture/storage/fileUploadExcel.jsp" />
+      <deployment>
+        <artifact name="samplemanager:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="fileUploadExcel_jsp_samplemanager" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Cover" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="56694" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="samplemanager:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <configuration default="false" name="fileUploadExcel.jsp (1)" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" temporary="true" APPLICATION_SERVER_NAME="Tomcat 8.5.55" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8081/WEB-INF/views/capture/storage/fileUploadExcel.jsp" />
+      <deployment>
+        <artifact name="samplemanager:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="fileUploadExcel_jsp_(1)_samplemanager" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="samplemanager:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
+      <module name="" />
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="depsClasspath" value="false" />
+      <setting name="passParentEnv" value="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <setting name="launchBrowser" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
+      <option name="BCName" value="" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="moduleName" value="" />
+      <option name="trusted" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="myFilePath" />
+      <option name="GLUE" />
+      <option name="myNameFilter" />
+      <option name="myGeneratedName" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
+      <option name="VM_PARAMETERS" value="" />
+      <option name="USER_CFG_CLASS" />
+      <option name="CONTEXT_PROVIDER" />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
+      <option name="BCName" value="" />
+      <option name="IOSSimulatorSdkPath" value="" />
+      <option name="adlOptions" value="" />
+      <option name="airProgramParameters" value="" />
+      <option name="appDescriptorForEmulator" value="Android" />
+      <option name="debugTransport" value="USB" />
+      <option name="debuggerSdkRaw" value="BC SDK" />
+      <option name="emulator" value="NexusOne" />
+      <option name="emulatorAdlOptions" value="" />
+      <option name="fastPackaging" value="true" />
+      <option name="fullScreenHeight" value="0" />
+      <option name="fullScreenWidth" value="0" />
+      <option name="launchUrl" value="false" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="mobileRunTarget" value="Emulator" />
+      <option name="moduleName" value="" />
+      <option name="overriddenMainClass" value="" />
+      <option name="overriddenOutputFileName" value="" />
+      <option name="overrideMainClass" value="false" />
+      <option name="runTrusted" value="true" />
+      <option name="screenDpi" value="0" />
+      <option name="screenHeight" value="0" />
+      <option name="screenWidth" value="0" />
+      <option name="url" value="http://" />
+      <option name="usbDebugPort" value="7936" />
+      <method />
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings />
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Tomcat8" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.55" ALTERNATIVE_JRE_ENABLED="false" ALTERNATIVE_JRE_PATH="">
+      <option name="BROWSER_ID" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="samplemanager:war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/samplemanager" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_samplemanager" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Cover" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="64834" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="samplemanager:war" />
+        </option>
+      </method>
+    </configuration>
+    <list size="4">
+      <item index="0" class="java.lang.String" itemvalue="Tomcat Server.Tomcat8" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.All in samplemanager" />
+      <item index="2" class="java.lang.String" itemvalue="Tomcat Server.fileUploadExcel.jsp" />
+      <item index="3" class="java.lang.String" itemvalue="Tomcat Server.fileUploadExcel.jsp (1)" />
+    </list>
+    <recent_temporary>
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Tomcat Server.fileUploadExcel.jsp (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Tomcat Server.fileUploadExcel.jsp" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.All in samplemanager" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\ICS_DESARROLLO1\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4b3f16a4-2da5-4be3-b51e-7250e0d9ea45" name="Default" comment="" />
+      <created>1623254704698</created>
+      <updated>1623254704698</updated>
+      <workItem from="1623254709014" duration="73000" />
+      <workItem from="1623254871920" duration="106000" />
+      <workItem from="1617293728802" duration="1056000" />
+      <workItem from="1623257413669" duration="92000" />
+      <workItem from="1623257755918" duration="67000" />
+      <workItem from="1623258006323" duration="180000" />
+      <workItem from="1623258290388" duration="207000" />
+      <workItem from="1623258546595" duration="156000" />
+      <workItem from="1623259174149" duration="191000" />
+      <workItem from="1623259880666" duration="351000" />
+      <workItem from="1623277978642" duration="1197000" />
+      <workItem from="1623333271009" duration="17167000" />
+      <workItem from="1623423082647" duration="14271000" />
+      <workItem from="1623681082518" duration="26784000" />
+      <workItem from="1623766335192" duration="21957000" />
+      <workItem from="1623851504857" duration="26159000" />
+      <workItem from="1623939114413" duration="26544000" />
+      <workItem from="1624024775143" duration="24248000" />
+      <workItem from="1624284513593" duration="26430000" />
+      <workItem from="1624371104573" duration="27633000" />
+      <workItem from="1624458011731" duration="20580000" />
+      <workItem from="1624548863394" duration="16631000" />
+      <workItem from="1624575432790" duration="395000" />
+      <workItem from="1624630690118" duration="15915000" />
+      <workItem from="1624890451631" duration="7070000" />
+      <workItem from="1624977307050" duration="16051000" />
+      <workItem from="1625064565474" duration="9607000" />
+      <workItem from="1625148996044" duration="13831000" />
+      <workItem from="1625235256225" duration="19021000" />
+      <workItem from="1625495512203" duration="3883000" />
+      <workItem from="1625514875305" duration="7982000" />
+      <workItem from="1625582302851" duration="11317000" />
+      <workItem from="1625665918105" duration="23127000" />
+      <workItem from="1625754044884" duration="23136000" />
+      <workItem from="1626104515192" duration="57000" />
+      <workItem from="1626104576196" duration="599000" />
+      <workItem from="1626115232349" duration="137000" />
+      <workItem from="1626115374070" duration="153000" />
+      <workItem from="1626117560378" duration="1941000" />
+      <workItem from="1626119519316" duration="58000" />
+      <workItem from="1626119879253" duration="944000" />
+      <workItem from="1626121707457" duration="26000" />
+      <workItem from="1626122029233" duration="707000" />
+      <workItem from="1626122911781" duration="1424000" />
+      <workItem from="1626124775473" duration="1605000" />
+      <workItem from="1626128196452" duration="1008000" />
+      <workItem from="1626187098928" duration="2082000" />
+      <workItem from="1626190155107" duration="3686000" />
+      <workItem from="1626197589501" duration="338000" />
+      <workItem from="1626212134106" duration="3273000" />
+      <workItem from="1626272184041" duration="3727000" />
+      <workItem from="1626275956426" duration="4572000" />
+      <workItem from="1626280925892" duration="896000" />
+      <workItem from="1626281859727" duration="1342000" />
+      <workItem from="1626283931854" duration="299000" />
+      <workItem from="1626284253555" duration="4563000" />
+      <workItem from="1626288939308" duration="398000" />
+      <workItem from="1626361428841" duration="15035000" />
+      <workItem from="1626446088995" duration="21449000" />
+      <workItem from="1626792088599" duration="19809000" />
+      <workItem from="1626877484925" duration="5494000" />
+      <workItem from="1626885067892" duration="11892000" />
+      <workItem from="1626962385699" duration="27987000" />
+      <workItem from="1627050050257" duration="23078000" />
+      <workItem from="1627308719779" duration="22708000" />
+      <workItem from="1627333766626" duration="4928000" />
+      <workItem from="1627394742191" duration="26815000" />
+      <workItem from="1627482199672" duration="21449000" />
+      <workItem from="1627567488128" duration="22816000" />
+      <workItem from="1627654348646" duration="25241000" />
+      <workItem from="1628001223172" duration="11882000" />
+      <workItem from="1628086561081" duration="22190000" />
+      <workItem from="1628173081203" duration="22898000" />
+      <workItem from="1628259011319" duration="25572000" />
+      <workItem from="1628690946484" duration="21986000" />
+      <workItem from="1628777757204" duration="26193000" />
+      <workItem from="1628863400492" duration="7536000" />
+      <workItem from="1629124518346" duration="27704000" />
+      <workItem from="1629210318795" duration="23044000" />
+      <workItem from="1629297023038" duration="21803000" />
+      <workItem from="1629382953449" duration="9416000" />
+      <workItem from="1629405807921" duration="5073000" />
+      <workItem from="1629469129373" duration="23386000" />
+      <workItem from="1629728260117" duration="23865000" />
+      <workItem from="1629813498703" duration="21550000" />
+      <workItem from="1629900190665" duration="26430000" />
+      <workItem from="1629988026080" duration="13663000" />
+      <workItem from="1630073946227" duration="17120000" />
+      <workItem from="1630333020455" duration="15329000" />
+      <workItem from="1630418271172" duration="23199000" />
+      <workItem from="1630505552845" duration="22381000" />
+      <workItem from="1630594790028" duration="14512000" />
+      <workItem from="1630681073046" duration="19350000" />
+      <workItem from="1630707121883" duration="1149000" />
+      <workItem from="1630949035126" duration="10938000" />
+      <workItem from="1631025531392" duration="14100000" />
+      <workItem from="1631043395568" duration="4838000" />
+      <workItem from="1631048312185" duration="3742000" />
+      <workItem from="1631052216452" duration="1638000" />
+      <workItem from="1631116775221" duration="12550000" />
+      <workItem from="1631195980033" duration="22535000" />
+      <workItem from="1631283078744" duration="21086000" />
+      <workItem from="1632148293776" duration="8377000" />
+      <workItem from="1632158174543" duration="2047000" />
+      <workItem from="1632160457653" duration="17174000" />
+      <workItem from="1632232992353" duration="24026000" />
+      <workItem from="1632319716643" duration="21845000" />
+      <workItem from="1632406827394" duration="20626000" />
+      <workItem from="1632431355802" duration="5130000" />
+      <workItem from="1632492237515" duration="24062000" />
+      <workItem from="1632752167359" duration="13706000" />
+      <workItem from="1632837853751" duration="12841000" />
+      <workItem from="1632925166918" duration="13518000" />
+      <workItem from="1633011449297" duration="8185000" />
+      <workItem from="1633098207925" duration="3828000" />
+      <workItem from="1633358125492" duration="4956000" />
+      <workItem from="1633443824946" duration="5556000" />
+      <workItem from="1633529945545" duration="8065000" />
+      <workItem from="1633616696692" duration="10562000" />
+      <workItem from="1633964731247" duration="6885000" />
+      <workItem from="1634049185781" duration="6864000" />
+      <workItem from="1634138950337" duration="3345000" />
+      <workItem from="1634222716454" duration="7589000" />
+      <workItem from="1634311099535" duration="6409000" />
+      <workItem from="1634567045165" duration="4098000" />
+      <workItem from="1634653093276" duration="10663000" />
+      <workItem from="1634739875925" duration="4544000" />
+      <workItem from="1634826157244" duration="697000" />
+      <workItem from="1634934621370" duration="1851000" />
+      <workItem from="1635172607310" duration="11922000" />
+      <workItem from="1635257040719" duration="8806000" />
+      <workItem from="1635344613473" duration="15953000" />
+      <workItem from="1635429374833" duration="8040000" />
+      <workItem from="1635518891246" duration="14139000" />
+      <workItem from="1635951490375" duration="2547000" />
+      <workItem from="1636035327241" duration="10906000" />
+      <workItem from="1636121539535" duration="3255000" />
+      <workItem from="1636382971519" duration="7088000" />
+      <workItem from="1636467081820" duration="3590000" />
+      <workItem from="1636554332545" duration="12471000" />
+      <workItem from="1636640359168" duration="7617000" />
+      <workItem from="1636727553365" duration="1797000" />
+      <workItem from="1636990729437" duration="17455000" />
+      <workItem from="1637013449509" duration="3137000" />
+      <workItem from="1637072500746" duration="24024000" />
+      <workItem from="1637159897367" duration="6029000" />
+      <workItem from="1637166763391" duration="17195000" />
+      <workItem from="1637245047734" duration="26862000" />
+      <workItem from="1637273415350" duration="69000" />
+      <workItem from="1637273872868" duration="2264000" />
+      <workItem from="1637331902443" duration="22164000" />
+      <workItem from="1637592158134" duration="4385000" />
+      <workItem from="1637678439683" duration="3125000" />
+      <workItem from="1637764201586" duration="18688000" />
+      <workItem from="1637850584782" duration="10546000" />
+      <workItem from="1637936249745" duration="7786000" />
+      <workItem from="1637958508323" duration="5741000" />
+      <workItem from="1638195187478" duration="9818000" />
+      <workItem from="1638283361399" duration="6136000" />
+      <workItem from="1638368599916" duration="14848000" />
+      <workItem from="1638462220307" duration="2389000" />
+      <workItem from="1638475634109" duration="3451000" />
+      <workItem from="1638541434177" duration="20254000" />
+      <workItem from="1638570056043" duration="2189000" />
+      <workItem from="1638800284208" duration="23054000" />
+      <workItem from="1638830536225" duration="741000" />
+      <workItem from="1639059968620" duration="15200000" />
+      <workItem from="1639144351664" duration="4978000" />
+      <workItem from="1639404995132" duration="16846000" />
+      <workItem from="1639490616416" duration="16548000" />
+      <workItem from="1639578988898" duration="2393000" />
+      <workItem from="1639663845164" duration="3641000" />
+      <workItem from="1639751586103" duration="4668000" />
+      <workItem from="1640010716071" duration="494000" />
+      <workItem from="1641391635577" duration="25677000" />
+      <workItem from="1641478586613" duration="15466000" />
+      <workItem from="1641565539014" duration="1844000" />
+      <workItem from="1641825628490" duration="10187000" />
+      <workItem from="1641914704238" duration="5022000" />
+      <workItem from="1642016930212" duration="2766000" />
+      <workItem from="1642024327258" duration="508000" />
+      <workItem from="1642025133736" duration="61000" />
+      <workItem from="1642025614992" duration="303000" />
+      <workItem from="1642028955649" duration="42000" />
+      <workItem from="1642712911849" duration="288000" />
+      <workItem from="1642734827226" duration="599000" />
+      <workItem from="1642735896894" duration="570000" />
+      <workItem from="1643736252650" duration="1034000" />
+      <workItem from="1645028428897" duration="3797000" />
+      <workItem from="1645041439795" duration="1606000" />
+      <workItem from="1645043057020" duration="984000" />
+      <workItem from="1645044051797" duration="683000" />
+      <workItem from="1645106986438" duration="1517000" />
+      <workItem from="1645109560573" duration="4737000" />
+      <workItem from="1645198396135" duration="3402000" />
+      <workItem from="1645463092785" duration="700000" />
+      <workItem from="1645633477955" duration="2726000" />
+      <workItem from="1646668859923" duration="18623000" />
+      <workItem from="1647276560227" duration="5456000" />
+      <workItem from="1647355093216" duration="8925000" />
+      <workItem from="1647871053664" duration="1832000" />
+      <workItem from="1647963322039" duration="3598000" />
+      <workItem from="1648132509320" duration="1068000" />
+      <workItem from="1648217128389" duration="1658000" />
+      <workItem from="1648480095571" duration="3341000" />
+      <workItem from="1648767040208" duration="609000" />
+      <workItem from="1648820701865" duration="3671000" />
+      <workItem from="1649081163629" duration="11640000" />
+      <workItem from="1649167740192" duration="11343000" />
+      <workItem from="1649253043810" duration="10985000" />
+      <workItem from="1649342815733" duration="7344000" />
+      <workItem from="1649426519316" duration="4758000" />
+      <workItem from="1650401822481" duration="5303000" />
+      <workItem from="1650901878076" duration="7145000" />
+      <workItem from="1650921226691" duration="18207000" />
+      <workItem from="1651585906704" duration="7753000" />
+      <workItem from="1651691520404" duration="48541000" />
+      <workItem from="1653053904225" duration="60317000" />
+      <workItem from="1654017698110" duration="41532000" />
+      <workItem from="1654781927668" duration="16157000" />
+      <workItem from="1654869691472" duration="12251000" />
+      <workItem from="1655478891924" duration="4961000" />
+      <workItem from="1656016869338" duration="1494000" />
+      <workItem from="1656079486636" duration="15159000" />
+      <workItem from="1656707461599" duration="625000" />
+      <workItem from="1657202842387" duration="12153000" />
+      <workItem from="1657547491604" duration="6509000" />
+      <workItem from="1657639673226" duration="2703000" />
+      <workItem from="1657663262349" duration="1214000" />
+      <workItem from="1657721159630" duration="652000" />
+      <workItem from="1657807663501" duration="998000" />
+      <workItem from="1658432073454" duration="1681000" />
+      <workItem from="1658502628705" duration="1075000" />
+      <workItem from="1658525866168" duration="53000" />
+      <workItem from="1658527088139" duration="604000" />
+      <workItem from="1658757232991" duration="1969000" />
+      <workItem from="1658846165726" duration="2150000" />
+      <workItem from="1658931972179" duration="964000" />
+      <workItem from="1659019657305" duration="1201000" />
+      <workItem from="1659131727197" duration="617000" />
+      <workItem from="1659452662733" duration="616000" />
+      <workItem from="1659554941397" duration="9142000" />
+      <workItem from="1659623450646" duration="9616000" />
+      <workItem from="1659636372216" duration="1607000" />
+      <workItem from="1659637996184" duration="363000" />
+      <workItem from="1659638369044" duration="5444000" />
+      <workItem from="1659651554840" duration="1457000" />
+      <workItem from="1659708273362" duration="3668000" />
+      <workItem from="1659716058031" duration="4839000" />
+      <workItem from="1659722290951" duration="1347000" />
+      <workItem from="1660075133047" duration="733000" />
+      <workItem from="1660248906682" duration="802000" />
+      <workItem from="1660313503087" duration="2888000" />
+      <workItem from="1660335190688" duration="26000" />
+      <workItem from="1660335244155" duration="3000" />
+    </task>
+    <task id="LOCAL-00001" summary="Commit cambios urgentes Sample Manager">
+      <created>1629128286218</created>
+      <updated>1629128286218</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Commit Traslado a produccion primeros cambios">
+      <created>1629730715257</created>
+      <updated>1629730715257</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Commit Traslado a produccion primeros cambios">
+      <created>1629731016915</created>
+      <updated>1629731016915</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Commit Traslado a produccion primeros cambios">
+      <created>1629731425977</created>
+      <updated>1629731425977</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Commit Traslado a produccion search Specimen campos ubicacion">
+      <created>1629757075187</created>
+      <updated>1629757075187</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Commit Traslado a produccion valor UL specimens">
+      <created>1629931651372</created>
+      <updated>1629931651372</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Commit Traslado a produccion UL Specimen Default">
+      <created>1629988597188</created>
+      <updated>1629988597188</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Commit Traslado a produccion UL Specimen Ultimo">
+      <created>1629988699257</created>
+      <updated>1629988699257</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Commit Traslado a produccion subject lista desplegable">
+      <created>1630681497958</created>
+      <updated>1630681497958</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Commit Traslado a produccion Anticuerpos">
+      <created>1632770856272</created>
+      <updated>1632770856272</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Commit Traslado a produccion Anticuerpos">
+      <created>1632775422772</created>
+      <updated>1632775422772</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Commit Traslado a produccion Anticuerpos">
+      <created>1632782214666</created>
+      <updated>1632782214666</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Commit Traslado a produccion Anticuerpos2">
+      <created>1632840100379</created>
+      <updated>1632840100379</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Commit Traslado a produccion Anticuerpos2.1">
+      <created>1632843669268</created>
+      <updated>1632843669268</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Commit Traslado a produccion Anticuerpos Modificaciones">
+      <created>1636411173599</created>
+      <updated>1636411173599</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Commit Traslado a produccion Specimens, valor UL">
+      <created>1636578299854</created>
+      <updated>1636578299854</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Commit Traslado a produccion Specimens, valor UL">
+      <created>1636646849455</created>
+      <updated>1636646849455</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Commit Traslado a produccion modulo Recombinant Protein">
+      <created>1637686260855</created>
+      <updated>1637686260855</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Commit Traslado a produccion Specimens, valor UL, Specimen Type, Study">
+      <created>1639087335532</created>
+      <updated>1639087335532</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Commit Traslado de todo sample manager">
+      <created>1659738653246</created>
+      <updated>1659738653246</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="All_in_samplemanager - 2021.06.09 at 11h 01m 25s.xml">
+      <configuration name="All in samplemanager" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="All_in_samplemanager - 2021.06.09 at 11h 06m 06s.xml">
+      <configuration name="All in samplemanager" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="All_in_samplemanager - 2021.06.09 at 11h 09m 16s.xml">
+      <configuration name="All in samplemanager" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="All_in_samplemanager - 2021.06.09 at 11h 19m 52s.xml">
+      <configuration name="All in samplemanager" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="All_in_samplemanager - 2021.06.09 at 11h 20m 27s.xml">
+      <configuration name="All in samplemanager" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="All_in_samplemanager - 2021.06.09 at 11h 21m 09s.xml">
+      <configuration name="All in samplemanager" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_samplemanager - 2021.06.09 at 11h 22m 14s.xml">
+      <configuration name="All in samplemanager" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="2403216000" />
+  </component>
+  <component name="TodoView" selected-index="1">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="0" width="1550" height="840" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3240469" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1574012" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24865592" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35190615" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.02631579" sideWeight="0.5003349" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24966533" sideWeight="0.15051547" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991204" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991204" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24798928" sideWeight="0.7693452" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28217158" sideWeight="0.49892932" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35337242" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.6279762" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41935483" sideWeight="0.4996651" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25481087" sideWeight="0.37202382" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.10557185" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.10374833" sideWeight="0.5010707" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32697946" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299866" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hibernate Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26119402" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.49706745" sideWeight="0.4996651" order="16" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20147255" sideWeight="0.37149027" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25481087" sideWeight="0.37202382" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24865592" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1574012" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32844576" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991204" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.10374833" sideWeight="0.5010707" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991204" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35337242" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25769746" sideWeight="0.6279762" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3020528" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32697946" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3240469" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299866" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hibernate Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26119402" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23753665" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24966533" sideWeight="0.15051547" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27419356" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20147255" sideWeight="0.37149027" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24899058" sideWeight="0.7693452" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27576974" sideWeight="0.49892932" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+    <MESSAGE value="Commit cambios urgentes Sample Manager" />
+    <MESSAGE value="Commit Traslado a produccion primeros cambios" />
+    <MESSAGE value="Commit Traslado a produccion search Specimen campos ubicacion" />
+    <MESSAGE value="Commit Traslado a produccion valor UL specimens" />
+    <MESSAGE value="Commit Traslado a produccion UL Specimen Default" />
+    <MESSAGE value="Commit Traslado a produccion UL Specimen Ultimo" />
+    <MESSAGE value="Commit Traslado a produccion subject lista desplegable" />
+    <MESSAGE value="Commit Traslado a produccion Anticuerpos" />
+    <MESSAGE value="Commit Traslado a produccion Anticuerpos2" />
+    <MESSAGE value="Commit Traslado a produccion Anticuerpos2.1" />
+    <MESSAGE value="Commit Traslado a produccion Anticuerpos Modificaciones" />
+    <MESSAGE value="Commit Traslado a produccion Specimens, valor UL" />
+    <MESSAGE value="Commit Traslado a produccion modulo Recombinant Protein" />
+    <MESSAGE value="Commit Traslado a produccion Specimens, valor UL, Specimen Type, Study" />
+    <MESSAGE value="Commit Traslado de todo sample manager" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit Traslado de todo sample manager" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/capture/specimens/DownSQLQueryInv.jsp</url>
+          <line>52</line>
+          <properties />
+          <option name="timeStamp" value="141" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/APIController.java</url>
+          <line>110</line>
+          <properties />
+          <option name="timeStamp" value="243" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/web/controller/CaptureRecombinantProtController.java</url>
+          <line>326</line>
+          <properties />
+          <option name="timeStamp" value="262" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/service/RecombinantProteinFilterService.java</url>
+          <line>48</line>
+          <properties />
+          <option name="timeStamp" value="266" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/web/controller/CaptureRecombinantProtController.java</url>
+          <line>311</line>
+          <properties />
+          <option name="timeStamp" value="267" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/web/controller/CaptureSpecimensController.java</url>
+          <line>395</line>
+          <properties />
+          <option name="timeStamp" value="315" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/web/controller/CaptureSpecimensController.java</url>
+          <line>389</line>
+          <properties />
+          <option name="timeStamp" value="316" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/web/controller/CaptureSpecimensController.java</url>
+          <line>429</line>
+          <properties />
+          <option name="timeStamp" value="317" />
+        </line-breakpoint>
+      </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="318" />
+    </breakpoint-manager>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/capture/specimens/list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3332" max-vertical-offset="7344">
+          <caret line="196" column="68" selection-start-line="196" selection-start-column="68" selection-end-line="196" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/appServlet/hibernate.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3302" max-vertical-offset="8347">
+          <caret line="197" column="47" selection-start-line="197" selection-start-column="47" selection-end-line="197" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/views/SpecimenFilter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2346" max-vertical-offset="4505">
+          <caret line="138" column="43" selection-start-line="138" selection-start-column="43" selection-end-line="138" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/service/SpecimenFilterService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1498" max-vertical-offset="1921">
+          <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/web/controller/CaptureSpecimensController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="7769" max-vertical-offset="15266">
+          <caret line="457" column="13" selection-start-line="432" selection-start-column="50" selection-end-line="457" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/domain/Specimen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3196" max-vertical-offset="3876">
+          <caret line="188" column="0" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/capture/specimens/editForm.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1017" max-vertical-offset="6035">
+          <caret line="77" column="102" selection-start-line="77" selection-start-column="102" selection-end-line="77" selection-end-column="102" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/capture/specimens/list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2908" max-vertical-offset="7344">
+          <caret line="196" column="68" selection-start-line="196" selection-start-column="68" selection-end-line="196" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/appServlet/hibernate.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3302" max-vertical-offset="8347">
+          <caret line="197" column="47" selection-start-line="197" selection-start-column="47" selection-end-line="197" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/views/SpecimenFilter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2346" max-vertical-offset="4505">
+          <caret line="138" column="43" selection-start-line="138" selection-start-column="43" selection-end-line="138" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/service/SpecimenFilterService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1498" max-vertical-offset="1921">
+          <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/web/controller/CaptureSpecimensController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="7769" max-vertical-offset="15266">
+          <caret line="457" column="13" selection-start-line="432" selection-start-column="50" selection-end-line="457" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/domain/Specimen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3196" max-vertical-offset="3876">
+          <caret line="188" column="0" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/capture/specimens/editForm.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1017" max-vertical-offset="6035">
+          <caret line="77" column="102" selection-start-line="77" selection-start-column="102" selection-end-line="77" selection-end-column="102" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/web/controller/CaptureRecombinantProtController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="15006" max-vertical-offset="15606">
+          <caret line="940" column="5" selection-start-line="446" selection-start-column="3" selection-end-line="940" selection-end-column="5" />
+          <folding>
+            <element signature="e#24114#24134#0" expanded="false" />
+            <element signature="e#24203#24223#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/3.2.10.RELEASE/spring-web-3.2.10.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33173078" vertical-offset="1562" max-vertical-offset="4250">
+          <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/capture/specimens/enterNewForm.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55284554" vertical-offset="2091" max-vertical-offset="6358">
+          <caret line="139" column="46" selection-start-line="131" selection-start-column="40" selection-end-line="139" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/fragments/sideNav.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44918698" vertical-offset="1581" max-vertical-offset="3638">
+          <caret line="106" column="71" selection-start-line="106" selection-start-column="71" selection-end-line="106" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/service/AntibodyFilterService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.64612955" vertical-offset="288" max-vertical-offset="1224">
+          <caret line="51" column="46" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/fileuploadexcell/uploadFormexcel.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.8353658" vertical-offset="930" max-vertical-offset="2278">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/fileuploadexcell/uploadExcel.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.0945122" vertical-offset="2205" max-vertical-offset="2635">
+          <caret line="70" column="73" selection-start-line="70" selection-start-column="73" selection-end-line="70" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/capture/specimens/uploadResultExcel.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5030488" vertical-offset="2232" max-vertical-offset="2669">
+          <caret line="141" column="14" selection-start-line="141" selection-start-column="14" selection-end-line="141" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/capture/recombinantProtein/list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7800633" vertical-offset="935" max-vertical-offset="5865">
+          <caret line="84" column="66" selection-start-line="84" selection-start-column="66" selection-end-line="84" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/3.6.4.Final/hibernate-core-3.6.4.Final-sources.jar!/org/hibernate/impl/SessionFactoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="6656" max-vertical-offset="19023">
+          <caret line="531" column="0" selection-start-line="531" selection-start-column="0" selection-end-line="531" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/3.6.4.Final/hibernate-core-3.6.4.Final-sources.jar!/org/hibernate/impl/AbstractSessionImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33164558" vertical-offset="209" max-vertical-offset="2295">
+          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/3.6.4.Final/hibernate-core-3.6.4.Final-sources.jar!/org/hibernate/jdbc/JDBCContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33164558" vertical-offset="1960" max-vertical-offset="5253">
+          <caret line="179" column="0" selection-start-line="179" selection-start-column="0" selection-end-line="179" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/3.6.4.Final/hibernate-core-3.6.4.Final-sources.jar!/org/hibernate/impl/SessionImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33173078" vertical-offset="26433" max-vertical-offset="36244">
+          <caret line="1767" column="0" selection-start-line="1767" selection-start-column="0" selection-end-line="1767" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/views/StoreSpecimen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.4554973" vertical-offset="3970" max-vertical-offset="4352">
+          <caret line="66" column="15" selection-start-line="66" selection-start-column="15" selection-end-line="66" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript5.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8708861" vertical-offset="2495" max-vertical-offset="3247">
+          <caret line="167" column="5" selection-start-line="167" selection-start-column="5" selection-end-line="167" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/service/SpecimenService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55949366" vertical-offset="0" max-vertical-offset="1734">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/domain/SpecimensFilters.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43037975" vertical-offset="0" max-vertical-offset="816">
+          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/domain/SpecimensResults.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38701922" vertical-offset="3069" max-vertical-offset="3944">
+          <caret line="190" column="32" selection-start-line="190" selection-start-column="26" selection-end-line="190" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/views/EntitySpecimen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="3727" max-vertical-offset="4403">
+          <caret line="226" column="25" selection-start-line="226" selection-start-column="20" selection-end-line="226" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/service/SpecimenFilterService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1498" max-vertical-offset="1921">
+          <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/domain/Specimen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1732" max-vertical-offset="2516">
+          <caret line="188" column="0" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/3.2.10.RELEASE/spring-aop-3.2.10.RELEASE-sources.jar!/org/springframework/aop/framework/CglibAopProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37259614" vertical-offset="8821" max-vertical-offset="14535">
+          <caret line="604" column="44" selection-start-line="604" selection-start-column="44" selection-end-line="604" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/berkeley/harrislab/samplemanager/web/controller/CaptureSpecimensController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="6698" max-vertical-offset="14620">
+          <caret line="457" column="13" selection-start-line="432" selection-start-column="50" selection-end-line="457" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/capture/specimens/editForm.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1017" max-vertical-offset="6035">
+          <caret line="77" column="102" selection-start-line="77" selection-start-column="102" selection-end-line="77" selection-end-column="102" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/appServlet/hibernate.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="656">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/samplemanager.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.799427" vertical-offset="1326" max-vertical-offset="2159">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3302" max-vertical-offset="8347">
+          <caret line="197" column="47" selection-start-line="197" selection-start-column="47" selection-end-line="197" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/views/SpecimenFilter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2346" max-vertical-offset="4505">
+          <caret line="138" column="43" selection-start-line="138" selection-start-column="43" selection-end-line="138" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/capture/specimens/list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3332" max-vertical-offset="7344">
+          <caret line="196" column="68" selection-start-line="196" selection-start-column="68" selection-end-line="196" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>samplemanager:war</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.5747393" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring (samplemanager)|Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.5747393" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>sass-stdlib</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.5747393" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.5747393" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Hibernate|samplemanager</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.5747393" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: mysql:mysql-connector-java:8.0.28</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.5747393" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
+

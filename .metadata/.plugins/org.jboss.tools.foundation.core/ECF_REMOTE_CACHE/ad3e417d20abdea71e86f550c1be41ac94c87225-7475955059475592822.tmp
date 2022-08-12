@@ -1,0 +1,27 @@
+### Current CI snapshot builds
+# JBT 4.19.1.Final
+jboss.discovery.directory.url|jbosstools|4.19.1.Final=http://download.jboss.org/jbosstools/photon/snapshots/updates/discovery.earlyaccess/master/jbosstools-directory.xml
+jboss.discovery.site.url|jbosstools|4.19.1.Final=http://download.jboss.org/jbosstools/photon/snapshots/updates/discovery.central/master/
+jboss.discovery.earlyaccess.site.url|jbosstools|4.19.1.Final=http://download.jboss.org/jbosstools/photon/snapshots/updates/discovery.earlyaccess/master/
+jboss.discovery.earlyaccess.list.url|jbosstools|4.19.1.Final=http://download.jboss.org/jbosstools/photon/snapshots/updates/discovery.earlyaccess/master/jbosstools-earlyaccess.properties
+jboss.central.webpage.url|jbosstools|4.19.1.Final=http://download.jboss.org/jbosstools/static/redhat-central/jbosstools-central-webpage-2.0.0-20191001.1470.zip
+jboss.fuse.extras.site.url|jbosstools|4.19.1.Final=http://download.jboss.org/jbosstools/photon/snapshots/builds/jbosstools-fuse-extras_master/latest/all/repo/
+# DevStudio 12.19.1.GA
+jboss.discovery.directory.url|devstudio|12.19.1.GA=https://devstudio.redhat.com/12/snapshots/updates/discovery.earlyaccess/master/devstudio-directory.xml
+jboss.discovery.site.url|devstudio|12.19.1.GA=https://devstudio.redhat.com/12/snapshots/updates/discovery.central/master/
+jboss.discovery.earlyaccess.site.url|devstudio|12.19.1.GA=https://devstudio.redhat.com/12/snapshots/updates/discovery.earlyaccess/master/
+jboss.discovery.earlyaccess.list.url|devstudio|12.19.1.GA=https://devstudio.redhat.com/12/snapshots/updates/discovery.earlyaccess/master/devstudio-earlyaccess.properties
+jboss.central.webpage.url|devstudio|12.19.1.GA=http://download.jboss.org/jbosstools/static/redhat-central/jbosstools-central-webpage-2.0.0-20191001.1470.zip
+jboss.fuse.extras.site.url|devstudio|12.19.1.GA=http://download.jboss.org/jbosstools/photon/snapshots/builds/jbosstools-fuse-extras_master/latest/all/repo/
+
+
+### latest staging / uncommented for stage period
+# JBT 4.19.1.AM1
+#jboss.discovery.directory.url|jbosstools|4.19.1.AM1=http://download.jboss.org/jbosstools/photon/staging/updates/discovery.earlyaccess/4.19.1.AM1/jbosstools-directory.xml
+#jboss.discovery.site.url|jbosstools|4.19.1.AM1=http://download.jboss.org/jbosstools/photon/staging/updates/
+#jboss.discovery.earlyaccess.site.url|jbosstools|4.19.1.AM1=http://download.jboss.org/jbosstools/photon/staging/updates/discovery.earlyaccess/4.19.1.AM1/
+#jboss.discovery.earlyaccess.list.url|jbosstools|4.19.1.AM1=http://download.jboss.org/jbosstools/photon/staging/updates/discovery.earlyaccess/4.19.1.AM1/jbosstools-earlyaccess.properties
+#jboss.central.webpage.url|jbosstools|4.19.1.AM1=http://download.jboss.org/jbosstools/static/redhat-central/jbosstools-central-webpage-2.0.0-20191001.1470.zip
+#jboss.fuse.extras.site.url|jbosstools|4.19.1.AM1=http://download.jboss.org/jbosstools/photon/staging/updates/fuse-extras/
+# DevStudio 12.19.1.AM1
+jboss.discovery.directory.url|devstudio|12.19.1.
