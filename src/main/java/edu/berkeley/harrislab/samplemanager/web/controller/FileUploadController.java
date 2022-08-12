@@ -2,7 +2,6 @@ package edu.berkeley.harrislab.samplemanager.web.controller;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
-import com.mysql.jdbc.ExportControlled;
 import edu.berkeley.harrislab.samplemanager.domain.*;
 import edu.berkeley.harrislab.samplemanager.domain.audit.AuditTrail;
 import edu.berkeley.harrislab.samplemanager.language.MessageResource;
