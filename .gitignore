@@ -1,0 +1,12 @@
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.logs
+*.iml
+.idea/
+.eclipse
+.metadata/
+.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_6_1.xml
+.idea/libraries/Maven__mysql_mysql_connector_java_8_0_18.xml
