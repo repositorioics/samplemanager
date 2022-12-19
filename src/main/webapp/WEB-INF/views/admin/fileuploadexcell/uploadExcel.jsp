@@ -67,6 +67,8 @@
                                     <th><spring:message code="VolUnits"/></th>
                                     <th><spring:message code="Subject"/></th>
                                     <th><spring:message code="InStorage"/></th>
+                                    <th><spring:message code="Record_user"/></th>
+                                    <th><spring:message code="Record_date"/></th>
                                 </tr>
                                 </thead>
 

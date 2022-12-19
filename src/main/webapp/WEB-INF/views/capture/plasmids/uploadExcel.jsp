@@ -39,40 +39,20 @@
 			                <i class="fa fa-file-upload"></i>&nbsp;<strong><spring:message code="uploadEntityToolTip" /></strong>
 			              </h6>
 			              <div class="card-body">
-			                <spring:url value="/admin/fileuploadexcell/uploadEntityFile/" var="uploadUrl"></spring:url>
-                                <form method="POST" action="${fn:escapeXml(uploadUrl)}" enctype="multipart/form-data">
-                                    <div class="form-group">
-                                        <label class="btn rounded-pill btn-outline-primary">
-                                            <i class="fa fa-hand-point-up"></i> <spring:message code="selectfileupload" /><input id="fileinput" name="file" type="file" accept=".xlsx,.xls" style="display: none;">
-                                        </label>
-                                        <span id="selected_filename"><spring:message code="noFileSelected" /></span>
-                                    </div>
+			                <spring:url value="/capture/plasmids/uploadEntityFile/" var="uploadUrl"></spring:url>
+			                <form method="POST" action="${fn:escapeXml(uploadUrl)}" enctype="multipart/form-data">
+			                	<div class="form-group">
+									<label class="btn rounded-pill btn-outline-primary">
+									    <i class="fa fa-hand-point-up"></i> <spring:message code="selectfileupload" /><input id="fileinput" name="file" type="file" accept=".xlsx,.xls" style="display: none;">
+									</label>
+									<span id="selected_filename"><spring:message code="noFileSelected" /></span>
+								</div>
 								<div class="row justify-content-end">
 									<button type="submit" data-toggle="tooltip" data-placement="bottom" title="<spring:message code="uploadEntityToolTip" />" class="btn rounded-pill btn-outline-primary"><i class="fa fa-check"></i> <spring:message code="upload" /></button>
 								</div>
 			                </form>
 
-                        </div>
-
-                            <table id="table" class="table table-striped table-bordered datatable"
-                                   width="100%" hidden="true">
-                                <thead>
-                                <tr>
-                                    <th><spring:message code="Specimens"/></th>
-                                    <th><spring:message code="SpecimenId"/></th>
-                                    <th><spring:message code="LabReceiptDate"/></th>
-                                    <th><spring:message code="SpecimenType"/></th>
-                                    <th><spring:message code="SpecimenCondition"/></th>
-                                    <th><spring:message code="Volume"/></th>
-                                    <th><spring:message code="VolUnits"/></th>
-                                    <th><spring:message code="Subject"/></th>
-                                    <th><spring:message code="InStorage"/></th>
-                                    <th><spring:message code="Record_user"/></th>
-                                    <th><spring:message code="Record_date"/></th>
-                                </tr>
-                                </thead>
-
-                            </table>
+			              </div>
 			            </div>
 			            
          			</div>
@@ -104,34 +84,12 @@
   	<!-- Custom scripts required by this view -->
 
 	<script>
-
-        jQuery(document).ready(function() {
-            $("li.storage").addClass("open");
-            $("li.storage").addClass("active");
-            $("li.fileuploadexcel").addClass("active");
-            $('#table').DataTable({
-                dom: 'lBfrtip',
-                "oLanguage": {
-                    "sUrl": "${dataTablesLang}"
-                },
-                "bFilter": false,
-                "bInfo": false,
-                "bPaginate": false,
-                "bDestroy": false,
-                "responsive": false,
-                "pageLength": 5,
-                "lengthMenu": [5, 10, 20, 50, 100],
-                "bLengthChange": false,
-                "responsive": false,
-                "buttons": [
-                    {
-                        extend: 'excel',
-                        text: "Download Excel Template to Update",
-                        className: "btn rounded-pill btn-outline-primary"
-                    }
-                ]
-            });
-        });
+		jQuery(document).ready(function() {
+            $("li.capture").addClass("open");
+            $("li.capture").addClass("active");
+            $("li.plasmids").addClass("active");
+	    });
+		
 		$('#fileinput').change(function() {
 		  $('#selected_filename').text($('#fileinput')[0].files[0].name);
 		});

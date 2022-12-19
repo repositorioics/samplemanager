@@ -177,7 +177,7 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="form-label"><spring:message code="estado" /></label>
+                                                <label class="form-label"><spring:message code="status" /></label>
                                                 <select class="select2-control form-control" id="estado" name="estado" style="width: 100%" data-allow-clear="true">
                                                     <option value="">Seleccione</option>
                                                     <option value="1">Activo</option>
