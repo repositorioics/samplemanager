@@ -41,40 +41,54 @@
 			              <div class="card-body">
 			                <spring:url value="/admin/fileuploadexcell/uploadEntityFile/" var="uploadUrl"></spring:url>
                                 <form method="POST" action="${fn:escapeXml(uploadUrl)}" enctype="multipart/form-data">
-                                    <div class="form-group">
+                                    <div class="d-flex align-items-start">
                                         <label class="btn rounded-pill btn-outline-primary">
                                             <i class="fa fa-hand-point-up"></i> <spring:message code="selectfileupload" /><input id="fileinput" name="file" type="file" accept=".xlsx,.xls" style="display: none;">
                                         </label>
                                         <span id="selected_filename"><spring:message code="noFileSelected" /></span>
+                                        <div class="d-flex justify-content-around">
+                                            <button type="submit" data-toggle="tooltip" data-placement="bottom" title="<spring:message code="uploadUpdateToolTip" />" class="btn rounded-pill btn-outline-primary"><i class="fa fa-check"></i> <spring:message code="Update volume and specimen locations" /></button>
+                                        </div>
                                     </div>
-								<div class="row justify-content-end">
-									<button type="submit" data-toggle="tooltip" data-placement="bottom" title="<spring:message code="uploadEntityToolTip" />" class="btn rounded-pill btn-outline-primary"><i class="fa fa-check"></i> <spring:message code="upload" /></button>
-								</div>
 			                </form>
 
                         </div>
 
-                            <table id="table" class="table table-striped table-bordered datatable"
-                                   width="100%" hidden="true">
-                                <thead>
-                                <tr>
-                                    <th><spring:message code="Specimens"/></th>
-                                    <th><spring:message code="SpecimenId"/></th>
-                                    <th><spring:message code="LabReceiptDate"/></th>
-                                    <th><spring:message code="SpecimenType"/></th>
-                                    <th><spring:message code="SpecimenCondition"/></th>
-                                    <th><spring:message code="Volume"/></th>
-                                    <th><spring:message code="VolUnits"/></th>
-                                    <th><spring:message code="Subject"/></th>
-                                    <th><spring:message code="InStorage"/></th>
-                                    <th><spring:message code="Record_user"/></th>
-                                    <th><spring:message code="Record_date"/></th>
-                                </tr>
-                                </thead>
 
-                            </table>
+
 			            </div>
-			            
+                        <div class="d-flex align-items-start">
+                        <table id="table" class="table table-striped table-bordered datatable"
+                               width="100%" hidden="true">
+                            <thead>
+                            <tr>
+                                <th><spring:message code="Specimens"/></th>
+                                <th><spring:message code="SpecimenId"/></th>
+                                <th><spring:message code="Volume"/></th>
+                            </tr>
+                            </thead>
+
+                        </table>
+                        </div>
+                        <div class="d-flex align-items-stretch">
+                        <table id="table1" class="table table-striped table-bordered datatable"
+                               width="100%" hidden="true">
+                            <thead>
+                            <tr>
+                                <th><spring:message code="Specimens"/></th>
+                                <th><spring:message code="SpecimenId"/></th>
+                                <th><spring:message code="Volume"/></th>
+                                <th><spring:message code="InStorage"/></th>
+                                <th><spring:message code="Frezzer "/></th>
+                                <th><spring:message code="Rack"/></th>
+                                <th><spring:message code="Box"/></th>
+                                <th><spring:message code="Position"/></th>
+
+                            </tr>
+                            </thead>
+
+                        </table>
+                        </div>
          			</div>
          			<!-- / Content -->
          			<jsp:include page="../../fragments/navFooter.jsp" />
@@ -126,7 +140,30 @@
                 "buttons": [
                     {
                         extend: 'excel',
-                        text: "Download Excel Template to Update",
+                        text: "Download Excel Template to Update Volume",
+                        className: "btn rounded-pill btn-outline-primary"
+                    }
+                ]
+            });
+
+            $('#table1').DataTable({
+                dom: 'lBfrtip',
+                "oLanguage": {
+                    "sUrl": "${dataTablesLang}"
+                },
+                "bFilter": false,
+                "bInfo": false,
+                "bPaginate": false,
+                "bDestroy": false,
+                "responsive": false,
+                "pageLength": 5,
+                "lengthMenu": [5, 10, 20, 50, 100],
+                "bLengthChange": false,
+                "responsive": false,
+                "buttons": [
+                    {
+                        extend: 'excel',
+                        text: "Download Excel Template to Update Volume and Locations",
                         className: "btn rounded-pill btn-outline-primary"
                     }
                 ]

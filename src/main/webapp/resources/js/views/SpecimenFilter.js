@@ -8,6 +8,7 @@ var SearchProcess = function () {
             var activeSearch = 0;
             var viewMess = parametros.viewMessage;
             var editMess = parametros.editMessage;
+            var creaAlic = "Aliquots";
 
             $('#labReceiptDate').datepicker({
                 orientation: isRtl ? 'auto right' : 'auto left',
@@ -200,7 +201,9 @@ var SearchProcess = function () {
                         fnCreatedCell: function (nTd, sData, oData, iRow, iCol) {
                             var editUrl = parametros.editUrl + oData.systemId + '/' ;
                             var viewUrl = parametros.viewUrl + oData.systemId + '/';
-                            $(nTd).html('<a data-toggle="tooltip" data-placement="bottom" title= ' + viewMess + ' href=' + viewUrl + ' class="btn btn-outline-primary btn-sm"><i class="fa fa-search"></i></a> <a data-toggle="tooltip" data-placement="bottom" title= ' + editMess + ' href=' + editUrl + ' class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></a>');
+                            var viewAli = parametros.aliquotUrl + oData.systemId + '/';
+                          //  $(nTd).html('<a data-toggle="tooltip" data-placement="bottom" title= ' + viewMess + ' href=' + viewUrl + ' class="btn btn-outline-primary btn-sm"><i class="fa fa-search"></i></a> <a data-toggle="tooltip" data-placement="bottom" title= ' + editMess + ' href=' + editUrl + ' class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></a>');
+                            $(nTd).html('<a data-toggle="tooltip" data-placement="bottom" title= ' + viewMess + ' href=' + viewUrl + ' class="btn btn-outline-primary btn-sm"><i class="fa fa-search"></i></a> <a data-toggle="tooltip" data-placement="bottom" title= ' + editMess + ' href=' + editUrl + ' class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></a> <a data-toggle="tooltip" data-placement="bottom" title= ' + creaAlic + ' href=' + viewAli + ' class="btn btn-outline-primary btn-sm"><i class="fa fa-bong"></i></a>');
                         }
 
                     }

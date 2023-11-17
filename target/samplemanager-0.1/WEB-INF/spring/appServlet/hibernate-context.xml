@@ -31,7 +31,7 @@
 				p:jdbcUrl="${app.jdbc.url}"
 				p:user="${app.jdbc.username}"
 				p:password="${app.jdbc.password}"
-				p:acquireIncrement="5"
+				p:acquireIncrement="720"
 				p:idleConnectionTestPeriod="240"
 				p:maxPoolSize="100"
 				p:maxStatements="50"

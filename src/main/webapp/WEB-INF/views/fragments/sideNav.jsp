@@ -134,6 +134,14 @@
                 </li>
             </ul>
 
+            <ul class="sidenav-menu">
+                <li class="sidenav-item fileuploadexcel" >
+                    <a href="<spring:url value="/admin/fileupdatespecimen/" htmlEscape="true "/>" class="sidenav-link">
+                        <div><spring:message code="Upload Shipping Box Samples" /></div>
+                    </a>
+                </li>
+            </ul>
+
         </li>
         <sec:authorize url="/admin/">
         <li class="sidenav-item admin">

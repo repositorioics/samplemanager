@@ -44,31 +44,36 @@
 			                <div class="import-error alert alert-danger">
 			                 		${errorMessage}
 			                </div>
+                              <div class="table-responsive">
 			                <div class="import-results col-md-12 col-lg-12 col-xl-12">
 			                  	<strong><spring:message code="updateResultsupload"  htmlEscape="false"/></strong>
-			                  	<table id="lista_entidades" class="table table-striped table-bordered datatable" width="100%">
-				                <thead>
-				                	<tr>
-					                    <th><spring:message code="resultadoUploadExcel" /></th>
+                                <table  id="list_participante_extension"  class="table table-hover table-bordered" style="width: 100%">
+                                    <thead>
+                                    <tr>
+
+                                        <th class="text-center" style="background-color: #add8e6"> <spring:message code="Excel file processing summary"/></th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <c:forEach items="${codigos_error}" var="e" varStatus="theCount">
+
+                                        <tr>
+                                            <td class="text-center">${e}</td>
 
 
-				                	</tr>
-				                </thead>
-				                <tbody>
-				                	<c:forEach items="${entidadesErr}" var="entidad">
-				                		<tr>
-				                            <td><c:out value="${entidad.specimenId }" /></td>
-
-				                		</tr>
-				                	</c:forEach>
-				                </tbody>
-				                </table>
+                                            </td>
+                                        </tr>
+                                    </c:forEach>
+                                    </tbody>
+                                </table>
 			                  	<div class="row justify-content-end">
 			                  		<spring:url value="/capture/specimens/" var="listUrl"/>
 									<a class="btn rounded-pill btn-outline-primary" href="${fn:escapeXml(listUrl)}"><spring:message code="end" /></a>
 								</div>
-			                </div>	
-			              </div>
+			                     </div>
+                              </div>
+                          </div>
 			            </div>
 			            
          			</div>
@@ -140,8 +145,11 @@
 		  $('.import-error').show();
 	    }
         else {
-
-            swal("${numFilas}" + " Records Processed Successfully");
+            if ("${numNoact}" === "0"){
+                swal("${numFilas}" + "--> Records Processed Successfully.");
+            }else{
+                swal("${numFilas}" + "--> Records Processed Successfully.     " + "${numNoact}" + " -->  raw error codes id");
+            }
         }
 		
 	</script>

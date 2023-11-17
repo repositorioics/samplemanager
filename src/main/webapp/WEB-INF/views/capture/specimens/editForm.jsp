@@ -78,12 +78,12 @@
                                                 <label class="form-label"><spring:message code="status" /></label> <span class="badge badge-dot badge-danger"></span>
                                                 <select class="select2-control form-control" id="estado" name="estado" style="width: 100%" data-allow-clear="false">
                                                     <option value="">Seleccione</option>
-                                                    <option value="1">Activo</option>
-                                                    <option value="0">Inactivo</option>
+                                                    <option value="1">Active</option>
+                                                    <option value="0">Inactive</option>
                                                 </select>
                                             </div>
 
-					                    </div>	
+					                    </div>
 					                    
 					                    <div class="form-group">
 					                      <div class="input-group">

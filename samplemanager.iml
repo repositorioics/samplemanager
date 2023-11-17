@@ -17,10 +17,7 @@
           <unit-entry name="sessionFactory" value="dataSource" />
           <unit-entry name="src:main:webapp:WEB-INF:spring:appServlet:hibernate.cfg.xml" />
         </datasource-map>
-        <naming-strategy-map>
-          <unit-entry name="sessionFactory" />
-          <unit-entry name="src:main:webapp:WEB-INF:spring:appServlet:hibernate.cfg.xml" />
-        </naming-strategy-map>
+        <naming-strategy-map />
         <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/main/webapp/WEB-INF/spring/appServlet/hibernate.cfg.xml" />
       </configuration>
     </facet>
@@ -28,8 +25,8 @@
       <configuration>
         <fileset id="fileset" name="Spring Application Context" removed="false">
           <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/spring/appServlet/hibernate-context.xml</file>
-          <file>file://$MODULE_DIR$/src/main/resources/security.xml</file>
           <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/security.xml</file>
           <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/spring/appServlet/controllers.xml</file>
           <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/spring/root-context.xml</file>
         </fileset>
@@ -46,8 +43,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="lib" level="project" />
-    <orderEntry type="library" name="repositories.xml" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context:3.2.10.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-aop:3.2.10.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: aopalliance:aopalliance:1.0" level="project" />
@@ -117,6 +112,9 @@
     <orderEntry type="library" name="Maven: org.apache.xmlbeans:xmlbeans:3.1.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-compress:1.20" level="project" />
     <orderEntry type="library" name="Maven: com.github.virtuald:curvesapi:1.06" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven.plugins:maven-clean-plugin:2.5" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven:maven-plugin-api:2.0.6" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.plexus:plexus-utils:3.0" level="project" />
   </component>
 </module>
 

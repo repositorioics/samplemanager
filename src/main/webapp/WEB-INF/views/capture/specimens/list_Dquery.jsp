@@ -43,7 +43,7 @@
                     <br><br>
                     <div class="import-results col-md-12 col-lg-12 col-xl-12">
                         <div class="table-container">
-                    <table id="lista_entidades11" class="table table-striped table-bordered datatable" data-show-toggle="true"   >
+                    <table id="lista_entidades11" class="table table-striped table-bordered datatable" data-show-toggle="true" hidden="true"  >
                         <thead>
                         <tr>
                             <th><spring:message code="specimenId" /></th>

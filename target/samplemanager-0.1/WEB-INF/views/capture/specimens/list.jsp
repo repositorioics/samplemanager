@@ -180,8 +180,8 @@
                                                 <label class="form-label"><spring:message code="status" /></label>
                                                 <select class="select2-control form-control" id="estado" name="estado" style="width: 100%" data-allow-clear="true">
                                                     <option value="">Seleccione</option>
-                                                    <option value="1">Activo</option>
-                                                    <option value="0">Inactivo</option>
+                                                    <option value="1">Active</option>
+                                                    <option value="0">Inactive</option>
                                                 </select>
                                             </div>
 
@@ -339,6 +339,9 @@
 <spring:url value="/capture/specimens/"
             var="viewUrl"/>
 
+    <spring:url value="/capture/specimens/aliquotList"
+                var="aliquotUrl"/>
+
 <spring:url value="/capture/subjects/"
             var="viewSubjectUrl"/>
 
@@ -394,6 +397,7 @@
             searchUrl: "${searchUrl}",
             editUrl: "${editUrl}",
             viewUrl: "${viewUrl}",
+            aliquotUrl: "${aliquotUrl}",
             successmessage: "${successmessage}",
             errormessage: "${errormessage}",
             waitmessage: "${waitmessage}",

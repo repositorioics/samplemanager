@@ -781,6 +781,65 @@ public class CaptureSpecimensController {
 		return specimensList ;
 	}
 
+    @RequestMapping( value="/aliquotView/", method=RequestMethod.GET)
+    public @ResponseBody List<SpecimensResults> searchProcess1(@RequestParam( value = "strFilter", required = true) String filtro) throws Exception {
+        SpecimensFilters specFilters = jsonToFilter(filtro);
+        List<SpecimensResults> specimensList;
+
+
+
+        List<MessageResource>  mr_sp_type = this.messageResourceService.getCatalogoTodos("CAT_SP_TYPE");
+        List<MessageResource>  mr_sino = this.messageResourceService.getCatalogoTodos("CAT_SINO");
+        List<MessageResource>  mr_vol_units = this.messageResourceService.getCatalogoTodos("CAT_VOL_UNITS");
+        List<MessageResource>  mr_sp_cond = this.messageResourceService.getCatalogoTodos("CAT_SP_COND");
+
+        if (specFilters.getActiveSearch() == 0){
+            specimensList = new ArrayList<>();
+
+        }else{
+
+            specimensList = specimenFilterService.getSpecimensByFilter(specFilters);
+
+        }
+
+
+        String lang = LocaleContextHolder.getLocale().getLanguage();
+        for(SpecimensResults specimen:specimensList) {
+            String descCatalogo = null;
+
+            if(mr_sp_type!=null) {
+                descCatalogo = getMessage(mr_sp_type, specimen.getSpecimenType(), lang);
+                specimen.setSpecimenType(descCatalogo);
+            }
+
+            if(mr_sino!=null) {
+                descCatalogo = getMessage(mr_sino, specimen.getInStorage(), lang);
+                specimen.setInStorage(descCatalogo);
+            }
+
+            if(mr_vol_units!=null) {
+                descCatalogo = getMessage(mr_vol_units, specimen.getVolUnits(), lang);
+                specimen.setVolUnits(descCatalogo);
+            }
+
+            if(mr_sp_cond!=null) {
+                descCatalogo = getMessage(mr_sp_cond, specimen.getSpecimenCondition(), lang);
+                specimen.setSpecimenCondition(descCatalogo);
+            }
+
+            if(mr_sino!=null) {
+                descCatalogo = getMessage(mr_sino, specimen.getDesPasive(), lang);
+                specimen.setDesPasive("<span class='badge badge-"+(specimen.getDesPasive().equals("1")? "success":"danger")+"'>"+descCatalogo + "</span>");
+            }
+
+
+
+        }
+
+
+
+        return specimensList ;
+    }
 
     @RequestMapping( value="/ClassExcForm1/", method = RequestMethod.GET)
     public String submitUploadForm( ModelMap modelmap) throws IOException {
