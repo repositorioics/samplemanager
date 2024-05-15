@@ -116,7 +116,7 @@ public class SpecimenStorageService {
 
     public void saveSpecimenStorage1(SpecimenStorage specimenStorage) {
         Session session = sessionFactory.getCurrentSession();
-        Query query = session.createSQLQuery("SET FOREIGN_KEY_CHECKS=0");
+       // Query query = session.createSQLQuery("SET FOREIGN_KEY_CHECKS=0");
        // session.saveOrUpdate(specimenStorage.getSpecimen());
         session.saveOrUpdate(specimenStorage);
     }

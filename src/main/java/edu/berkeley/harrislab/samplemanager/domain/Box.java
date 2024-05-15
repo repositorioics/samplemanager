@@ -77,10 +77,18 @@ public class Box extends BaseMetaData implements Auditable{
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	@ManyToOne(optional=false)
-	@JoinColumn(name="rack")
+
+
+    /*@JoinColumn(name = "locationId", referencedColumnName = "locationId")
+    @ManyToOne
+    @JsonInclude(JsonInclude.Include.NON_NULL)*/
+
+	//@ManyToOne(optional=false)
+    @ManyToOne
+	//@JoinColumn(name="rack")
+    @JoinColumn(name="rack")
 	@ForeignKey(name = "box_FK1")
+    //@JsonInclude(JsonInclude.Include.NON_NULL)
 	public Rack getRack() {
 		return rack;
 	}

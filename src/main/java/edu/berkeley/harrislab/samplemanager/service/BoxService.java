@@ -116,6 +116,7 @@ public class BoxService {
 	 * 
 	 */
 	public void saveBox(Box box) {
+   //     Query query = session.createSQLQuery("SET FOREIGN_KEY_CHECKS=0");
 		Session session = sessionFactory.getCurrentSession();
 		session.saveOrUpdate(box);
 	}

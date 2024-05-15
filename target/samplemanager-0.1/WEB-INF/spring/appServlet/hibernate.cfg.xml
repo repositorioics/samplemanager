@@ -9,9 +9,9 @@
     <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
     <!-- Enable this to see the SQL statements in the logs-->
     <property name="show_sql">true</property>
-    <property name="hbm2ddl.auto">update</property>
-    <listener type="post-delete" class="edu.berkeley.harrislab.samplemanager.web.listener.HibernateAuditLogListener"/>  
-	<listener type="post-update" class="edu.berkeley.harrislab.samplemanager.web.listener.HibernateAuditLogListener"/>  
-	<listener type="post-insert" class="edu.berkeley.harrislab.samplemanager.web.listener.HibernateAuditLogListener"/> 
-  </session-factory>
-</hibernate-configuration>
+     <property name="hbm2ddl.auto">update</property>
+       <listener type="post-delete" class="edu.berkeley.harrislab.samplemanager.web.listener.HibernateAuditLogListener"/>
+       <listener type="post-update" class="edu.berkeley.harrislab.samplemanager.web.listener.HibernateAuditLogListener"/>
+       <listener type="post-insert" class="edu.berkeley.harrislab.samplemanager.web.listener.HibernateAuditLogListener"/>
+     </session-factory>
+   </hibernate-configuration>

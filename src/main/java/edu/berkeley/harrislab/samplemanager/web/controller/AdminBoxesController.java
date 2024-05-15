@@ -279,6 +279,8 @@ public class AdminBoxesController {
         	UserSistema usuarioActual = this.usuarioService.getUser(SecurityContextHolder.getContext().getAuthentication().getName());
     		Box entidad = this.boxService.getBoxByUserId(id);
 			if(entidad==null) entidad = new Box(new Date(), usuarioActual.getUsername(), wad.getRemoteAddress(), '0');
+            logger.debug("Id "+ id );
+            logger.debug("systemId "+ systemId);
 			if (!systemId.equals("")) entidad.setSystemId(systemId);
 			if (!id.equals("")) entidad.setId(id);
 			if (!rack.equals("")) entidad.setRack(this.rackService.getRackBySystemId(rack));
@@ -287,6 +289,10 @@ public class AdminBoxesController {
 			entidad.setColumns(columns);
 			entidad.setCapacity(rows*columns);
 			if (!obs.equals("")) entidad.setObs(obs);
+            logger.debug(entidad.getId().toString());
+            logger.debug(entidad.getCapacity().toString());
+            logger.debug(entidad.getRack().toString());
+          //  logger.debug(entidad.getSystemId().toString());
 			this.boxService.saveBox(entidad);
 			return createJsonResponse(entidad);
     	}

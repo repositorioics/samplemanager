@@ -203,15 +203,16 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.18</version>
-		</dependency>
+            <version>8.0.33</version>
+        <!--	<version>8.0.18</version> -->
+        </dependency>
 
-		<!-- Postgresql 
-		<dependency>
-			<groupId>postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<version>9.0-801.jdbc4</version>
-		</dependency>-->
+        <!-- Postgresql
+        <dependency>
+            <groupId>postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>9.0-801.jdbc4</version>
+        </dependency>-->
 
 		<!-- Hibernate -->
 		<dependency>
